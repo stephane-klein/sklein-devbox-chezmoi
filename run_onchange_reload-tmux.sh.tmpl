@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# dot_config/tmux/tmux.conf hash: {{ include "dot_config/tmux/tmux.conf" | sha256sum }}
+if [ -n "$TMUX" ]; then
+    tmux source-file ~/.config/tmux/tmux.conf \; display-message "Tmux config reloaded" >/dev/null 2>&1 || true
+fi
