@@ -10,3 +10,9 @@ if command -v starship &> /dev/null; then
     eval "$(starship init zsh)"
 fi
 
+# Refresh tmux status bar after each command
+_tmux_refresh() {
+    [[ -n "$TMUX" ]] && tmux refresh-client -S 2>/dev/null
+}
+precmd_functions+=( _tmux_refresh )
+
