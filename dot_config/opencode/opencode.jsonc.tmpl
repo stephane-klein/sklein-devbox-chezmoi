@@ -1,0 +1,21 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "permission": {
+    "bash": "allow"
+  },
+  "mcp": {
+    "fetch": {
+      "type": "local",
+      "command": ["npx", "-y", "mcp-fetch-server"],
+      "enabled": true,
+      "environment": {
+        "DEFAULT_LIMIT": "0"
+      }
+    },
+    "context7": {
+      "type": "local",
+      "command": ["npx", "-y", "@upstash/context7-mcp", "--api-key", "ctx7sk-a55b88eb-cc38-44b4-83cf-1bc68fb42449"],
+      "enabled": true
+    }
+  }
+}

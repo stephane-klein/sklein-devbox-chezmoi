@@ -11,6 +11,17 @@ if command -v starship &> /dev/null; then
     eval "$(starship init zsh)"
 fi
 
+# Set tmux window title to current directory
+# Only updates if automatic-rename is on (preserves manual renames)
+_tmux_window_title() {
+    [[ -n "$TMUX" ]] || return
+    local auto
+    auto=$(tmux show-options -wqv automatic-rename 2>/dev/null)
+    [[ "$auto" == "off" ]] || printf '\033k%s\033\\' "$PWD"
+}
+chpwd_functions+=( _tmux_window_title )
+precmd_functions+=( _tmux_window_title )
+
 # Refresh tmux status bar after each command
 _tmux_refresh() {
     [[ -n "$TMUX" ]] && tmux refresh-client -S 2>/dev/null
