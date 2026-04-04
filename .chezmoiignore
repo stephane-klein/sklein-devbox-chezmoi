@@ -1,2 +1,5 @@
 AGENTS.md
 README.md
+
+Containerfile
+entrypoint.sh
