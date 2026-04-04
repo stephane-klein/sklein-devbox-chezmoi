@@ -26,6 +26,7 @@ RUN dnf copr enable -y atim/starship && \
         chezmoi \
         mise \
         starship \
+        sudo \
         && \
     dnf clean all
 
@@ -36,6 +37,10 @@ RUN curl -sSL https://github.com/tianon/gosu/releases/download/1.17/gosu-amd64 -
 # Create user sklein with fixed UID 1000
 RUN groupadd -g 1000 sklein && \
     useradd -u 1000 -g sklein -s /bin/zsh -m sklein
+
+# Configure sudo for sklein user without password
+RUN echo "sklein ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/sklein && \
+    chmod 440 /etc/sudoers.d/sklein
 
 # Copy entrypoint script
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
