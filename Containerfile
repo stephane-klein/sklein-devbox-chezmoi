@@ -11,6 +11,14 @@ RUN dnf copr enable -y atim/starship && \
     dnf copr enable -y jdxcode/mise && \
     dnf update -y && \
     dnf install -y \
+        procps-ng \
+        util-linux \
+        coreutils \
+        findutils \
+        diffutils \
+        which \
+        file \
+        tree \
         curl \
         git \
         wget \
