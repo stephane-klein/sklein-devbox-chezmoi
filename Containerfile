@@ -1,16 +1,25 @@
 FROM fedora:43
 
-RUN dnf update -y && \
+# Note: Chezmoi and starship are installed via dnf rather than Mise because they are
+# primary components needed early in the entrypoint.sh initialization script.
+# Initially they were installed via Mise, but this caused circular dependency issues
+# and problems in .zshrc.
+# Another point: I know that mise evolves frequently and we accept rebuilding the Docker
+# image when Mise is updated -- this is an intentional tradeoff for now. This decision
+# may be revisited in the future.
+RUN dnf copr enable -y atim/starship && \
+    dnf copr enable -y jdxcode/mise && \
+    dnf update -y && \
     dnf install -y \
         curl \
         git \
         wget \
         zsh \
+        chezmoi \
+        mise \
+        starship \
         && \
     dnf clean all
-
-# Install chezmoi
-RUN curl -sSL https://chezmoi.io/get | sh
 
 # Install gosu
 RUN curl -sSL https://github.com/tianon/gosu/releases/download/1.17/gosu-amd64 -o /usr/local/bin/gosu && \
