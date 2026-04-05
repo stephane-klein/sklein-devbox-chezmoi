@@ -1,0 +1,10 @@
+[mounts]
+        path = /home/sklein/.local/share/gopass/stores/root
+[recipients]
+        hash = 3ee561c30c8c84a3462a2c948d4595c3e1ff122ed42e43f74c9086b5d9ffce30
+[age]
+        agent-timeout = 600
+        agent-enabled = true
+[core]
+        auto = false
+        autopush = false
