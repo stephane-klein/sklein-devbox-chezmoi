@@ -27,12 +27,31 @@ RUN dnf copr enable -y atim/starship && \
         mise \
         starship \
         sudo \
+        pinentry-tty \
         && \
     dnf clean all
 
 # Install gosu
 RUN curl -sSL https://github.com/tianon/gosu/releases/download/1.17/gosu-amd64 -o /usr/local/bin/gosu && \
     chmod +x /usr/local/bin/gosu
+
+# Install age
+ARG AGE_VERSION=1.3.1
+RUN curl -sSL "https://github.com/FiloSottile/age/releases/download/v${AGE_VERSION}/age-v${AGE_VERSION}-linux-amd64.tar.gz" \
+        -o /tmp/age.tar.gz && \
+    tar -xzf /tmp/age.tar.gz -C /tmp && \
+    mv /tmp/age/age /usr/local/bin/age && \
+    mv /tmp/age/age-keygen /usr/local/bin/age-keygen && \
+    mv /tmp/age/age-inspect /usr/local/bin/age-inspect && \
+    rm -rf /tmp/age*
+
+# Install gopass
+ARG GOPASS_VERSION=1.16.1
+RUN curl -sSL "https://github.com/gopasspw/gopass/releases/download/v${GOPASS_VERSION}/gopass-${GOPASS_VERSION}-linux-amd64.tar.gz" \
+        -o /tmp/gopass.tar.gz && \
+    tar -xzf /tmp/gopass.tar.gz -C /tmp && \
+    mv /tmp/gopass /usr/local/bin/gopass && \
+    rm -rf /tmp/gopass*
 
 # Create user sklein with fixed UID 1000
 RUN groupadd -g 1000 sklein && \
