@@ -5,7 +5,6 @@ plugins=(git)
 ZSH_COMPDUMP="${ZSH_CACHE_DIR:-$HOME/.cache/zsh}/.zcompdump"
 source $ZSH/oh-my-zsh.sh
 
-eval "$($HOME/.local/bin/mise activate zsh)"
 export GNUPGHOME="$HOME/.config/gnupg"
 export PATH="$HOME/bin:$PATH"
 
@@ -19,3 +18,4 @@ _tmux_refresh() {
 }
 precmd_functions+=( _tmux_refresh )
 
+eval "$(mise activate zsh 2>/dev/null)"
