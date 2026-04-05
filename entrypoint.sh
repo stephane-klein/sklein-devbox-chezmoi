@@ -17,10 +17,11 @@ chown sklein:sklein "${XDG_RUNTIME_DIR}"
 export XDG_RUNTIME_DIR
 
 mkdir -p /home/sklein/.config/gopass/age/
+chown -R sklein:sklein /home/sklein/.config/gopass/age/
+
+export GPG_TTY=$(tty)
 
 if [ ! -f "/home/sklein/.config/gopass/age/identities" ]; then
-    export GPG_TTY=$(tty)
-
     if [ ! -f "/tmp/sklein-devbox-age-key" ]; then
         read -s -p "Enter AGE key: " AGE_KEY
         echo
