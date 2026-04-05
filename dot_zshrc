@@ -5,6 +5,8 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 eval "$($HOME/.local/bin/mise activate zsh)"
+export GNUPGHOME="$HOME/.config/gnupg"
+export PATH="$HOME/bin:$PATH"
 
 if command -v starship &> /dev/null; then
     eval "$(starship init zsh)"
