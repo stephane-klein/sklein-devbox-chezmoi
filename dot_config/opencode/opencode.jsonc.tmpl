@@ -1,0 +1,23 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "autoupdate": false,
+  "permission": {
+    "bash": "allow"
+  },
+  // I use `mise exec --cd / -- ...` to launch MCP servers with the Node instance installed globally by Mise
+  "mcp": {
+    "fetch": {
+      "type": "local",
+      "command": ["mise", "exec", "--cd", "/", "--", "mcp-fetch-server"],
+      "enabled": true,
+      "environment": {
+        "DEFAULT_LIMIT": "0"
+      }
+    },
+    "context7": {
+      "type": "local",
+      "command": ["mise", "exec", "--cd", "/", "--", "context7-mcp", "--api-key", "{{ gopass "context7/apikey"}}"],
+      "enabled": true,
+    }
+  }
+}

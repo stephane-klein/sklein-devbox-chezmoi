@@ -6,3 +6,8 @@ fd = "10.4.2"
 tmux = "3.6a"
 fzf = "0.70.0"
 jujutsu = "0.39.0"
+node = "24.14.1"
+
+# Tooling for OpenCode
+"npm:@upstash/context7-mcp" = "2.1.6"
+"npm:mcp-fetch-server" = "1.1.2"
