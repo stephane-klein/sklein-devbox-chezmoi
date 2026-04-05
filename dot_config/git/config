@@ -1,0 +1,26 @@
+[init]
+    defaultBranch = main
+
+[user]
+    name = Stéphane Klein
+    email = contact@stephane-klein.info
+    signingkey = 2918F482FCE7DCBE
+
+[push]
+    default = current
+    autoSetupRemote = true
+
+[pull]
+    rebase = true
+
+[color]
+    ui = true
+
+[commit]
+    gpgsign = true
+
+[tag]
+    gpgsign = true
+
+[rerere]
+    enabled = true
