@@ -55,6 +55,14 @@ RUN curl -sSL "https://github.com/gopasspw/gopass/releases/download/v${GOPASS_VE
     mv /tmp/gopass /usr/local/bin/gopass && \
     rm -rf /tmp/gopass*
 
+# Install neovim
+ARG NEOVIM_VERSION=0.12.1
+RUN curl -sSL "https://github.com/neovim/neovim/releases/download/v${NEOVIM_VERSION}/nvim-linux-x86_64.tar.gz" \
+        -o /tmp/nvim.tar.gz && \
+    tar -xzf /tmp/nvim.tar.gz -C /tmp && \
+    cp -r /tmp/nvim-linux-x86_64/* /usr/local/ && \
+    rm -rf /tmp/nvim*
+
 # Create user sklein with fixed UID 1000
 RUN groupadd -g 1000 sklein && \
     useradd -u 1000 -g sklein -s /bin/zsh -m sklein
