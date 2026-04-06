@@ -6,10 +6,12 @@ fd = "10.4.2"
 tmux = "3.6a"
 jujutsu = "0.39.0"
 node = "24.14.1"
+uv = "latest"
 go = "latest"
 
 # Tooling for OpenCode
 "npm:@upstash/context7-mcp" = "2.1.6"
-"npm:mcp-fetch-server" = "1.1.2"
+"pipx:mcp-server-fetch" = "2025.4.7"
+
 # Tooling for Tmux
 "go:github.com/dustinkirkland/golang-petname/cmd/petname" = "latest"
