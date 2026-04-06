@@ -22,4 +22,14 @@ _tmux_refresh() {
 }
 precmd_functions+=( _tmux_refresh )
 
+# Set tmux pane title to current directory
+chpwd() {
+  tmux select-pane -t "$TMUX_PANE" -T "$PWD" 2>/dev/null
+}
+
+# Set pane title on shell startup
+if [[ -n "$TMUX_PANE" ]]; then
+  tmux select-pane -t "$TMUX_PANE" -T "$PWD"
+fi
+
 eval "$(mise activate zsh 2>/dev/null)"

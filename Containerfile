@@ -28,6 +28,8 @@ RUN dnf copr enable -y atim/starship && \
         starship \
         sudo \
         pinentry-tty \
+        gum \
+        fzf \
         && \
     dnf clean all
 
