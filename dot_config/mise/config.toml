@@ -14,4 +14,4 @@ go = "latest"
 "pipx:mcp-server-fetch" = "2025.4.7"
 
 # Tooling for Tmux
-"go:github.com/dustinkirkland/golang-petname/cmd/petname" = "latest"
+"pipx:petname" = "latest"
