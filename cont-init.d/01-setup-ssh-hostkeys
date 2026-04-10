@@ -1,0 +1,13 @@
+#!/command/with-contenv sh
+
+HOST_KEYS_DIR="/var/lib/sklein-devbox/ssh-host-keys"
+
+# Generate ed25519 host key if it doesn't exist
+if [ ! -f "${HOST_KEYS_DIR}/ssh_host_ed25519_key" ]; then
+    mkdir -p "${HOST_KEYS_DIR}"
+    ssh-keygen -t ed25519 -f "${HOST_KEYS_DIR}/ssh_host_ed25519_key" -N ""
+fi
+
+# Set correct permissions (sshd is picky about this)
+chmod 600 ${HOST_KEYS_DIR}/ssh_host_ed25519_key
+chmod 644 ${HOST_KEYS_DIR}/ssh_host_ed25519_key.pub

@@ -1,0 +1,24 @@
+#!/command/with-contenv sh
+
+# Setup XDG_RUNTIME_DIR
+USER_UID=1000
+mkdir -p /tmp/user/${USER_UID}
+chmod 700 /tmp/user/${USER_UID}
+chown sklein:sklein /tmp/user/${USER_UID}
+
+# Setup gopass directory
+mkdir -p /home/sklein/.config/gopass/age
+chown -R sklein:sklein /home/sklein/.config/gopass
+
+# Setup .ssh directory for gopass/known_hosts
+mkdir -p /home/sklein/.ssh
+ssh-keyscan github.com >> /home/sklein/.ssh/known_hosts 2>/dev/null || true
+chown -R sklein:sklein /home/sklein/.ssh
+
+# Save sklein-devbox environment variables for SSH sessions
+mkdir -p /home/sklein/.config/sklein-devbox
+{
+    [ -n "${SKLEIN_DEVBOX_NAME:-}" ] && echo "export SKLEIN_DEVBOX_NAME='${SKLEIN_DEVBOX_NAME}'"
+    [ -n "${SKLEIN_DEVBOX_GOPASS:-}" ] && echo "export SKLEIN_DEVBOX_GOPASS='${SKLEIN_DEVBOX_GOPASS}'"
+} > /home/sklein/.config/sklein-devbox/env
+chown sklein:sklein /home/sklein/.config/sklein-devbox/env

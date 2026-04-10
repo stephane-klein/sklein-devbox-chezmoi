@@ -1,0 +1,8 @@
+#!/command/with-contenv sh
+
+if [ -f /tmp/devbox-ssh-key.pub ]; then
+    mkdir -p /home/sklein/.ssh
+    cp /tmp/devbox-ssh-key.pub /home/sklein/.ssh/authorized_keys.devbox
+    chown sklein:sklein /home/sklein/.ssh/authorized_keys.devbox
+    chmod 600 /home/sklein/.ssh/authorized_keys.devbox
+fi

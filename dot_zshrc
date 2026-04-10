@@ -1,3 +1,8 @@
+# Source sklein-devbox environment variables (for SSH sessions)
+if [ -f "${HOME}/.config/sklein-devbox/env" ]; then
+    source "${HOME}/.config/sklein-devbox/env"
+fi
+
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.local/bin:$PATH"
 ZSH_THEME=""

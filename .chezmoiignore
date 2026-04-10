@@ -3,3 +3,5 @@ README.md
 
 Containerfile
 entrypoint.sh
+sshd_config
+cont-init.d/

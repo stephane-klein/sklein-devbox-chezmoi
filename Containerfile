@@ -30,12 +30,9 @@ RUN dnf copr enable -y atim/starship && \
         pinentry-tty \
         gum \
         fzf \
+        openssh-server \
         && \
     dnf clean all
-
-# Install gosu
-RUN curl -sSL https://github.com/tianon/gosu/releases/download/1.17/gosu-amd64 -o /usr/local/bin/gosu && \
-    chmod +x /usr/local/bin/gosu
 
 # Install age
 ARG AGE_VERSION=1.3.1
@@ -55,6 +52,13 @@ RUN curl -sSL "https://github.com/gopasspw/gopass/releases/download/v${GOPASS_VE
     mv /tmp/gopass /usr/local/bin/gopass && \
     rm -rf /tmp/gopass*
 
+# Install s6-overlay
+RUN curl -sSL https://github.com/just-containers/s6-overlay/releases/download/v3.2.2.0/s6-overlay-noarch.tar.xz -o /tmp/s6-overlay-noarch.tar.xz && \
+    curl -sSL https://github.com/just-containers/s6-overlay/releases/download/v3.2.2.0/s6-overlay-x86_64.tar.xz -o /tmp/s6-overlay-x86_64.tar.xz && \
+    tar -C / -Jxpf /tmp/s6-overlay-noarch.tar.xz && \
+    tar -C / -Jxpf /tmp/s6-overlay-x86_64.tar.xz && \
+    rm -f /tmp/s6-overlay-*.tar.xz
+
 # Install neovim
 ARG NEOVIM_VERSION=0.12.1
 RUN curl -sSL "https://github.com/neovim/neovim/releases/download/v${NEOVIM_VERSION}/nvim-linux-x86_64.tar.gz" \
@@ -65,11 +69,24 @@ RUN curl -sSL "https://github.com/neovim/neovim/releases/download/v${NEOVIM_VERS
 
 # Create user sklein with fixed UID 1000
 RUN groupadd -g 1000 sklein && \
-    useradd -u 1000 -g sklein -s /bin/zsh -m sklein
+    useradd -u 1000 -g sklein -s /bin/zsh -m sklein && \
+    usermod -p '*' sklein
 
 # Configure sudo for sklein user without password
 RUN echo "sklein ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/sklein && \
     chmod 440 /etc/sudoers.d/sklein
+
+# Copy sshd config
+COPY sshd_config /etc/ssh/sshd_config
+RUN chmod 644 /etc/ssh/sshd_config
+
+# Copy s6-overlay init scripts
+COPY cont-init.d/ /etc/cont-init.d/
+RUN chmod +x /etc/cont-init.d/*
+
+# Copy s6-overlay service for sshd
+COPY services.d/sshd /etc/services.d/sshd
+RUN chmod +x /etc/services.d/sshd/run
 
 # Copy entrypoint script
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
@@ -89,5 +106,4 @@ ENV SHELL=/bin/zsh
 
 WORKDIR /workspace/
 
-ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
-CMD ["/bin/zsh"]
+ENTRYPOINT ["/init"]
