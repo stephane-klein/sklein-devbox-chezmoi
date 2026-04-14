@@ -4,8 +4,10 @@
 
 set -euo pipefail
 
-mkdir -p ~/.config/gnupg
-chmod 700 ~/.config/gnupg
+export GNUPGHOME="${HOME}/.config/gnupg"
+
+mkdir -p "${GNUPGHOME}"
+chmod 700 "${GNUPGHOME}"
 
 # --- 1. Import public keys from ~/.config/gnupg/pubkeys/ ---
 PUBKEYS_DIR="${HOME}/.local/share/gopass/stores/root/gpg/pubkeys/"
