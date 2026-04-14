@@ -2,6 +2,6 @@ AGENTS.md
 README.md
 
 Containerfile
-entrypoint.sh
+ssh-forcecommand-entrypoint.sh
 sshd_config
 cont-init.d/

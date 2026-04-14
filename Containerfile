@@ -1,7 +1,7 @@
 FROM fedora:43
 
 # Note: Chezmoi and starship are installed via dnf rather than Mise because they are
-# primary components needed early in the entrypoint.sh initialization script.
+# primary components needed early in the ssh-forcecommand-entrypoint.sh initialization script.
 # Initially they were installed via Mise, but this caused circular dependency issues
 # and problems in .zshrc.
 # Another point: I know that mise evolves frequently and we accept rebuilding the Docker
@@ -88,9 +88,9 @@ RUN chmod +x /etc/cont-init.d/*
 COPY services.d/ /etc/services.d/
 RUN find /etc/services.d/ -type f \( -name "run" -o -name "finish" \) -exec chmod +x {} \;
 
-# Copy entrypoint script
-COPY entrypoint.sh /usr/local/bin/entrypoint.sh
-RUN chmod +x /usr/local/bin/entrypoint.sh
+# Copy SSH ForceCommand entrypoint script
+COPY ssh-forcecommand-entrypoint.sh /usr/local/bin/ssh-forcecommand-entrypoint.sh
+RUN chmod +x /usr/local/bin/ssh-forcecommand-entrypoint.sh
 
 # Configure XDG directories
 ENV XDG_CONFIG_HOME=/home/sklein/.config \
