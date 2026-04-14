@@ -1,0 +1,3 @@
+#!/command/execlineb -P
+importas -i XDG_RUNTIME_DIR XDG_RUNTIME_DIR
+rm -f ${XDG_RUNTIME_DIR}/gopass/gopass-age-agent.sock

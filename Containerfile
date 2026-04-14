@@ -84,9 +84,9 @@ RUN chmod 644 /etc/ssh/sshd_config
 COPY cont-init.d/ /etc/cont-init.d/
 RUN chmod +x /etc/cont-init.d/*
 
-# Copy s6-overlay service for sshd
-COPY services.d/sshd /etc/services.d/sshd
-RUN chmod +x /etc/services.d/sshd/run
+# Copy s6-overlay services
+COPY services.d/ /etc/services.d/
+RUN find /etc/services.d/ -type f \( -name "run" -o -name "finish" \) -exec chmod +x {} \;
 
 # Copy entrypoint script
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh

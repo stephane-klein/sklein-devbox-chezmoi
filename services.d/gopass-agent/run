@@ -1,0 +1,4 @@
+#!/command/execlineb -P
+s6-setuidgid sklein
+env XDG_RUNTIME_DIR=/tmp/user/1000
+exec gopass age agent start

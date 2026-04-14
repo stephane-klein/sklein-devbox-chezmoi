@@ -50,11 +50,15 @@ if [ "${SKLEIN_DEVBOX_GOPASS:-}" = "1" ] && [ ! -d "/home/sklein/.local/share/go
     unset GIT_SSH_COMMAND
 fi
 
-# Start gopass agent if needed
-if [ "${SKLEIN_DEVBOX_GOPASS:-}" = "1" ] && [ ! -S "${XDG_RUNTIME_DIR}/gopass/gopass-age-agent.sock" ]; then
-    mkdir -p "${XDG_RUNTIME_DIR}/gopass"
-    gopass age agent start 1>/dev/null &
-    sleep 0.5
+# Start gopass agent service if enabled and not already running
+if [ "${SKLEIN_DEVBOX_GOPASS:-}" = "1" ]; then
+    if [ ! -S "${XDG_RUNTIME_DIR}/gopass/gopass-age-agent.sock" ]; then
+        # Clean up stale socket if exists
+        rm -f "${XDG_RUNTIME_DIR}/gopass/gopass-age-agent.sock"
+        # Start the s6 service for gopass agent
+        s6-svc -u /run/service/gopass-agent 2>/dev/null || true
+        sleep 0.5
+    fi
 fi
 
 # Chezmoi init/apply
