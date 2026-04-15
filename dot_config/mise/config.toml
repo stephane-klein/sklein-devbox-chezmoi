@@ -11,6 +11,7 @@ go = "latest"
 neovim = "0.12.1"
 tree-sitter = "0.26.8"
 usage = "3.2.0"
+atuin = "18.15.2"
 
 # Tooling for OpenCode
 "npm:@upstash/context7-mcp" = "2.1.6"

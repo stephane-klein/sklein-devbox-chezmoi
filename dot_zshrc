@@ -10,10 +10,18 @@ plugins=(git)
 ZSH_COMPDUMP="${ZSH_CACHE_DIR:-$HOME/.cache/zsh}/.zcompdump"
 source $ZSH/oh-my-zsh.sh
 
-# History: 2 years limit (~730000 commands)
+# Atuin - advanced history with pwd, duration, and context
+if command -v atuin &> /dev/null; then
+    eval "$(atuin init zsh)"
+fi
+
+# History: 2 years limit (~730000 commands) - fallback compatibility
 HISTSIZE=100000
 SAVEHIST=730000
 HISTFILE="$HOME/.zsh_history"
+
+# Save timestamps in history
+setopt EXTENDED_HISTORY
 
 # Share history between all sessions
 setopt SHARE_HISTORY
