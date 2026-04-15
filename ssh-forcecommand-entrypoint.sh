@@ -73,7 +73,11 @@ fi
 unset GOPASS_AGE_PASSWORD
 
 # Execute command directly (already running as sklein)
-if [ $# -eq 0 ]; then
+# SSH_ORIGINAL_COMMAND contains the command passed via SSH when ForceCommand is used
+if [ -n "$SSH_ORIGINAL_COMMAND" ]; then
+    # Execute the original SSH command
+    exec /bin/zsh -i -c "$SSH_ORIGINAL_COMMAND"
+elif [ $# -eq 0 ]; then
     exec /bin/zsh
 else
     exec "$@"
