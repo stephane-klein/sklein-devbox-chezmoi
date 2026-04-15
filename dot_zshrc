@@ -38,3 +38,5 @@ if [[ -n "$TMUX_PANE" ]]; then
 fi
 
 eval "$(mise activate zsh 2>/dev/null)"
+
+alias opencode="TMUX= command opencode"
