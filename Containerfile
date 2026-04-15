@@ -7,6 +7,8 @@ FROM fedora:43
 # Another point: I know that mise evolves frequently and we accept rebuilding the Docker
 # image when Mise is updated -- this is an intentional tradeoff for now. This decision
 # may be revisited in the future.
+#
+# gcc package for Neovim Treesitter support
 RUN dnf copr enable -y atim/starship && \
     dnf copr enable -y jdxcode/mise && \
     dnf update -y && \
@@ -31,6 +33,8 @@ RUN dnf copr enable -y atim/starship && \
         gum \
         fzf \
         openssh-server \
+        gcc \
+        unzip \
         && \
     dnf clean all
 
