@@ -10,6 +10,19 @@ plugins=(git)
 ZSH_COMPDUMP="${ZSH_CACHE_DIR:-$HOME/.cache/zsh}/.zcompdump"
 source $ZSH/oh-my-zsh.sh
 
+# History: 2 years limit (~730000 commands)
+HISTSIZE=100000
+SAVEHIST=730000
+HISTFILE="$HOME/.zsh_history"
+
+# Share history between all sessions
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_VERIFY
+setopt APPEND_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+
 export GNUPGHOME="$HOME/.config/gnupg"
 export PATH="$HOME/bin:$PATH"
 
