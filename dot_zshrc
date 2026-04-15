@@ -40,3 +40,4 @@ fi
 eval "$(mise activate zsh 2>/dev/null)"
 
 alias opencode="TMUX= command opencode"
+export EDITOR=nvim
