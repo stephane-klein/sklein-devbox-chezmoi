@@ -63,7 +63,7 @@ fi
 
 # Chezmoi init/apply
 if [ ! -d "/home/sklein/.local/share/chezmoi" ]; then
-    chezmoi init https://github.com/stephane-klein/sklein-devbox-chezmoi.git
+    chezmoi init git@github.com:stephane-klein/sklein-devbox-chezmoi.git
 fi
 
 if [ ! -f "/home/sklein/.config/chezmoi/chezmoistate.boltdb" ]; then
