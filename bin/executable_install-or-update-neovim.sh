@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # ~/bin/install-or-update-neovim.sh
 
-nvim --headless "+Lazy! sync" \
+nvim --headless "+Lazy! restore" \
   -c "MasonToolsInstallSync" \
   -c "TSInstallSync" \
   +qa
