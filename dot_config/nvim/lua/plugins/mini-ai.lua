@@ -1,7 +1,7 @@
 -- mini.ai with treesitter textobjects support
 -- Replaces nvim-treesitter-textobjects, works with tree-sitter-manager
 return {
-  "echasnovski/mini.ai",
+  "nvim-mini/mini.ai",
   version = false,
   dependencies = {},
   config = function()
