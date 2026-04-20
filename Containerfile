@@ -59,8 +59,10 @@ RUN curl -sSL "https://github.com/gopasspw/gopass/releases/download/v${GOPASS_VE
 # Install s6-overlay
 RUN curl -sSL https://github.com/just-containers/s6-overlay/releases/download/v3.2.2.0/s6-overlay-noarch.tar.xz -o /tmp/s6-overlay-noarch.tar.xz && \
     curl -sSL https://github.com/just-containers/s6-overlay/releases/download/v3.2.2.0/s6-overlay-x86_64.tar.xz -o /tmp/s6-overlay-x86_64.tar.xz && \
+    curl -sSL https://github.com/just-containers/s6-overlay/releases/download/v3.2.2.0/s6-overlay-symlinks-arch.tar.xz -o /tmp/s6-overlay-symlinks-arch.tar.xz && \
     tar -C / -Jxpf /tmp/s6-overlay-noarch.tar.xz && \
     tar -C / -Jxpf /tmp/s6-overlay-x86_64.tar.xz && \
+    tar -C / -Jxpf /tmp/s6-overlay-symlinks-arch.tar.xz && \
     rm -f /tmp/s6-overlay-*.tar.xz
 
 # Install neovim

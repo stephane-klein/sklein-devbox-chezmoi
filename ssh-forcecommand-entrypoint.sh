@@ -70,6 +70,11 @@ if [ ! -f "/home/sklein/.config/chezmoi/chezmoistate.boltdb" ]; then
     chezmoi apply
 fi
 
+# Start gpg-agent service if configuration exists
+if [ -f "$HOME/.config/gnupg/gpg-agent.conf" ]; then
+    s6-svc -u /run/service/gpg-agent 2>/dev/null || true
+fi
+
 unset GOPASS_AGE_PASSWORD
 
 # Execute command directly (already running as sklein)

@@ -5,3 +5,4 @@ Containerfile
 ssh-forcecommand-entrypoint.sh
 sshd_config
 cont-init.d/
+services.d/

@@ -1,0 +1,4 @@
+#!/command/execlineb -P
+s6-setuidgid sklein
+env GNUPGHOME=/home/sklein/.config/gnupg
+exec gpg-agent --supervised
