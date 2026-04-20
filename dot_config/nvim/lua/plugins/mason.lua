@@ -42,11 +42,13 @@ return {
         "typescript-language-server",
         "tailwindcss-language-server",
         "eslint-lsp",
+        "astro-language-server",
 
         -- Golang (LSP + tools)
         "goimports",
         "gofumpt",
         "gopls",
+        "golangci-lint",
 
         -- Script (LSP + tools)
         "shfmt",
