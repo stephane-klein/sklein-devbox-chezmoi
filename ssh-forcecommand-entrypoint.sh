@@ -15,6 +15,26 @@ fi
 export XDG_RUNTIME_DIR="/tmp/user/$(id -u)"
 export GPG_TTY=$(tty)
 
+# Trap for graceful tmux shutdown when sshd dies (SIGHUP) or receives SIGTERM
+# Only for interactive sessions (not healthcheck)
+if [ -z "$SSH_ORIGINAL_COMMAND" ] || [ "$SSH_ORIGINAL_COMMAND" = "/bin/zsh" ] || [ "$SSH_ORIGINAL_COMMAND" = "/bin/bash" ]; then
+    cleanup_tmux() {
+        # Gracefully kill the tmux server of THIS session only
+        if [ -n "$TMUX" ]; then
+            # TMUX contains "socket,pid" - extract the socket path
+            local tmux_socket="${TMUX%,*}"
+            if [ -S "$tmux_socket" ] 2>/dev/null; then
+                tmux -S "$tmux_socket" kill-server 2>/dev/null || true
+            else
+                # Fallback: kill by default socket
+                tmux kill-server 2>/dev/null || true
+            fi
+        fi
+        exit 0
+    }
+    trap cleanup_tmux HUP TERM INT
+fi
+
 # Gopass interactive setup (if needed)
 if [ ! -f "/home/sklein/.config/gopass/age/identities" ]; then
     if [ ! -f "/tmp/sklein-devbox-age-key" ]; then
