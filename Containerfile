@@ -50,7 +50,9 @@ RUN curl -sSL "https://github.com/FiloSottile/age/releases/download/v${AGE_VERSI
 
 # Install gopass
 ARG GOPASS_VERSION=1.16.1
-RUN curl -sSL "https://github.com/gopasspw/gopass/releases/download/v${GOPASS_VERSION}/gopass-${GOPASS_VERSION}-linux-amd64.tar.gz" \
+# RUN curl -sSL "https://github.com/gopasspw/gopass/releases/download/v${GOPASS_VERSION}/gopass-${GOPASS_VERSION}-linux-amd64.tar.gz" \
+# I use this fork to get this patch: https://github.com/gopasspw/gopass/pull/3364/
+RUN curl -sSL "https://github.com/stephane-klein/gopass/releases/download/1.16.2-sklein/gopass-1.16.2-sklein-linux-amd64.tar.gz" \
         -o /tmp/gopass.tar.gz && \
     tar -xzf /tmp/gopass.tar.gz -C /tmp && \
     mv /tmp/gopass /usr/local/bin/gopass && \
