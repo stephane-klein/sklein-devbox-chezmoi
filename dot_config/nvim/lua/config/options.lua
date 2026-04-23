@@ -91,3 +91,5 @@ vim.diagnostic.enable(false)
 vim.g.lazyvim_markdown_conceallevel = 0
 
 vim.opt.clipboard = "unnamedplus"
+
+vim.lsp.inlay_hint.enable(true)

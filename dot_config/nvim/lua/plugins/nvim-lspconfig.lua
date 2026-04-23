@@ -65,5 +65,22 @@ return {
         'lua_ls',
       })
     end,
+
+    -- golang
+    vim.lsp.config('gopls', {
+      settings = {
+        gopls = {
+          hints = {
+            parameterNames = true,
+            assignVariableTypes = true,
+            compositeLiteralFields = true,
+            compositeLiteralTypes = true,
+            constantValues = true,
+            functionTypeParameters = true,
+            rangeVariableTypes = true,
+          },
+        },
+      },
+    })
   },
 }
