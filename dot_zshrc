@@ -14,6 +14,8 @@ fpath+=("$HOME/.config/zsh/completions")
 
 source $ZSH/oh-my-zsh.sh
 
+eval "$(mise activate zsh 2>/dev/null)"
+
 # Atuin - advanced history with pwd, duration, and context
 if command -v atuin &> /dev/null; then
     eval "$(atuin init zsh)"
@@ -61,8 +63,6 @@ chpwd() {
 if [[ -n "$TMUX_PANE" ]]; then
   tmux select-pane -t "$TMUX_PANE" -T "$PWD"
 fi
-
-eval "$(mise activate zsh 2>/dev/null)"
 
 alias opencode="TMUX= command opencode"
 export EDITOR=nvim
