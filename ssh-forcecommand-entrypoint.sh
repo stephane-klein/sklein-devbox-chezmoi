@@ -2,7 +2,7 @@
 
 touch /home/sklein/.zshrc
 
-# Load sklein-devbox environment variables (saved by cont-init.d)
+# Load sklein-devbox environment variables (saved by init scripts)
 if [ -f "/home/sklein/.config/sklein-devbox/env" ]; then
     source "/home/sklein/.config/sklein-devbox/env"
 fi
@@ -15,6 +15,7 @@ fi
 
 export XDG_RUNTIME_DIR="/tmp/user/$(id -u)"
 export GPG_TTY=$(tty)
+export PEBBLE=/var/lib/pebble
 
 # Trap for graceful tmux shutdown when sshd dies (SIGHUP) or receives SIGTERM
 # Only for interactive sessions (not healthcheck)
@@ -35,7 +36,7 @@ fi
 
 # Run idempotent initialization unless disabled
 if [ "${SKLEIN_DEVBOX_DISABLE_INIT:-}" != "1" ]; then
-    /usr/local/bin/sklein-devbox-init.sh || true
+    SKLEIN_DEVBOX_AUTO_INIT=1 /usr/local/bin/sklein-devbox-init.sh || true
 else
     echo "Note: Automatic initialization is disabled."
     echo "You can run 'sklein-devbox-init.sh' manually to set up gopass, chezmoi, and other configurations."

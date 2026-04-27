@@ -1,0 +1,98 @@
+#compdef pebble
+
+_pebble() {
+    local curcontext="$curcontext" state line
+    typeset -A opt_args
+
+    _arguments -C \
+        '(-h --help)'{-h,--help}'[Show help about a command]' \
+        '1: :->command' \
+        '*:: :->args'
+
+    case "$state" in
+        command)
+            local -a subcmds
+            subcmds=(
+                'run:Run the service manager environment'
+                'help:Show help about a command'
+                'version:Show version details'
+                "add:Dynamically add a layer to the plan's layers"
+                'plan:Show the plan with layers combined'
+                'replan:Ensure running services and checks match the current plan'
+                'services:Query the status of configured services'
+                'logs:Fetch service logs'
+                'start:Start a service and its dependencies'
+                'restart:Restart a service'
+                'signal:Send a signal to one or more running services'
+                'stop:Stop a service and its dependents'
+                'checks:Query the status of configured health checks'
+                'check:Query the details of a configured health check'
+                'start-checks:Start one or more checks'
+                'stop-checks:Stop one or more checks'
+                'health:Query health of checks'
+                'push:Transfer a file to the remote system'
+                'pull:Retrieve a file from the remote system'
+                'ls:List path contents'
+                'mkdir:Create a directory'
+                'rm:Remove a file or directory'
+                'exec:Execute a remote command and wait for it to finish'
+                'changes:List system changes'
+                "tasks:List a change's tasks"
+                'warnings:List warnings'
+                'okay:Acknowledge notices and warnings'
+                'notices:List notices'
+                'notice:Fetch a single notice'
+                'notify:Record a custom notice'
+                'identities:List identities'
+                'identity:Show a single identity'
+                'add-identities:Add new identities'
+                'update-identities:Update or replace identities'
+                'remove-identities:Remove identities'
+            )
+            _describe -t commands 'pebble command' subcmds
+            ;;
+        args)
+            case "$line[1]" in
+                start|stop|restart|signal|logs)
+                    _pebble_services
+                    ;;
+                check|start-checks|stop-checks)
+                    _pebble_checks
+                    ;;
+                help)
+                    _pebble_commands
+                    ;;
+                changes|tasks)
+                    # No specific completion
+                    ;;
+                ls|mkdir|rm|push|pull|exec)
+                    _files
+                    ;;
+            esac
+            ;;
+    esac
+}
+
+_pebble_services() {
+    local -a services
+    local svc_output
+    svc_output=$(pebble services 2>/dev/null | tail -n +2 | awk '{print $1}')
+    services=(${(f)svc_output})
+    _describe -t services 'service' services
+}
+
+_pebble_checks() {
+    local -a checks
+    local chk_output
+    chk_output=$(pebble checks 2>/dev/null | tail -n +2 | awk '{print $1}')
+    checks=(${(f)chk_output})
+    _describe -t checks 'check' checks
+}
+
+_pebble_commands() {
+    local -a cmds
+    cmds=(run help version add plan replan services logs start restart signal stop checks check start-checks stop-checks health push pull ls mkdir rm exec changes tasks warnings okay notices notice notify identities identity add-identities update-identities remove-identities)
+    _describe -t commands 'command' cmds
+}
+
+_pebble "$@"

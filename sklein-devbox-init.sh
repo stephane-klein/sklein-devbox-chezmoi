@@ -2,6 +2,9 @@
 
 INIT_DIR="${HOME}/.local/share/sklein-devbox/init-steps"
 mkdir -p "${INIT_DIR}"
+WELCOME_SHOWN_FILE="${INIT_DIR}/welcome-shown"
+
+export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/tmp/user/$(id -u)}"
 
 FORCE=0
 STATUS=0
@@ -18,6 +21,15 @@ while [ $# -gt 0 ]; do
     esac
     shift
 done
+
+if [ "${FORCE}" = "1" ]; then
+    rm -f "${WELCOME_SHOWN_FILE}"
+fi
+
+WELCOME_ALREADY_SHOWN=0
+if [ -f "${WELCOME_SHOWN_FILE}" ]; then
+    WELCOME_ALREADY_SHOWN=1
+fi
 
 show_step_status() {
     [ -f "${INIT_DIR}/gopass-identities.done" ] && echo "[init] gopass-identities: done" || echo "[init] gopass-identities: pending"
@@ -39,7 +51,9 @@ if [ "${FORCE}" = "1" ]; then
 fi
 
 # Show current status at the beginning of normal execution
-show_step_status
+if [ "${WELCOME_ALREADY_SHOWN}" = "0" ]; then
+    show_step_status
+fi
 
 # Step 1: gopass age identities
 if [ ! -f "${INIT_DIR}/gopass-identities.done" ]; then
@@ -54,7 +68,7 @@ if [ ! -f "${INIT_DIR}/gopass-identities.done" ]; then
         if gopass age identities list >/dev/null 2>&1; then
             touch "${INIT_DIR}/gopass-identities.done"
         else
-            echo "[init] Incorrect passphrase. Please run with --force to start over."
+            echo "[init] Incorrect passphrase. Please run skleni-devbox-init.sh to start over."
             exit 1
         fi
     fi
@@ -178,10 +192,20 @@ if [ ! -f "${INIT_DIR}/chezmoi-apply.done" ]; then
     fi
 fi
 
-# Check if any steps were already initialized (show hint)
-if [ -f "${INIT_DIR}/gopass-identities.done" ] || [ -f "${INIT_DIR}/gopass-store.done" ] || [ -f "${INIT_DIR}/chezmoi-init.done" ] || [ -f "${INIT_DIR}/chezmoi-apply.done" ]; then
+# Show hint only when welcome has not been shown yet
+if [ "${WELCOME_ALREADY_SHOWN}" = "0" ]; then
     echo ""
     echo "Hint: To re-run a specific step, remove its .done file:"
     echo "      rm ${INIT_DIR}/<step-name>.done"
     echo "      To re-run all steps from scratch, use: sklein-devbox-init.sh --force"
+fi
+
+# Suggest reloading shell when run manually
+if [ -z "${SKLEIN_DEVBOX_AUTO_INIT:-}" ]; then
+    echo "[init] Run 'exec zsh' to reload your shell configuration."
+fi
+
+# Create welcome-shown marker only when all steps are completed
+if [ -f "${INIT_DIR}/gopass-identities.done" ] && [ -f "${INIT_DIR}/gopass-store.done" ] && [ -f "${INIT_DIR}/chezmoi-init.done" ] && [ -f "${INIT_DIR}/chezmoi-apply.done" ]; then
+    touch "${WELCOME_SHOWN_FILE}"
 fi

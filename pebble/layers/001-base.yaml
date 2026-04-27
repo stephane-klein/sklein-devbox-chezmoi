@@ -1,0 +1,6 @@
+services:
+  sshd:
+    override: replace
+    summary: OpenSSH server
+    command: /usr/sbin/sshd -D -e
+    startup: enabled
