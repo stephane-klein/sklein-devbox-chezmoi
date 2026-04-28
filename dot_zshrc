@@ -8,6 +8,10 @@ export PATH="$HOME/.local/bin:$PATH"
 ZSH_THEME=""
 plugins=(git)
 ZSH_COMPDUMP="${ZSH_CACHE_DIR:-$HOME/.cache/zsh}/.zcompdump"
+
+# Add custom completions path (e.g. for Jujutsu)
+fpath+=("$HOME/.config/zsh/completions")
+
 source $ZSH/oh-my-zsh.sh
 
 # Atuin - advanced history with pwd, duration, and context
