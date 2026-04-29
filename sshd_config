@@ -11,4 +11,5 @@ MaxAuthTries 10
 AuthorizedKeysFile /home/sklein/.ssh/authorized_keys /home/sklein/.ssh/authorized_keys.devbox
 AllowAgentForwarding yes
 AllowTcpForwarding yes
+AcceptEnv SKLEIN_DEVBOX_DISABLE_INIT
 ForceCommand /usr/local/bin/ssh-forcecommand-entrypoint.sh
