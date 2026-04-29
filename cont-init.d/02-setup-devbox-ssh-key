@@ -1,8 +1,16 @@
 #!/command/with-contenv sh
 
+echo "[cont-init] 02-setup-devbox-ssh-key: starting"
+
 if [ -f /tmp/devbox-ssh-key.pub ]; then
+    echo "[cont-init] 02-setup-devbox-ssh-key: found /tmp/devbox-ssh-key.pub, installing authorized key"
     mkdir -p /home/sklein/.ssh
     cp /tmp/devbox-ssh-key.pub /home/sklein/.ssh/authorized_keys.devbox
     chown sklein:sklein /home/sklein/.ssh/authorized_keys.devbox
     chmod 600 /home/sklein/.ssh/authorized_keys.devbox
+    echo "[cont-init] 02-setup-devbox-ssh-key: authorized key installed"
+else
+    echo "[cont-init] 02-setup-devbox-ssh-key: WARNING /tmp/devbox-ssh-key.pub not found, skipping"
 fi
+
+echo "[cont-init] 02-setup-devbox-ssh-key: done"

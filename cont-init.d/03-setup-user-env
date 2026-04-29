@@ -1,19 +1,24 @@
 #!/command/with-contenv sh
 
+echo "[cont-init] 03-setup-user-env: starting"
+
 # Setup XDG_RUNTIME_DIR
 USER_UID=1000
 mkdir -p /tmp/user/${USER_UID}
 chmod 700 /tmp/user/${USER_UID}
 chown sklein:sklein /tmp/user/${USER_UID}
+echo "[cont-init] 03-setup-user-env: XDG_RUNTIME_DIR ready at /tmp/user/${USER_UID}"
 
 # Setup gopass directory
 mkdir -p /home/sklein/.config/gopass/age
 chown -R sklein:sklein /home/sklein/.config/gopass
+echo "[cont-init] 03-setup-user-env: gopass config directory ready"
 
 # Setup .ssh directory for gopass/known_hosts
 mkdir -p /home/sklein/.ssh
 ssh-keyscan github.com >> /home/sklein/.ssh/known_hosts 2>/dev/null || true
 chown -R sklein:sklein /home/sklein/.ssh
+echo "[cont-init] 03-setup-user-env: SSH known_hosts updated"
 
 # Save sklein-devbox environment variables for SSH sessions
 mkdir -p /home/sklein/.config/sklein-devbox
@@ -23,3 +28,6 @@ mkdir -p /home/sklein/.config/sklein-devbox
     [ -n "${GITHUB_TOKEN:-}" ] && echo "export GITHUB_TOKEN='${GITHUB_TOKEN}'"
 } > /home/sklein/.config/sklein-devbox/env
 chown sklein:sklein /home/sklein/.config/sklein-devbox/env
+echo "[cont-init] 03-setup-user-env: environment variables saved"
+
+echo "[cont-init] 03-setup-user-env: done"
