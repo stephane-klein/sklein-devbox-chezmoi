@@ -2,6 +2,7 @@ AGENTS.md
 README.md
 
 Containerfile
+sklein-devbox-init.sh
 ssh-forcecommand-entrypoint.sh
 sshd_config
 cont-init.d/

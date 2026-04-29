@@ -96,6 +96,10 @@ RUN chmod +x /etc/cont-init.d/*
 COPY services.d/ /etc/services.d/
 RUN find /etc/services.d/ -type f \( -name "run" -o -name "finish" \) -exec chmod +x {} \;
 
+# Copy init script
+COPY sklein-devbox-init.sh /usr/local/bin/sklein-devbox-init.sh
+RUN chmod +x /usr/local/bin/sklein-devbox-init.sh
+
 # Copy SSH ForceCommand entrypoint script
 COPY ssh-forcecommand-entrypoint.sh /usr/local/bin/ssh-forcecommand-entrypoint.sh
 RUN chmod +x /usr/local/bin/ssh-forcecommand-entrypoint.sh
