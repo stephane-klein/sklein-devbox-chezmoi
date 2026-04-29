@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+touch /home/sklein/.zshrc
+
 # Load sklein-devbox environment variables (saved by cont-init.d)
 if [ -f "/home/sklein/.config/sklein-devbox/env" ]; then
     source "/home/sklein/.config/sklein-devbox/env"
