@@ -20,5 +20,6 @@ mkdir -p /home/sklein/.config/sklein-devbox
 {
     [ -n "${SKLEIN_DEVBOX_NAME:-}" ] && echo "export SKLEIN_DEVBOX_NAME='${SKLEIN_DEVBOX_NAME}'"
     [ -n "${SKLEIN_DEVBOX_GOPASS:-}" ] && echo "export SKLEIN_DEVBOX_GOPASS='${SKLEIN_DEVBOX_GOPASS}'"
+    [ -n "${GITHUB_TOKEN:-}" ] && echo "export GITHUB_TOKEN='${GITHUB_TOKEN}'"
 } > /home/sklein/.config/sklein-devbox/env
 chown sklein:sklein /home/sklein/.config/sklein-devbox/env
