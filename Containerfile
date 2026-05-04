@@ -35,6 +35,7 @@ RUN dnf copr enable -y atim/starship && \
         openssh-server \
         gcc \
         unzip \
+        libnotify \
         && \
     dnf clean all
 
