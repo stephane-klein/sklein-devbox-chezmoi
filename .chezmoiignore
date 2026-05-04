@@ -5,5 +5,6 @@ Containerfile
 sklein-devbox-init.sh
 ssh-forcecommand-entrypoint.sh
 sshd_config
-cont-init.d/
-services.d/
+container-entrypoint.sh
+entrypoint-init.d/
+pebble/
