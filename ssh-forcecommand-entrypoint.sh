@@ -41,20 +41,6 @@ else
     echo "You can run 'sklein-devbox-init.sh' manually to set up gopass, chezmoi, and other configurations."
 fi
 
-# Start gopass agent service if enabled and not already running
-if [ "${SKLEIN_DEVBOX_GOPASS:-}" = "1" ]; then
-    if [ ! -S "${XDG_RUNTIME_DIR}/gopass/gopass-age-agent.sock" ]; then
-        rm -f "${XDG_RUNTIME_DIR}/gopass/gopass-age-agent.sock"
-        s6-svc -u /run/service/gopass-agent 2>/dev/null || true
-        sleep 0.5
-    fi
-fi
-
-# Start gpg-agent service if configuration exists
-if [ -f "$HOME/.config/gnupg/gpg-agent.conf" ]; then
-    s6-svc -u /run/service/gpg-agent 2>/dev/null || true
-fi
-
 # Execute command directly (already running as sklein)
 if [ -n "$SSH_ORIGINAL_COMMAND" ]; then
     exec /bin/zsh -i -c "$SSH_ORIGINAL_COMMAND"
