@@ -1,22 +1,25 @@
+[settings]
+lockfile = true
+
 [tools]
-starship = "1.22.1"
-opencode = "1.14.28" 
+starship = "1.25.1"
+opencode = "1.14.33"
 ripgrep = "15.1.0"
 fd = "10.4.2"
 tmux = "3.6a"
-jujutsu = "0.39.0"
+jujutsu = "0.40.0"
 node = "24.14.1"
 uv = "latest"
 go = "latest"
 neovim = "0.12.2"
 tree-sitter = "0.26.8"
-usage = "3.2.0"
-atuin = "18.15.2"
+usage = "3.3.0"
+atuin = "18.16.0"
 delta = "0.19.2"
 rtk = "0.38.0"
 
 # Tooling for OpenCode
-"npm:@upstash/context7-mcp" = "2.1.6"
+"npm:@upstash/context7-mcp" = "2.2.4"
 "pipx:mcp-server-fetch" = "2025.4.7"
 
 # Tooling for Tmux
