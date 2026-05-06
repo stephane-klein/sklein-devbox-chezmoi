@@ -36,6 +36,7 @@ RUN dnf copr enable -y atim/starship && \
         gcc \
         unzip \
         libnotify \
+        pulseaudio-utils \
         && \
     dnf clean all
 
