@@ -22,6 +22,27 @@ while [ $# -gt 0 ]; do
     shift
 done
 
+# Setup SSH for git operations (used by both gopass setup and chezmoi init)
+SSH_KEY_FILE=""
+if [ -f "/tmp/sklein-devbox-ssh-key" ]; then
+    mkdir -p /home/sklein/.ssh
+    SSH_KEY_FILE=$(mktemp /home/sklein/.ssh/sklein-devbox-XXXXX)
+    cat /tmp/sklein-devbox-ssh-key > "${SSH_KEY_FILE}"
+    chmod 600 "${SSH_KEY_FILE}"
+    export GIT_SSH_COMMAND="ssh -i ${SSH_KEY_FILE}"
+else
+    export GIT_SSH_COMMAND="ssh -F /tmp/host-ssh/config"
+fi
+
+# Cleanup function for trap - removes SSH key file and unsets env var on exit
+cleanup_ssh() {
+    unset GIT_SSH_COMMAND
+    if [ -n "${SSH_KEY_FILE}" ] && [ -f "${SSH_KEY_FILE}" ]; then
+        rm -f "${SSH_KEY_FILE}"
+    fi
+}
+trap cleanup_ssh EXIT
+
 if [ "${FORCE}" = "1" ]; then
     rm -f "${WELCOME_SHOWN_FILE}"
 fi
@@ -118,15 +139,6 @@ if [ ! -f "${INIT_DIR}/gopass-store.done" ]; then
         fi
 
         if [ ! -f "${INIT_DIR}/gopass-store.done" ]; then
-            if [ -f "/tmp/sklein-devbox-ssh-key" ]; then
-                SSH_KEY_FILE=$(mktemp /home/sklein/.ssh/sklein-devbox-XXXXX)
-                cat /tmp/sklein-devbox-ssh-key > "${SSH_KEY_FILE}"
-                chmod 600 "${SSH_KEY_FILE}"
-                export GIT_SSH_COMMAND="ssh -i ${SSH_KEY_FILE}"
-            else
-                export GIT_SSH_COMMAND="ssh -F /tmp/host-ssh/config"
-            fi
-
             gopass --yes setup \
                 --crypto age \
                 --remote git@github.com:stephane-klein/sklein-devbox-secrets.git \
@@ -139,11 +151,8 @@ if [ ! -f "${INIT_DIR}/gopass-store.done" ]; then
                 echo "WARNING: sklein-devbox-init.sh failed at step 'gopass-store'."
                 echo "This step will be retried automatically on next connection."
                 echo "Run 'sklein-devbox-init.sh' to retry now, or 'sklein-devbox-init.sh --force' to restart ALL steps from scratch."
-                unset GIT_SSH_COMMAND
                 exit 1
             fi
-
-            unset GIT_SSH_COMMAND
         fi
     else
         touch "${INIT_DIR}/gopass-store.done"
