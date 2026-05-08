@@ -65,4 +65,6 @@ if [[ -n "$TMUX_PANE" ]]; then
 fi
 
 alias opencode="TMUX= command opencode"
+alias open-nvim-config="cd ~/.config/nvim; nvim ."
+alias open-nvim-chezmoi="cd ~/.local/share/chezmoi; nvim ."
 export EDITOR=nvim
