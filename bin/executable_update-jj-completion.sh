@@ -95,6 +95,3 @@ fi
 
 # Clean up any old _jj_aliases file
 rm -f "${COMPLETIONS_DIR}/_jj_aliases"
-
-echo ""
-echo "Restart your terminal or run 'exec zsh' to apply changes"

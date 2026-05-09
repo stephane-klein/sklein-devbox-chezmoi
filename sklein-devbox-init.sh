@@ -191,6 +191,8 @@ if [ ! -f "${INIT_DIR}/chezmoi-apply.done" ]; then
 
     chezmoi apply
 
+    ~/bin/update-zsh-completions.sh
+
     if [ $? -eq 0 ]; then
         touch "${INIT_DIR}/chezmoi-apply.done"
     else
