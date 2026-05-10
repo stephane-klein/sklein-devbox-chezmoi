@@ -3,11 +3,11 @@ lockfile = true
 
 [tools]
 starship = "1.25.1"
-opencode = "1.14.33"
+opencode = "1.14.46"
 ripgrep = "15.1.0"
 fd = "10.4.2"
 tmux = "3.6a"
-jujutsu = "0.40.0"
+jujutsu = "0.41.0"
 node = "24.14.1"
 uv = "latest"
 go = "latest"
@@ -16,7 +16,7 @@ tree-sitter = "0.26.8"
 usage = "3.3.0"
 atuin = "18.16.0"
 delta = "0.19.2"
-rtk = "0.38.0"
+rtk = "0.39.0"
 github-cli = "2.92.0"
 zoxide = "0.9.9"
 
