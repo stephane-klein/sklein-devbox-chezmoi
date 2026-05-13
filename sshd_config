@@ -1,9 +1,6 @@
 # Host key from persistent storage
 HostKey /var/lib/sklein-devbox/ssh-host-keys/ssh_host_ed25519_key
 
-# Use non-privileged port for rootless container
-Port 2222
-
 PermitRootLogin no
 PasswordAuthentication no
 UsePAM yes
