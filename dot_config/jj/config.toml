@@ -8,3 +8,6 @@ email = "contact@stephane-klein.info"
 [ui]
 pager = "delta"
 diff-formatter = ":git"
+
+[aliases]
+publish-main = ["util", "exec", "--", "bash", "-c", "jj bookmark set main -r @- && jj git push"]
