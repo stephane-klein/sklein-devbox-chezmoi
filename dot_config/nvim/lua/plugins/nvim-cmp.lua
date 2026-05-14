@@ -50,6 +50,14 @@ return {
       end
     end
 
+    -- Disable nvim-cmp in agentic.nvim prompt buffers so that
+    -- the file picker completion (triggered by @) can use <CR>
+    -- to accept selections without conflicts.
+    cmp.setup.filetype("AgenticInput", {
+      enabled = false,
+      sources = {},
+    })
+
     return opts
   end,
 }

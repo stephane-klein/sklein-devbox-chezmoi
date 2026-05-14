@@ -24,6 +24,11 @@ return {
         widget = {
           switch_model = "<leader>am",  -- Switch model with <leader>am
         },
+        prompt = {
+          accept_completion = {
+            { "<CR>", mode = { "i" } },
+          },
+        },
       },
     },
     -- stylua: ignore
