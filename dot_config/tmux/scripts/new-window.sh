@@ -17,4 +17,4 @@ if [[ -z "$name" ]]; then
   name=$(mise exec --cd / -- petname)
 fi
 
-tmux new-window -c "$CURRENT_PATH" -n "$name"
+tmux new-window -a -c "$CURRENT_PATH" -n "$name"
