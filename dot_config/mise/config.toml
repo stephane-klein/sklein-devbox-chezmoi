@@ -3,7 +3,7 @@ lockfile = true
 
 [tools]
 starship = "1.25.1"
-opencode = "1.14.46"
+opencode = "1.15.0"
 ripgrep = "15.1.0"
 fd = "10.4.2"
 tmux = "3.6a"
@@ -14,14 +14,14 @@ go = "latest"
 neovim = "0.12.2"
 tree-sitter = "0.26.8"
 usage = "3.3.0"
-atuin = "18.16.0"
+atuin = "18.16.1"
 delta = "0.19.2"
-rtk = "0.39.0"
+rtk = "0.40.0"
 github-cli = "2.92.0"
 zoxide = "0.9.9"
 
 # Tooling for OpenCode
-"npm:@upstash/context7-mcp" = "2.2.4"
+"npm:@upstash/context7-mcp" = "2.2.5"
 "pipx:mcp-server-fetch" = "2025.4.7"
 
 # Tooling for Tmux
