@@ -90,6 +90,11 @@ Fix race condition in cache cleanup.  # point final interdit
 - **Liens de tracking** : utiliser des URLs complètes, une par ligne, préférablement avec `See: https://...`.
 - **Références** : éviter les IDs de tickets bruts dans le résumé ; les placer dans le corps avec une URL complète.
 
+## Comportement de l'agent
+
+- **Ne jamais demander** à l'utilisateur s'il souhaite le message de commit en français. Utiliser l'anglais par défaut sans sollicitation.
+- **Être minimaliste** dans les commentaires et interactions en dehors de la proposition du message de commit. Ne pas ajouter de texte superflu.
+
 ## Source d'inspiration
 
 Ces conventions s'inspirent largement de la guideline [git-commit-message](https://github.com/joelparkerhenderson/git-commit-message/) de Joel Parker Henderson.
