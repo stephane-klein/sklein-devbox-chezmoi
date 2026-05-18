@@ -22,6 +22,17 @@ Si l'utilisateur n'a pas fourni de `PROJECT_SHORT_DESCRIPTION`, l'agent doit lui
 
 Si l'utilisateur refuse de donner une description, l'agent peut utiliser une chaîne vide et continuer la génération.
 
+### Question sur Jujutsu
+
+L'agent doit demander à l'utilisateur (use question tool) :
+
+> *« Utiliserez-vous Jujutsu (jj) pour ce projet ? (Oui/Non) »*
+
+- Si **Oui** : `USE_JUJUTSU = true`
+- Si **Non** : `USE_JUJUTSU = false`
+
+Cette information sera transmise au template `AGENTS.md`.
+
 ### Amélioration de la description
 
 Si l'utilisateur a fourni une `PROJECT_SHORT_DESCRIPTION`, l'agent évalue si elle est suffisante et optimale en termes de :
@@ -83,12 +94,13 @@ Une fois les versions récupérées et les conflits résolus (ou confirmés par 
 2. **Substituer les placeholders** dans le contenu de chaque template :
 
 | Placeholder | Valeur |
-|---|---|
+|---|---|---|
 | `{{PROJECT_NAME}}` | `PROJECT_NAME` |
 | `{{PROJECT_SHORT_DESCRIPTION}}` | `PROJECT_SHORT_DESCRIPTION` (peut être vide) |
 | `{{AUTHOR_NAME}}` | `Stéphane Klein` |
 | `{{LAST_NODE_LTS_VERSION}}` | Version Node.js LTS récupérée |
 | `{{LAST_PNPM_VERSION}}` | Version pnpm récupérée |
+| `{{USE_JUJUTSU}}` | `true` si Jujutsu sera utilisé, sinon `false` |
 
 1. **Écrire les fichiers** dans le répertoire cible `TARGET_DIR` :
 
