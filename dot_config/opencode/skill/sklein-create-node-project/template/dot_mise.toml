@@ -1,0 +1,6 @@
+[env]
+_.path = './node_modules/.bin'
+
+[tools]
+node = "{{LAST_NODE_LTS_VERSION}}"
+pnpm = "{{LAST_PNPM_VERSION}}"
