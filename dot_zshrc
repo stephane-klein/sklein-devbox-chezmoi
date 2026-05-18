@@ -49,6 +49,10 @@ if command -v gopass &> /dev/null; then
     source <(gopass completion zsh)
 fi
 
+if command -v try &> /dev/null; then
+    eval "$(try init ~/src/tries)"
+fi
+
 # Refresh tmux status bar after each command
 _tmux_refresh() {
     [[ -n "$TMUX" ]] && tmux refresh-client -S 2>/dev/null
