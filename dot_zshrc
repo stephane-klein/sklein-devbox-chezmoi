@@ -53,6 +53,13 @@ if command -v try &> /dev/null; then
     eval "$(try init ~/src/tries)"
 fi
 
+function y() {
+    local tmp=$(mktemp)
+    yazi "$@" --cwd-file="$tmp"
+    cd "$(cat "$tmp")"
+    rm "$tmp"
+}
+
 # Refresh tmux status bar after each command
 _tmux_refresh() {
     [[ -n "$TMUX" ]] && tmux refresh-client -S 2>/dev/null
