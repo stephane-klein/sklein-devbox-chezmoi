@@ -1,0 +1,29 @@
+author_name:
+  type: str
+  default: Stéphane Klein
+
+project_name:
+  type: str
+  help: Project name (used in package.json, README, etc.)
+
+project_slug:
+  type: str
+  help: Repository name on GitHub (lowercase, no spaces, use hyphens instead)
+
+project_short_description:
+  type: str
+  help: Brief project description (1-2 sentences)
+
+use_jujutsu:
+  type: bool
+  help: Use Jujutsu (J) as version control instead of Git?
+
+last_node_lts_version:
+  type: str
+  help: Latest Node.js LTS version
+  default: 24.15.0
+
+last_pnpm_version:
+  type: str
+  help: Latest pnpm version
+  default: 11.1.3

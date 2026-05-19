@@ -10,6 +10,7 @@ Créer un nouveau projet Node.js basé sur les préférences de Stéphane Klein.
 ## Déclencheur
 
 Ce skill est activé lorsque l'utilisateur demande de créer un projet Node.js, par exemple :
+
 - "crée un projet node"
 - "initie un projet JS"
 - "crée un projet nodejs"
@@ -44,10 +45,30 @@ Si la description semble insuffisante ou non optimale, l'agent la reformule dire
 
 Cette version reformulée est utilisée directement dans les templates, sans validation utilisateur.
 
+### Génération de project_slug
+
+L'agent doit déterminer `PROJECT_SLUG` automatiquement :
+
+1. **Dérivation depuis `PROJECT_NAME`** :
+   - Convertir en minuscules
+   - Remplacer les espaces par des tirets
+   - Supprimer tout caractère non alphanumérique ni tiret
+   - Exemple : `Mon Super Projet` → `mon-super-projet`
+
+2. **Vérification du dossier cible** :
+   - Utiliser le dernier segment du chemin `TARGET_DIR` comme base
+   - Appliquer les mêmes règles de transformation
+
+3. **Demande de confirmation** :
+   - Si le `PROJECT_NAME` contient des caractères spéciaux ambigus ou si le `PROJECT_SLUG` résultant semble incohérent, demander confirmation à l'utilisateur
+   - Proposer le `PROJECT_SLUG` déduit et demander : *« Le nom du repository GitHub sera `{{project_slug}}`. Est-ce correct ? »*
+   - L'utilisateur peut accepter ou fournir un `PROJECT_SLUG` personnalisé
+
 ## Paramètres
 
 - **`PROJECT_NAME`** (requis) : nom du projet. Peut contenir des tirets, pas d'espaces.
 - **`PROJECT_SHORT_DESCRIPTION`** : courte explication du projet et de son but (1–2 phrases).
+- **`PROJECT_SLUG`** (optionnel) : nom du repository GitHub (minuscules, tirets, pas d'espaces). Si non fourni, il est déduit automatiquement de `PROJECT_NAME`.
 - **`TARGET_DIR`** (optionnel) : chemin absolu ou relatif du répertoire cible. Par défaut : le dossier courant.
 
 ## Valeurs fixes
@@ -70,49 +91,32 @@ Si l'une de ces deux requêtes échoue ou retourne une donnée inutilisable, l'a
 
 ## Vérification des conflits
 
-Avant d'écrire quoi que ce soit, l'agent doit vérifier si les fichiers cibles existent déjà dans `TARGET_DIR` :
-
-- `.mise.toml`
-- `.gitignore`
-- `AGENTS.md`
-- `README.md`
-- `package.json`
-
+Avant d'écrire quoi que ce soit, l'agent doit vérifier si les fichiers cibles existent déjà dans `TARGET_DIR`.
 Si un ou plusieurs de ces fichiers existent déjà, l'agent doit **prévenir l'utilisateur**, lister les fichiers concernés, et **demander une confirmation explicite** avant d'écraser. Sans confirmation, l'opération s'arrête.
 
-## Génération des fichiers
+## Génération des fichiers via Copier
 
-Une fois les versions récupérées et les conflits résolus (ou confirmés par l'utilisateur), l'agent doit :
+Une fois les versions récupérées et les conflits résolus (ou confirmés par l'utilisateur) :
 
-1. **Lire les templates** situés dans le répertoire `template/` à côté de ce `SKILL.md` :
-   - `template/.mise.toml`
-   - `template/.gitignore`
-   - `template/AGENTS.md`
-   - `template/README.md`
-   - `template/package.json`
+1. **Créer un fichier YAML temporaire** `/tmp/opencode/copier-params.yaml` :
+   ```yaml
+   author_name: Stéphane Klein
+   project_name: "{{PROJECT_NAME}}"
+   project_slug: "{{PROJECT_SLUG}}"
+   project_short_description: "{{PROJECT_SHORT_DESCRIPTION}}"
+   use_jujutsu: {{USE_JUJUTSU}}
+   last_node_lts_version: "{{LAST_NODE_LTS_VERSION}}"
+   last_pnpm_version: "{{LAST_PNPM_VERSION}}"
+   ```
 
-2. **Substituer les placeholders** dans le contenu de chaque template :
+2. **Exécuter Copier** :
+   ```bash
+   copier copy --data-file /tmp/opencode/copier-params.yaml \
+     /home/sklein/.config/opencode/skill/sklein-create-node-project/template/ \
+     "{{TARGET_DIR}}"
+   ```
 
-| Placeholder | Valeur |
-|---|---|---|
-| `{{PROJECT_NAME}}` | `PROJECT_NAME` |
-| `{{PROJECT_SHORT_DESCRIPTION}}` | `PROJECT_SHORT_DESCRIPTION` (peut être vide) |
-| `{{AUTHOR_NAME}}` | `Stéphane Klein` |
-| `{{LAST_NODE_LTS_VERSION}}` | Version Node.js LTS récupérée |
-| `{{LAST_PNPM_VERSION}}` | Version pnpm récupérée |
-| `{{USE_JUJUTSU}}` | `true` si Jujutsu sera utilisé, sinon `false` |
-
-1. **Écrire les fichiers** dans le répertoire cible `TARGET_DIR` :
-
-| Fichier cible | Template source |
-|---|---|
-| `.mise.toml` | `template/.mise.toml` |
-| `.gitignore` | `template/.gitignore` |
-| `AGENTS.md` | `template/AGENTS.md` |
-| `README.md` | `template/README.md` |
-| `package.json` | `template/package.json` |
-
-**Important** : le fichier `AGENTS.md` contient le `PROJECT_SHORT_DESCRIPTION` en plus des instructions de langue.
+3. **Supprimer** le fichier temporaire après exécution.
 
 **L'agent ne doit PAS exécuter `pnpm install` ni aucune autre commande d'installation.**
 

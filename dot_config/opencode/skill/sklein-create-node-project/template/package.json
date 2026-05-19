@@ -1,6 +1,0 @@
-{
-  "name": "{{PROJECT_NAME}}",
-  "type": "module",
-  "author": "{{AUTHOR_NAME}}",
-  "license": "MIT"
-}
