@@ -41,6 +41,7 @@ RUN dnf copr enable -y atim/starship && \
         gcc-c++ \
         python3 \
         make \
+        htop \
         && \
     dnf clean all
 
