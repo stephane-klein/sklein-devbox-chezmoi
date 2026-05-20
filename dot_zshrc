@@ -49,10 +49,6 @@ if command -v gopass &> /dev/null; then
     source <(gopass completion zsh)
 fi
 
-if command -v try &> /dev/null; then
-    eval "$(try init ~/src/tries)"
-fi
-
 function y() {
     local tmp=$(mktemp)
     yazi "$@" --cwd-file="$tmp"
@@ -88,3 +84,6 @@ _z() {
     _describe 'zoxide directory' dirs
 }
 compdef _z z
+
+# try-rs integration
+source '/home/sklein/.config/try-rs/try-rs.zsh'

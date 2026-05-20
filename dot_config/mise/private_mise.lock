@@ -125,6 +125,78 @@ checksum = "sha256:b6a8df3c8c6b9c80f290906387673bc4d272840f3789c5650e0e4e6e75522
 url = "https://github.com/cli/cli/releases/download/v2.92.0/gh_2.92.0_windows_amd64.zip"
 provenance = "github-attestations"
 
+[[tools."github:stephane-klein/try-cli"]]
+version = "1.5.3-sklein"
+backend = "github:stephane-klein/try-cli"
+
+[tools."github:stephane-klein/try-cli"."platforms.linux-arm64"]
+checksum = "sha256:bed948ff6a33ae97c5898cdcea51a9136eeb23bbe088ae46ce860c8b1e81272a"
+url = "https://github.com/stephane-klein/try-cli/releases/download/v1.5.3-sklein/try-aarch64-linux.tar.gz"
+url_api = "https://api.github.com/repos/stephane-klein/try-cli/releases/assets/423482541"
+
+[tools."github:stephane-klein/try-cli"."platforms.linux-arm64-musl"]
+checksum = "sha256:bed948ff6a33ae97c5898cdcea51a9136eeb23bbe088ae46ce860c8b1e81272a"
+url = "https://github.com/stephane-klein/try-cli/releases/download/v1.5.3-sklein/try-aarch64-linux.tar.gz"
+url_api = "https://api.github.com/repos/stephane-klein/try-cli/releases/assets/423482541"
+
+[tools."github:stephane-klein/try-cli"."platforms.linux-x64"]
+checksum = "sha256:2a58e161b7ac30dbe7ac054b960aa0bee7c13c710f96e3947ff9cb3a716c7153"
+url = "https://github.com/stephane-klein/try-cli/releases/download/v1.5.3-sklein/try-x86_64-linux.tar.gz"
+url_api = "https://api.github.com/repos/stephane-klein/try-cli/releases/assets/423482540"
+
+[tools."github:stephane-klein/try-cli"."platforms.linux-x64-musl"]
+checksum = "sha256:2a58e161b7ac30dbe7ac054b960aa0bee7c13c710f96e3947ff9cb3a716c7153"
+url = "https://github.com/stephane-klein/try-cli/releases/download/v1.5.3-sklein/try-x86_64-linux.tar.gz"
+url_api = "https://api.github.com/repos/stephane-klein/try-cli/releases/assets/423482540"
+
+[[tools."github:tassiovirginio/try-rs"]]
+version = "1.7.8"
+backend = "github:tassiovirginio/try-rs"
+
+[tools."github:tassiovirginio/try-rs"."platforms.linux-x64"]
+checksum = "sha256:c73e762a6b89f3ad12d245e81a4158ad5f8889c777199ed8b249e95d8509677b"
+url = "https://github.com/tassiovirginio/try-rs/releases/download/v1.7.8/try-rs-v1.7.8-linux-x86_64.tar.gz"
+url_api = "https://api.github.com/repos/tassiovirginio/try-rs/releases/assets/402047342"
+
+[tools."github:tassiovirginio/try-rs"."platforms.linux-x64-musl"]
+checksum = "sha256:c73e762a6b89f3ad12d245e81a4158ad5f8889c777199ed8b249e95d8509677b"
+url = "https://github.com/tassiovirginio/try-rs/releases/download/v1.7.8/try-rs-v1.7.8-linux-x86_64.tar.gz"
+url_api = "https://api.github.com/repos/tassiovirginio/try-rs/releases/assets/402047342"
+
+[tools."github:tassiovirginio/try-rs"."platforms.macos-x64"]
+checksum = "sha256:997f17910097d94d38eea666962b3aa6c5ed9f9fd41e10d231303af4d5f01d7f"
+url = "https://github.com/tassiovirginio/try-rs/releases/download/v1.7.8/try-rs_1.7.8-1_amd64.deb"
+url_api = "https://api.github.com/repos/tassiovirginio/try-rs/releases/assets/402047435"
+
+[tools."github:tassiovirginio/try-rs"."platforms.windows-x64"]
+checksum = "sha256:4cc225c1cc2ff9f4ae12d3b80bb8616595a01b60b17ab97fdfa2e85c6e653d8b"
+url = "https://github.com/tassiovirginio/try-rs/releases/download/v1.7.8/try-rs-windows-x86_64.exe"
+url_api = "https://api.github.com/repos/tassiovirginio/try-rs/releases/assets/402047526"
+
+[[tools."github:tobi/try-cli"]]
+version = "1.5.2"
+backend = "github:tobi/try-cli"
+
+[tools."github:tobi/try-cli"."platforms.linux-arm64"]
+checksum = "sha256:a251fcae64328a297e892c320e68f60dfa5b8595a1aa3d379299e37892bc713b"
+url = "https://github.com/tobi/try-cli/releases/download/v1.5.2/try-aarch64-linux.tar.gz"
+url_api = "https://api.github.com/repos/tobi/try-cli/releases/assets/331169708"
+
+[tools."github:tobi/try-cli"."platforms.linux-arm64-musl"]
+checksum = "sha256:a251fcae64328a297e892c320e68f60dfa5b8595a1aa3d379299e37892bc713b"
+url = "https://github.com/tobi/try-cli/releases/download/v1.5.2/try-aarch64-linux.tar.gz"
+url_api = "https://api.github.com/repos/tobi/try-cli/releases/assets/331169708"
+
+[tools."github:tobi/try-cli"."platforms.linux-x64"]
+checksum = "sha256:616680131496d20c399664b1ff68a9b1a34b92b6da8b2fc791325e95f7ad3c2e"
+url = "https://github.com/tobi/try-cli/releases/download/v1.5.2/try-x86_64-linux.tar.gz"
+url_api = "https://api.github.com/repos/tobi/try-cli/releases/assets/331169709"
+
+[tools."github:tobi/try-cli"."platforms.linux-x64-musl"]
+checksum = "sha256:616680131496d20c399664b1ff68a9b1a34b92b6da8b2fc791325e95f7ad3c2e"
+url = "https://github.com/tobi/try-cli/releases/download/v1.5.2/try-x86_64-linux.tar.gz"
+url_api = "https://api.github.com/repos/tobi/try-cli/releases/assets/331169709"
+
 [[tools.go]]
 version = "1.26.2"
 backend = "core:go"
