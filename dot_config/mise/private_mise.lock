@@ -375,8 +375,36 @@ version = "2.2.5"
 backend = "npm:@upstash/context7-mcp"
 
 [[tools.opencode]]
-version = "1.15.0"
+version = "1.15.5"
 backend = "aqua:anomalyco/opencode"
+
+[tools.opencode."platforms.linux-arm64"]
+checksum = "sha256:a6244ecce03f303a8945fae330f17964469fc0780fa3555cde80fb97ac46f2fb"
+url = "https://github.com/anomalyco/opencode/releases/download/v1.15.5/opencode-linux-arm64.tar.gz"
+
+[tools.opencode."platforms.linux-arm64-musl"]
+checksum = "sha256:67d473262cd8d6ed506ac3e949ee597a4d6548df7dda3ac207b44dc9270b16da"
+url = "https://github.com/anomalyco/opencode/releases/download/v1.15.5/opencode-linux-arm64-musl.tar.gz"
+
+[tools.opencode."platforms.linux-x64"]
+checksum = "sha256:bf6f75da089b22073bcf23754cc3be351f713363164e5bdcd3e49501c811b1c5"
+url = "https://github.com/anomalyco/opencode/releases/download/v1.15.5/opencode-linux-x64.tar.gz"
+
+[tools.opencode."platforms.linux-x64-musl"]
+checksum = "sha256:2775f0666cfab3cef954a41c515c82d392aa09e43921b35a5cab3a3d7ec6a461"
+url = "https://github.com/anomalyco/opencode/releases/download/v1.15.5/opencode-linux-x64-musl.tar.gz"
+
+[tools.opencode."platforms.macos-arm64"]
+checksum = "sha256:9cf68a67f6fdd0a5212daa0fcbca3dbc05fff788dc6c6214aa2f2f4a7caba815"
+url = "https://github.com/anomalyco/opencode/releases/download/v1.15.5/opencode-darwin-arm64.zip"
+
+[tools.opencode."platforms.macos-x64"]
+checksum = "sha256:fa8168407fcb06ef136bc98e8a18aacf042117f97c89ec944e0f6fe930269ec9"
+url = "https://github.com/anomalyco/opencode/releases/download/v1.15.5/opencode-darwin-x64.zip"
+
+[tools.opencode."platforms.windows-x64"]
+checksum = "sha256:8c4daa606d23eadf3dc776ef8049858e676fdb32804453e665bfeb77170d21c0"
+url = "https://github.com/anomalyco/opencode/releases/download/v1.15.5/opencode-windows-x64.zip"
 
 [[tools."pipx:copier"]]
 version = "9.15.1"
