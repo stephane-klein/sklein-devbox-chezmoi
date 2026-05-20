@@ -42,6 +42,7 @@ RUN dnf copr enable -y atim/starship && \
         python3 \
         make \
         htop \
+        psmisc \
         && \
     dnf clean all
 
