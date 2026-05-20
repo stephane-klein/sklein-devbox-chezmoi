@@ -37,6 +37,10 @@ RUN dnf copr enable -y atim/starship && \
         unzip \
         libnotify \
         pulseaudio-utils \
+        libatomic \
+        gcc-c++ \
+        python3 \
+        make \
         && \
     dnf clean all
 
