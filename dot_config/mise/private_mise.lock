@@ -125,6 +125,20 @@ checksum = "sha256:b6a8df3c8c6b9c80f290906387673bc4d272840f3789c5650e0e4e6e75522
 url = "https://github.com/cli/cli/releases/download/v2.92.0/gh_2.92.0_windows_amd64.zip"
 provenance = "github-attestations"
 
+[[tools."github:11happy/cpx"]]
+version = "0.1.4"
+backend = "github:11happy/cpx"
+
+[tools."github:11happy/cpx"."platforms.linux-x64"]
+checksum = "sha256:f97aa8306540c54118deffdf765a20a9ef2ad82a3208b2b97ba22da743ff35c1"
+url = "https://github.com/11happy/cpx/releases/download/v0.1.4/cpx-linux-x86_64-musl.tar.gz"
+url_api = "https://api.github.com/repos/11happy/cpx/releases/assets/360367583"
+
+[tools."github:11happy/cpx"."platforms.linux-x64-musl"]
+checksum = "sha256:f97aa8306540c54118deffdf765a20a9ef2ad82a3208b2b97ba22da743ff35c1"
+url = "https://github.com/11happy/cpx/releases/download/v0.1.4/cpx-linux-x86_64-musl.tar.gz"
+url_api = "https://api.github.com/repos/11happy/cpx/releases/assets/360367583"
+
 [[tools."github:stephane-klein/try-cli"]]
 version = "1.5.3-sklein"
 backend = "github:stephane-klein/try-cli"

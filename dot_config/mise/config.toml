@@ -23,6 +23,7 @@ jq = "1.8.1"
 yazi = "26.5.6"
 "pipx:copier" = "9.15.1"
 "github:tassiovirginio/try-rs" = "1.7.8"
+"github:11happy/cpx" = "0.1.4"
 
 # I use my fork to integrate https://github.com/tobi/try-cli/pull/17 patch
 "github:stephane-klein/try-cli" = "1.5.3-sklein"
