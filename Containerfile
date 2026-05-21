@@ -43,6 +43,7 @@ RUN dnf copr enable -y atim/starship && \
         make \
         htop \
         psmisc \
+        sqlite \
         && \
     dnf clean all
 
