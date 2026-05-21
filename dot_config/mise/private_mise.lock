@@ -139,6 +139,45 @@ checksum = "sha256:f97aa8306540c54118deffdf765a20a9ef2ad82a3208b2b97ba22da743ff3
 url = "https://github.com/11happy/cpx/releases/download/v0.1.4/cpx-linux-x86_64-musl.tar.gz"
 url_api = "https://api.github.com/repos/11happy/cpx/releases/assets/360367583"
 
+[[tools."github:mitsuhiko/minijinja"]]
+version = "2.20.0"
+backend = "github:mitsuhiko/minijinja"
+
+[tools."github:mitsuhiko/minijinja"."platforms.linux-arm64"]
+checksum = "sha256:b65aa27b9c818e965af6dfd151a62f294720a2b28f0bba3344f99e146343d3b1"
+url = "https://github.com/mitsuhiko/minijinja/releases/download/2.20.0/minijinja-cli-aarch64-unknown-linux-gnu.tar.xz"
+url_api = "https://api.github.com/repos/mitsuhiko/minijinja/releases/assets/424647445"
+
+[tools."github:mitsuhiko/minijinja"."platforms.linux-arm64-musl"]
+checksum = "sha256:b379a731c49918487846ac7d12e735f2572764559e1a704affbb499d1e240e67"
+url = "https://github.com/mitsuhiko/minijinja/releases/download/2.20.0/minijinja-cli-aarch64-unknown-linux-musl.tar.xz"
+url_api = "https://api.github.com/repos/mitsuhiko/minijinja/releases/assets/424647448"
+
+[tools."github:mitsuhiko/minijinja"."platforms.linux-x64"]
+checksum = "sha256:60f229d37c106cd3818a1d21a3eb92cd38768da3b2f16ee6fd72927ee15625ff"
+url = "https://github.com/mitsuhiko/minijinja/releases/download/2.20.0/minijinja-cli-x86_64-unknown-linux-gnu.tar.xz"
+url_api = "https://api.github.com/repos/mitsuhiko/minijinja/releases/assets/424647605"
+
+[tools."github:mitsuhiko/minijinja"."platforms.linux-x64-musl"]
+checksum = "sha256:892a51270f82f63d37c1112cee260d4321da7898d974b9dc8f0c0fcba0a05c05"
+url = "https://github.com/mitsuhiko/minijinja/releases/download/2.20.0/minijinja-cli-x86_64-unknown-linux-musl.tar.xz"
+url_api = "https://api.github.com/repos/mitsuhiko/minijinja/releases/assets/424647608"
+
+[tools."github:mitsuhiko/minijinja"."platforms.macos-arm64"]
+checksum = "sha256:23a91850cdcb534bab497e138fddd320f079342340851a7faa4c245956cebb70"
+url = "https://github.com/mitsuhiko/minijinja/releases/download/2.20.0/minijinja-cli-aarch64-apple-darwin.tar.xz"
+url_api = "https://api.github.com/repos/mitsuhiko/minijinja/releases/assets/424647441"
+
+[tools."github:mitsuhiko/minijinja"."platforms.macos-x64"]
+checksum = "sha256:323f793dd92807921d049e4e752c7f15e2ef14f22e5a57c6fc803a46443425a5"
+url = "https://github.com/mitsuhiko/minijinja/releases/download/2.20.0/minijinja-cli-x86_64-apple-darwin.tar.xz"
+url_api = "https://api.github.com/repos/mitsuhiko/minijinja/releases/assets/424647597"
+
+[tools."github:mitsuhiko/minijinja"."platforms.windows-x64"]
+checksum = "sha256:58bcbae843e5b79cc502a0b49351c338d53273eb3c2df31659dffe4b35dfaf73"
+url = "https://github.com/mitsuhiko/minijinja/releases/download/2.20.0/minijinja-cli-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/mitsuhiko/minijinja/releases/assets/424647602"
+
 [[tools."github:stephane-klein/try-cli"]]
 version = "1.5.3-sklein"
 backend = "github:stephane-klein/try-cli"
@@ -686,6 +725,38 @@ url = "https://github.com/sxyazi/yazi/releases/download/v26.5.6/yazi-x86_64-appl
 [tools.yazi."platforms.windows-x64"]
 checksum = "sha256:6c6c52a4b2648e179f917bdaa7c57e793d18561b380a8bfa025f10cd1b9b2ad1"
 url = "https://github.com/sxyazi/yazi/releases/download/v26.5.6/yazi-x86_64-pc-windows-msvc.zip"
+
+[[tools.yq]]
+version = "4.53.2"
+backend = "aqua:mikefarah/yq"
+
+[tools.yq."platforms.linux-arm64"]
+checksum = "sha256:03061b2a50c7a498de2bbb92d7cb078ce433011f085a4994117c2726be4106ea"
+url = "https://github.com/mikefarah/yq/releases/download/v4.53.2/yq_linux_arm64"
+
+[tools.yq."platforms.linux-arm64-musl"]
+checksum = "sha256:03061b2a50c7a498de2bbb92d7cb078ce433011f085a4994117c2726be4106ea"
+url = "https://github.com/mikefarah/yq/releases/download/v4.53.2/yq_linux_arm64"
+
+[tools.yq."platforms.linux-x64"]
+checksum = "sha256:d56bf5c6819e8e696340c312bd70f849dc1678a7cda9c2ad63eebd906371d56b"
+url = "https://github.com/mikefarah/yq/releases/download/v4.53.2/yq_linux_amd64"
+
+[tools.yq."platforms.linux-x64-musl"]
+checksum = "sha256:d56bf5c6819e8e696340c312bd70f849dc1678a7cda9c2ad63eebd906371d56b"
+url = "https://github.com/mikefarah/yq/releases/download/v4.53.2/yq_linux_amd64"
+
+[tools.yq."platforms.macos-arm64"]
+checksum = "sha256:541ba2287560df70f561955e2d7f7e1cd00cf2a15a884f6b5c87a4bfa887bc07"
+url = "https://github.com/mikefarah/yq/releases/download/v4.53.2/yq_darwin_arm64"
+
+[tools.yq."platforms.macos-x64"]
+checksum = "sha256:616b0a0f6a5b79d746f05a169c2b9bb40dee00c605ef165b9a1c1681bba738ac"
+url = "https://github.com/mikefarah/yq/releases/download/v4.53.2/yq_darwin_amd64"
+
+[tools.yq."platforms.windows-x64"]
+checksum = "sha256:2aee32f1de46a20672f48c25df3018839798bd509143f2ce05fdab1550ff5592"
+url = "https://github.com/mikefarah/yq/releases/download/v4.53.2/yq_windows_amd64.exe"
 
 [[tools.zoxide]]
 version = "0.9.9"

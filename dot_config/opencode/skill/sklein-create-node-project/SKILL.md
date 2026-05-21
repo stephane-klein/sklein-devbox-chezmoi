@@ -34,6 +34,23 @@ L'agent doit demander à l'utilisateur (use question tool) :
 
 Cette information sera transmise au template `AGENTS.md`.
 
+### Question sur les secrets d'environnement
+
+L'agent doit demander à l'utilisateur (use question tool) :
+
+> *« Voulez-vous inclure la gestion de variables d'environnement secrètes (fichier `.secret`) ? »*
+
+- Si **Oui** : demander ensuite :
+
+  > *« Voulez-vous intégrer gopass pour la gestion des secrets ? »*
+
+  - Si **Oui** : `INCLUDE_GOPASS_SETUP_SECRET = true`
+  - Si **Non** : `INCLUDE_GOPASS_SETUP_SECRET = false`
+
+  `INCLUDE_ENVIRONMENT_SECRETS = true`
+
+- Si **Non** : `INCLUDE_ENVIRONMENT_SECRETS = false` et `INCLUDE_GOPASS_SETUP_SECRET = false`
+
 ### Amélioration de la description
 
 Si l'utilisateur a fourni une `PROJECT_SHORT_DESCRIPTION`, l'agent évalue si elle est suffisante et optimale en termes de :
@@ -94,11 +111,11 @@ Si l'une de ces deux requêtes échoue ou retourne une donnée inutilisable, l'a
 Avant d'écrire quoi que ce soit, l'agent doit vérifier si les fichiers cibles existent déjà dans `TARGET_DIR`.
 Si un ou plusieurs de ces fichiers existent déjà, l'agent doit **prévenir l'utilisateur**, lister les fichiers concernés, et **demander une confirmation explicite** avant d'écraser. Sans confirmation, l'opération s'arrête.
 
-## Génération des fichiers via Copier
+## Génération des fichiers via generate.sh
 
 Une fois les versions récupérées et les conflits résolus (ou confirmés par l'utilisateur) :
 
-1. **Créer un fichier YAML temporaire** `/tmp/opencode/copier-params.yaml` :
+1. **Créer un fichier YAML temporaire** `/tmp/opencode/vars.yaml` :
    ```yaml
    author_name: Stéphane Klein
    project_name: "{{PROJECT_NAME}}"
@@ -107,12 +124,15 @@ Une fois les versions récupérées et les conflits résolus (ou confirmés par 
    use_jujutsu: {{USE_JUJUTSU}}
    last_node_lts_version: "{{LAST_NODE_LTS_VERSION}}"
    last_pnpm_version: "{{LAST_PNPM_VERSION}}"
+   include_environment_secrets: {{INCLUDE_ENVIRONMENT_SECRETS}}
+   include_gopass_setup_secret: {{INCLUDE_GOPASS_SETUP_SECRET}}
    ```
 
-2. **Exécuter Copier** :
+2. **Exécuter generate.sh** :
    ```bash
-   copier copy --data-file /tmp/opencode/copier-params.yaml \
-     /home/sklein/.config/opencode/skill/sklein-create-node-project/template/ \
+   /home/sklein/.config/opencode/skill/sklein-create-node-project/generate.sh \
+     /home/sklein/.config/opencode/skill/sklein-create-node-project/template \
+     /tmp/opencode/vars.yaml \
      "{{TARGET_DIR}}"
    ```
 
