@@ -27,8 +27,6 @@ yazi = "26.5.6"
 "github:11happy/cpx" = "0.1.4"
 "github:mitsuhiko/minijinja" = "2.20.0"
 
-# I use my fork to integrate https://github.com/tobi/try-cli/pull/17 patch
-"github:stephane-klein/try-cli" = "1.5.3-sklein"
 
 # Tooling for OpenCode
 "npm:@upstash/context7-mcp" = "2.2.5"
