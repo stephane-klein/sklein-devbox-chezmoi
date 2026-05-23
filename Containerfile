@@ -44,6 +44,8 @@ RUN dnf copr enable -y atim/starship && \
         htop \
         psmisc \
         sqlite \
+        podman \
+        podman-compose \
         && \
     dnf clean all
 
