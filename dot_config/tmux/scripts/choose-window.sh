@@ -1,14 +1,24 @@
 #!/usr/bin/env bash
 
-readarray -t RESULT < <(
+CURRENT=$(tmux display-message -p '#{window_index}.#{pane_index}')
+
+LIST=$(
   tmux list-panes -a \
     -F '#{window_index}.#{pane_index}	#{window_name}	#{pane_title}' \
-  | column -t -s $'\t' \
+  | column -t -s $'\t'
+)
+
+POS=$(echo "$LIST" | grep -n "^$CURRENT" | cut -d: -f1)
+POS=${POS:-1}
+
+readarray -t RESULT < <(
+  echo "$LIST" \
   | fzf --reverse --prompt="window> " \
         --header="Ctrl-X: kill pane | Ctrl-R: rename window | Enter: select" \
         --preview 'tmux capture-pane -pt {1} -e' \
         --preview-window=right:60% \
         --expect=ctrl-r \
+        --bind "load:pos($POS)" \
         --bind 'ctrl-x:execute-silent(tmux kill-pane -t {1})+reload(tmux list-panes -a -F "#{window_index}.#{pane_index}'$'\t''#{window_name}'$'\t''#{pane_title}")'
 )
 
