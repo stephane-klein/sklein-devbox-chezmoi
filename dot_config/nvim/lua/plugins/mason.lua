@@ -69,6 +69,9 @@ return {
 
         -- Lua
         "lua-language-server",
+
+        -- Sql
+        "sqlfluff"
       },
       auto_update = false,
       run_on_start = false, -- ← Pas d'installation au démarrage
