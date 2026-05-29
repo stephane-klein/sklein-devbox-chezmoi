@@ -33,3 +33,8 @@ Pour les citations, utiliser le format callout Obsidian suivant :
 - Utiliser le callout `> [!quote]` pour encadrer la citation.
 - Indenter le contenu du callout avec deux espaces.
 - Placer la source à la fin du callout sous forme de lien Markdown avec la classe CSS `{.source}`.
+
+## Mentions d'articles et de ressources
+
+- Quand on mentionne un article, un livre ou toute ressource en ligne, toujours inclure un lien direct vers la source (URL).
+- Ne pas se contenter du titre en italique ou du nom de l'auteur.
