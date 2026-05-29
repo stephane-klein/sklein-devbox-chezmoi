@@ -1,11 +1,15 @@
 ---
 name: sklein-issue-writing
-description: "Conventions for writing issues — todo section formatting rules by sklein."
+description: "Conventions for writing issues — todo section formatting rules by sklein"
 ---
 
 # sklein-issue-writing
 
 Issue writing conventions.
+
+## Language
+
+Issues must be written in **English** by default, unless explicitly specified otherwise by the human.
 
 ## Todo (Implementation Plan)
 
