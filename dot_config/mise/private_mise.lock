@@ -87,42 +87,42 @@ checksum = "sha256:b2816e506390a89941c63c9187d58a3cc10e9a55f2ef0685f9ea0eccaf7c9
 url = "https://github.com/sharkdp/fd/releases/download/v10.4.2/fd-v10.4.2-x86_64-pc-windows-msvc.zip"
 
 [[tools.github-cli]]
-version = "2.92.0"
+version = "2.93.0"
 backend = "aqua:cli/cli"
 
 [tools.github-cli."platforms.linux-arm64"]
-checksum = "sha256:c2248526dd0160c08d3fccca2332c3c1a07c15a78b23978e77735f1b5a18cfee"
-url = "https://github.com/cli/cli/releases/download/v2.92.0/gh_2.92.0_linux_arm64.tar.gz"
+checksum = "sha256:c55feb33684abba57e9909737340d5b39282257c0363e1edde6785ac4a413be7"
+url = "https://github.com/cli/cli/releases/download/v2.93.0/gh_2.93.0_linux_arm64.tar.gz"
 provenance = "github-attestations"
 
 [tools.github-cli."platforms.linux-arm64-musl"]
-checksum = "sha256:c2248526dd0160c08d3fccca2332c3c1a07c15a78b23978e77735f1b5a18cfee"
-url = "https://github.com/cli/cli/releases/download/v2.92.0/gh_2.92.0_linux_arm64.tar.gz"
+checksum = "sha256:c55feb33684abba57e9909737340d5b39282257c0363e1edde6785ac4a413be7"
+url = "https://github.com/cli/cli/releases/download/v2.93.0/gh_2.93.0_linux_arm64.tar.gz"
 provenance = "github-attestations"
 
 [tools.github-cli."platforms.linux-x64"]
-checksum = "sha256:b57848131bdf0c229cd35e1f2a51aa718199858b2e728410b37e89a428943ec4"
-url = "https://github.com/cli/cli/releases/download/v2.92.0/gh_2.92.0_linux_amd64.tar.gz"
+checksum = "sha256:02d1290eba130e0b896f3709ffff22e1c75a51475ddb70476a85abc6b5807af0"
+url = "https://github.com/cli/cli/releases/download/v2.93.0/gh_2.93.0_linux_amd64.tar.gz"
 provenance = "github-attestations"
 
 [tools.github-cli."platforms.linux-x64-musl"]
-checksum = "sha256:b57848131bdf0c229cd35e1f2a51aa718199858b2e728410b37e89a428943ec4"
-url = "https://github.com/cli/cli/releases/download/v2.92.0/gh_2.92.0_linux_amd64.tar.gz"
+checksum = "sha256:02d1290eba130e0b896f3709ffff22e1c75a51475ddb70476a85abc6b5807af0"
+url = "https://github.com/cli/cli/releases/download/v2.93.0/gh_2.93.0_linux_amd64.tar.gz"
 provenance = "github-attestations"
 
 [tools.github-cli."platforms.macos-arm64"]
-checksum = "sha256:b11c54f6bd7d15ed6590475079e5b2fcf36f45d3991a80041b29c9d0cc1f1d07"
-url = "https://github.com/cli/cli/releases/download/v2.92.0/gh_2.92.0_macOS_arm64.zip"
+checksum = "sha256:a86be4e0a86c26456cf71177d6572d6f1165cf1679e532b72f7f15918ee51fd2"
+url = "https://github.com/cli/cli/releases/download/v2.93.0/gh_2.93.0_macOS_arm64.zip"
 provenance = "github-attestations"
 
 [tools.github-cli."platforms.macos-x64"]
-checksum = "sha256:ae9bb327ab0d91071bdada79f8f14034a2a0f19b0e001835a782eafa519d2af0"
-url = "https://github.com/cli/cli/releases/download/v2.92.0/gh_2.92.0_macOS_amd64.zip"
+checksum = "sha256:009425b9d175c482037fe25181817fd6b1ea3ae1f51cfae0e18f29f33d3152ac"
+url = "https://github.com/cli/cli/releases/download/v2.93.0/gh_2.93.0_macOS_amd64.zip"
 provenance = "github-attestations"
 
 [tools.github-cli."platforms.windows-x64"]
-checksum = "sha256:b6a8df3c8c6b9c80f290906387673bc4d272840f3789c5650e0e4e6e75522785"
-url = "https://github.com/cli/cli/releases/download/v2.92.0/gh_2.92.0_windows_amd64.zip"
+checksum = "sha256:77aa01ed7317295ad550de0ad04f3f276b1ef0e9272e3d002ac28dd99853d211"
+url = "https://github.com/cli/cli/releases/download/v2.93.0/gh_2.93.0_windows_amd64.zip"
 provenance = "github-attestations"
 
 [[tools."github:11happy/cpx"]]
@@ -415,36 +415,36 @@ version = "3.0.0"
 backend = "npm:@upstash/context7-mcp"
 
 [[tools.opencode]]
-version = "1.15.10"
+version = "1.15.12"
 backend = "aqua:anomalyco/opencode"
 
 [tools.opencode."platforms.linux-arm64"]
-checksum = "sha256:def583a68cb155cddd9523e52139a5b915e981eef17a274c8c8171a3ee828ae2"
-url = "https://github.com/anomalyco/opencode/releases/download/v1.15.10/opencode-linux-arm64.tar.gz"
+checksum = "sha256:ed5181b81e978fa027d9f47cd67f8faebec634223d7f824aa226126188ccbee5"
+url = "https://github.com/anomalyco/opencode/releases/download/v1.15.12/opencode-linux-arm64.tar.gz"
 
 [tools.opencode."platforms.linux-arm64-musl"]
-checksum = "sha256:9637087a44bcdfe07667190c817cec42dc47a7f2fd5289e7d4f607ce6522472f"
-url = "https://github.com/anomalyco/opencode/releases/download/v1.15.10/opencode-linux-arm64-musl.tar.gz"
+checksum = "sha256:7fac9f1d30d0062795a1874b7c0e951b377741236e25384a12a6cdd0aed56890"
+url = "https://github.com/anomalyco/opencode/releases/download/v1.15.12/opencode-linux-arm64-musl.tar.gz"
 
 [tools.opencode."platforms.linux-x64"]
-checksum = "sha256:a4c0c94a7fdbf637e3ae479c046ca49e925370b4cee503dfba7ab677a13cd0c5"
-url = "https://github.com/anomalyco/opencode/releases/download/v1.15.10/opencode-linux-x64.tar.gz"
+checksum = "sha256:ed6f8bce0fea1fb2be789bfe0cfbe7a4a819770e998e32836b0708c015303a67"
+url = "https://github.com/anomalyco/opencode/releases/download/v1.15.12/opencode-linux-x64.tar.gz"
 
 [tools.opencode."platforms.linux-x64-musl"]
-checksum = "sha256:328400235e523888744b4360c72f909b49f329f977a39709c37bbd4c8c3c19c7"
-url = "https://github.com/anomalyco/opencode/releases/download/v1.15.10/opencode-linux-x64-musl.tar.gz"
+checksum = "sha256:f5a95346e3018a28a0b33b8a7976274a0d837468a1a96e685df514bcf942130c"
+url = "https://github.com/anomalyco/opencode/releases/download/v1.15.12/opencode-linux-x64-musl.tar.gz"
 
 [tools.opencode."platforms.macos-arm64"]
-checksum = "sha256:b9074b933e0db458243f7ba20d8c3bf6a85e679b400c62df0eafd3abadd725ed"
-url = "https://github.com/anomalyco/opencode/releases/download/v1.15.10/opencode-darwin-arm64.zip"
+checksum = "sha256:d654f0e3f52bdba560b1aac021e1fec7ef456d21b0f02c3ba8202843e73dbd45"
+url = "https://github.com/anomalyco/opencode/releases/download/v1.15.12/opencode-darwin-arm64.zip"
 
 [tools.opencode."platforms.macos-x64"]
-checksum = "sha256:ef14f611d0c3e68d9488fd0573b3bc2185dfd4ccb27755f8389018dba3f79539"
-url = "https://github.com/anomalyco/opencode/releases/download/v1.15.10/opencode-darwin-x64.zip"
+checksum = "sha256:fba0919515bcda9e742dd7c647a7983f784ca948dec84f29c235a8ad0bcef985"
+url = "https://github.com/anomalyco/opencode/releases/download/v1.15.12/opencode-darwin-x64.zip"
 
 [tools.opencode."platforms.windows-x64"]
-checksum = "sha256:ee069519fea3748385f439a1d9a2ca41a84938d51194a4e8a553afb0b86dc2c5"
-url = "https://github.com/anomalyco/opencode/releases/download/v1.15.10/opencode-windows-x64.zip"
+checksum = "sha256:5cfee78fb675b11cd0777e5342153a784c8bbcb7fc42a35cd33e03d8a2502999"
+url = "https://github.com/anomalyco/opencode/releases/download/v1.15.12/opencode-windows-x64.zip"
 
 [[tools."pipx:copier"]]
 version = "9.15.1"
@@ -487,43 +487,43 @@ checksum = "sha256:124510b94b6baa3380d051fdf4650eaa80a302c876d611e9dba0b2e18d874
 url = "https://github.com/BurntSushi/ripgrep/releases/download/15.1.0/ripgrep-15.1.0-x86_64-pc-windows-msvc.zip"
 
 [[tools.rtk]]
-version = "0.41.0"
+version = "0.42.0"
 backend = "github:rtk-ai/rtk"
 
 [tools.rtk."platforms.linux-arm64"]
-checksum = "sha256:68d6fedfd76f16437eb79cb659169ef8bc3994124486cc71d9479a1b241b7812"
-url = "https://github.com/rtk-ai/rtk/releases/download/v0.41.0/rtk-aarch64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/427742484"
+checksum = "sha256:62bb749df1ed64f09149998c31de864932f047a1be4e0f882a8ceada849e0871"
+url = "https://github.com/rtk-ai/rtk/releases/download/v0.42.0/rtk-aarch64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/428637339"
 
 [tools.rtk."platforms.linux-arm64-musl"]
-checksum = "sha256:68d6fedfd76f16437eb79cb659169ef8bc3994124486cc71d9479a1b241b7812"
-url = "https://github.com/rtk-ai/rtk/releases/download/v0.41.0/rtk-aarch64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/427742484"
+checksum = "sha256:62bb749df1ed64f09149998c31de864932f047a1be4e0f882a8ceada849e0871"
+url = "https://github.com/rtk-ai/rtk/releases/download/v0.42.0/rtk-aarch64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/428637339"
 
 [tools.rtk."platforms.linux-x64"]
-checksum = "sha256:90ae10f5c76de9bacaec5eeeefb6012f74dd47f4e280ec614295555b64da6b57"
-url = "https://github.com/rtk-ai/rtk/releases/download/v0.41.0/rtk-x86_64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/427742482"
+checksum = "sha256:cdd4f87ac97ce958f71b53a991880d6adcc41cc5bca1044175a64630980152be"
+url = "https://github.com/rtk-ai/rtk/releases/download/v0.42.0/rtk-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/428637341"
 
 [tools.rtk."platforms.linux-x64-musl"]
-checksum = "sha256:90ae10f5c76de9bacaec5eeeefb6012f74dd47f4e280ec614295555b64da6b57"
-url = "https://github.com/rtk-ai/rtk/releases/download/v0.41.0/rtk-x86_64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/427742482"
+checksum = "sha256:cdd4f87ac97ce958f71b53a991880d6adcc41cc5bca1044175a64630980152be"
+url = "https://github.com/rtk-ai/rtk/releases/download/v0.42.0/rtk-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/428637341"
 
 [tools.rtk."platforms.macos-arm64"]
-checksum = "sha256:8b9751f927da4fb433be23f24f205bf1c22f9dd6949790c0980d2cc91b14658c"
-url = "https://github.com/rtk-ai/rtk/releases/download/v0.41.0/rtk-aarch64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/427742486"
+checksum = "sha256:cddc9cd11cdf80b3342eebaba0e6ab26d9c8dec45295ea44cf98062987185724"
+url = "https://github.com/rtk-ai/rtk/releases/download/v0.42.0/rtk-aarch64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/428637345"
 
 [tools.rtk."platforms.macos-x64"]
-checksum = "sha256:b2729d9983b38af77824a5c7a3c23de415533be9fb022a5e473904ecc9620db9"
-url = "https://github.com/rtk-ai/rtk/releases/download/v0.41.0/rtk-x86_64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/427742485"
+checksum = "sha256:3b1b9f13548599ae9d920f5e3169cc402db1930044ea24e0be4e236b7f072a99"
+url = "https://github.com/rtk-ai/rtk/releases/download/v0.42.0/rtk-x86_64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/428637340"
 
 [tools.rtk."platforms.windows-x64"]
-checksum = "sha256:8b9b4c9c0e7e4eb33c7dd06eb2a34adefd910c489174dedbb06920240edd6f3a"
-url = "https://github.com/rtk-ai/rtk/releases/download/v0.41.0/rtk-x86_64-pc-windows-msvc.zip"
-url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/427742487"
+checksum = "sha256:527552ec419988ff4a862415ba28d5aa7c1148ef3dc926ae11a4c133e63a7491"
+url = "https://github.com/rtk-ai/rtk/releases/download/v0.42.0/rtk-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/428637344"
 
 [[tools.starship]]
 version = "1.25.1"
@@ -586,42 +586,42 @@ checksum = "sha256:b9b12eaeba43acf5671acf3857d947525440b544185a8db34ea557199a090
 url = "https://github.com/tmux/tmux-builds/releases/download/v3.6a/tmux-3.6a-macos-x86_64.tar.gz"
 
 [[tools.tree-sitter]]
-version = "0.26.8"
+version = "0.26.9"
 backend = "aqua:tree-sitter/tree-sitter"
 
 [tools.tree-sitter."platforms.linux-arm64"]
-checksum = "sha256:e339d6533b20830dd1666fe320aff85d301b3f59964a3836870b77f4827f9a17"
-url = "https://github.com/tree-sitter/tree-sitter/releases/download/v0.26.8/tree-sitter-linux-arm64.gz"
+checksum = "sha256:c8feeb32115958cb44442ca4d68f6d66cf7605dbd65681e62342181ebdd6db3b"
+url = "https://github.com/tree-sitter/tree-sitter/releases/download/v0.26.9/tree-sitter-linux-arm64.gz"
 provenance = "github-attestations"
 
 [tools.tree-sitter."platforms.linux-arm64-musl"]
-checksum = "sha256:e339d6533b20830dd1666fe320aff85d301b3f59964a3836870b77f4827f9a17"
-url = "https://github.com/tree-sitter/tree-sitter/releases/download/v0.26.8/tree-sitter-linux-arm64.gz"
+checksum = "sha256:c8feeb32115958cb44442ca4d68f6d66cf7605dbd65681e62342181ebdd6db3b"
+url = "https://github.com/tree-sitter/tree-sitter/releases/download/v0.26.9/tree-sitter-linux-arm64.gz"
 provenance = "github-attestations"
 
 [tools.tree-sitter."platforms.linux-x64"]
-checksum = "sha256:9754a32800f0b970152782df177b4a47c711e34e651a7aceb384d8bd29fa136e"
-url = "https://github.com/tree-sitter/tree-sitter/releases/download/v0.26.8/tree-sitter-linux-x64.gz"
+checksum = "sha256:9ce82137caa65864e7ca8b869fd391cef88c9bd2a01c4371b9c4dd26c2585efb"
+url = "https://github.com/tree-sitter/tree-sitter/releases/download/v0.26.9/tree-sitter-linux-x64.gz"
 provenance = "github-attestations"
 
 [tools.tree-sitter."platforms.linux-x64-musl"]
-checksum = "sha256:9754a32800f0b970152782df177b4a47c711e34e651a7aceb384d8bd29fa136e"
-url = "https://github.com/tree-sitter/tree-sitter/releases/download/v0.26.8/tree-sitter-linux-x64.gz"
+checksum = "sha256:9ce82137caa65864e7ca8b869fd391cef88c9bd2a01c4371b9c4dd26c2585efb"
+url = "https://github.com/tree-sitter/tree-sitter/releases/download/v0.26.9/tree-sitter-linux-x64.gz"
 provenance = "github-attestations"
 
 [tools.tree-sitter."platforms.macos-arm64"]
-checksum = "sha256:024e2cee34723524d62d41bde4d2b4af23c8bbe0236e116c79c0b37d9575889e"
-url = "https://github.com/tree-sitter/tree-sitter/releases/download/v0.26.8/tree-sitter-macos-arm64.gz"
+checksum = "sha256:e46725b2417c085b0761948abc0cc240bff6a3ab5d2128e3ad0de467ded3388d"
+url = "https://github.com/tree-sitter/tree-sitter/releases/download/v0.26.9/tree-sitter-macos-arm64.gz"
 provenance = "github-attestations"
 
 [tools.tree-sitter."platforms.macos-x64"]
-checksum = "sha256:d0daa279054c1d1cedb08f5ca784b451ceb1f0e6b083b112d07317958ae77fe0"
-url = "https://github.com/tree-sitter/tree-sitter/releases/download/v0.26.8/tree-sitter-macos-x64.gz"
+checksum = "sha256:a57b6044ad739ca3164cc20637db65352ccc9c69e1c34a7cda3e5a62d529b164"
+url = "https://github.com/tree-sitter/tree-sitter/releases/download/v0.26.9/tree-sitter-macos-x64.gz"
 provenance = "github-attestations"
 
 [tools.tree-sitter."platforms.windows-x64"]
-checksum = "sha256:28301a969412066bf4818c30c71d9c313091a9b9dc24b53a14ddda3a8e2cc2bb"
-url = "https://github.com/tree-sitter/tree-sitter/releases/download/v0.26.8/tree-sitter-windows-x64.gz"
+checksum = "sha256:dbb5309fcc76eaeb4ec358fcb72ac2eae5cd653e12967246cc63f84038d16cd8"
+url = "https://github.com/tree-sitter/tree-sitter/releases/download/v0.26.9/tree-sitter-windows-x64.gz"
 provenance = "github-attestations"
 
 [[tools.usage]]
