@@ -1,0 +1,35 @@
+# Agent Instructions
+
+## Project Context
+
+{{ project_short_description }}
+
+## Language Policy
+
+- **All project content must be in English**: source code, comments, commit messages, and documentation.
+- **Human conversations in OpenCode remain in French**.
+
+## Package Manager Policy
+
+- Always use `pnpm` for installing, adding, and removing packages.
+- Never use `npm` or `yarn`.
+
+## Version Control
+
+This project uses **Jujutsu** for version control.
+
+## Database
+
+This project uses **PostgreSQL** as its database, accessed directly with raw SQL — **no ORM**.
+
+SQL queries are executed using the [`postgres`](https://github.com/porsager/postgres) library (package name: `postgres`).
+
+Migrations are managed by [`postgres-shift`](https://github.com/porsager/postgres-shift) and located in `sqls/migrations/`.
+
+The complete schema (consolidated) is written by hand in `sqls/schema.sql`.
+
+{% if use_jujutsu -%}
+## Version Control
+
+This project uses **Jujutsu** for version control.
+{%- endif %}
