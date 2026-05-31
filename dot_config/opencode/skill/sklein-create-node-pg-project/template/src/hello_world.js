@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+// Example script — replace with your actual code
 import { sql, waitForDb } from './db.js';
 
 await waitForDb();

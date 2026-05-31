@@ -28,8 +28,25 @@ Migrations are managed by [`postgres-shift`](https://github.com/porsager/postgre
 
 The complete schema (consolidated) is written by hand in `sqls/schema.sql`.
 
+## Example / Scaffolding Files
+
+The following files are examples meant to be replaced with your actual project code:
+
+- `sqls/migrations/00001_initial/` — example migration (creates a sample `contacts` table)
+- `sqls/fixtures/00001_contacts.sql` — example fixture data
+- `sqls/schema.sql` — example consolidated schema
+- `src/hello_world.js` — example script demonstrating database access
+
+These files are marked with comments (`-- Example` / `// Example`) at the top. Replace or remove them as needed.
+
+> **Remove this entire section once the example files have been replaced or deleted.**
+
 {% if use_jujutsu -%}
 ## Version Control
 
 This project uses **Jujutsu** for version control.
 {%- endif %}
+
+## Documentation Maintenance
+
+Remove from this file any section or reference that becomes obsolete after file deletions or structural changes. Keep AGENTS.md up to date.

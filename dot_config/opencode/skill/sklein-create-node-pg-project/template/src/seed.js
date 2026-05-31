@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+// Utility script — loads and executes all SQL fixture files from sqls/fixtures/
 import { readFileSync, readdirSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { join, dirname } from 'path';
