@@ -76,6 +76,7 @@ alias opencode="TMUX= command opencode"
 alias open-nvim-config="cd ~/.config/nvim; nvim ."
 alias open-nvim-chezmoi="cd ~/.local/share/chezmoi; nvim ."
 alias try="try-rs"
+alias scratch-opencode='(cd ~/scratch && opencode)'
 
 export EDITOR=nvim
 eval "$(zoxide init zsh)"
