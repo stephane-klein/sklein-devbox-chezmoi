@@ -17,6 +17,12 @@ cp "$template_dir/Containerfile" "$target_dir/Containerfile"
 cp "$template_dir/LICENSE" "$target_dir/LICENSE"
 cp "$template_dir/compose.yaml" "$target_dir/compose.yaml"
 cp "$template_dir/entrypoint.sh" "$target_dir/entrypoint.sh"
+minijinja-cli "$template_dir/AGENTS.md.jinja" "$vars_file" > "$target_dir/AGENTS.md"
+minijinja-cli "$template_dir/NEXT_STEPS.md.jinja" "$vars_file" > "$target_dir/NEXT_STEPS.md"
+minijinja-cli "$template_dir/README.md.jinja" "$vars_file" > "$target_dir/README.md"
+minijinja-cli "$template_dir/package.json.jinja" "$vars_file" > "$target_dir/package.json"
+minijinja-cli "$template_dir/.mise.toml.jinja" "$vars_file" > "$target_dir/.mise.toml"
+
 
 mkdir -p "$target_dir/scripts"
 cp "$template_dir/scripts/dump-schema.sh" "$target_dir/scripts/dump-schema.sh"
@@ -39,11 +45,10 @@ cp "$template_dir/src/logger.js" "$target_dir/src/logger.js"
 cp "$template_dir/src/migrate.js" "$target_dir/src/migrate.js"
 cp "$template_dir/src/seed.js" "$target_dir/src/seed.js"
 
-minijinja-cli "$template_dir/AGENTS.md.jinja" "$vars_file" > "$target_dir/AGENTS.md"
-minijinja-cli "$template_dir/NEXT_STEPS.md.jinja" "$vars_file" > "$target_dir/NEXT_STEPS.md"
-minijinja-cli "$template_dir/README.md.jinja" "$vars_file" > "$target_dir/README.md"
-minijinja-cli "$template_dir/package.json.jinja" "$vars_file" > "$target_dir/package.json"
-minijinja-cli "$template_dir/.mise.toml.jinja" "$vars_file" > "$target_dir/.mise.toml"
+mkdir -p "$target_dir/deployment-playground/"
+cp "$template_dir/deployment-playground/README.md" "$target_dir/deployment-playground/README.md"
+minijinja-cli "$template_dird/deployment-playground/.env.jinja" "$vars_file" > "$target_dir/deployment-playground/.env"
+minijinja-cli "$template_dird/deployment-playground/compose.yml.jinja" "$vars_file" > "$target_dir/deployment-playground/compose.yml"
 
 if [ "$include_gopass_setup_secret" = "true" ]; then
   mkdir -p "$target_dir/scripts"
