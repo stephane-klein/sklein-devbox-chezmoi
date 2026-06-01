@@ -2,5 +2,13 @@
   "name": "{{ project_name }}",
   "type": "module",
   "author": "{{ author_name }}",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "lint": "biome lint",
+    "format": "biome format --write",
+    "check": "biome check --write"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "{{ last_biome_version }}"
+  }
 }

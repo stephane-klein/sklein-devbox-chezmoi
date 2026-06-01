@@ -18,6 +18,9 @@ last_node_lts_version: 24.15.0
 # Latest pnpm version
 last_pnpm_version: 11.1.3
 
+# Latest @biomejs/biome version
+last_biome_version: 2.3.11
+
 # Include environment secrets template (.secret)
 include_environment_secrets: true
 
