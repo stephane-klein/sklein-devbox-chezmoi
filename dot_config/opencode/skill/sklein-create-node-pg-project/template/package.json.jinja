@@ -4,12 +4,14 @@
   "author": "{{ author_name }}",
   "license": "MIT",
   "scripts": {
-    "lint": "biome lint",
-    "format": "biome format --write",
     "check": "biome check --write",
-    "sort-package-json": "sort-package-json",
+    "format": "biome format --write",
+    "lint": "biome lint",
+    "lint:pkg": "pnpm npmPkgJsonLint .",
+
     "migrate": "node src/migrate.js",
     "seed": "node src/seed.js",
+
     "hello": "node src/hello_world.js"
   },
   "dependencies": {
@@ -20,6 +22,6 @@
   },
   "devDependencies": {
     "@biomejs/biome": "{{ last_biome_version }}",
-    "sort-package-json": "^3.6.1"
+    "npm-package-json-lint": "{{ last_npm_package_json_lint_version }}"
   }
 }
