@@ -13,3 +13,13 @@ pnpm = "{{ last_pnpm_version }}"
 description = "Generate .secret from scripts/generate-secret.sh via gopass"
 run = "bash scripts/generate-secret.sh > .secret"
 {% endif -%}
+
+[tasks.lint]
+run ="pnpm run lint"
+
+[tasks.format]
+run ="pnpm run format"
+
+[tasks.check]
+run ="pnpm run check"
+
