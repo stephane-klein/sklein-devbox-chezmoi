@@ -1,5 +1,6 @@
 node_modules/
 dist/
+.secret
 NEXT_STEPS.md
 TODO.md
 TASKS.md

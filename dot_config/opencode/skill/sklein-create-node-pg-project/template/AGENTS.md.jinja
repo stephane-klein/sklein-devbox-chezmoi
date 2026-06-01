@@ -14,9 +14,14 @@
 - Always use `pnpm` for installing, adding, and removing packages.
 - Never use `npm` or `yarn`.
 
-## Version Control
+## Code Quality
 
-This project uses **Jujutsu** for version control.
+This project uses [Biome](https://biomejs.dev) for linting and formatting:
+- `pnpm lint` — check for code issues
+- `pnpm format` — auto-format code
+- `pnpm check` — run both (format + lint + organize imports)
+
+Configuration: `biome.jsonc`
 
 ## Database
 

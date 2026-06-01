@@ -10,8 +10,10 @@ include_gopass_setup_secret=$(yq '.include_gopass_setup_secret' "$vars_file")
 mkdir -p "$target_dir"
 
 cp "$template_dir/.containerignore" "$target_dir/.containerignore"
+cp "$template_dir/.editorconfig" "$target_dir/.editorconfig"
 cp "$template_dir/.envrc" "$target_dir/.envrc"
 cp "$template_dir/.gitignore" "$target_dir/.gitignore"
+cp "$template_dir/biome.jsonc" "$target_dir/biome.jsonc"
 cp "$template_dir/.secret.example" "$target_dir/.secret.example"
 cp "$template_dir/Containerfile" "$target_dir/Containerfile"
 cp "$template_dir/LICENSE" "$target_dir/LICENSE"

@@ -105,7 +105,10 @@ Avant toute génération, l'agent doit récupérer dynamiquement :
 2. **Dernière version de pnpm** via `curl -s https://registry.npmjs.org/pnpm/latest | jq -r '.version'` :
    - Exemple de résultat : `10.8.0`
 
-Si l'une de ces deux requêtes échoue ou retourne une donnée inutilisable, l'agent **doit échouer proprement** et informer l'utilisateur que la création du projet est impossible sans les versions à jour.
+3. **Dernière version de Biome** via `curl -s https://registry.npmjs.org/@biomejs/biome/latest | jq -r '.version'` :
+   - Exemple de résultat : `2.3.11`
+
+Si l'une de ces requêtes échoue ou retourne une donnée inutilisable, l'agent **doit échouer proprement** et informer l'utilisateur que la création du projet est impossible sans les versions à jour.
 
 ## Vérification des conflits
 
@@ -123,9 +126,10 @@ Une fois les versions récupérées et les conflits résolus (ou confirmés par 
    project_slug: "{{PROJECT_SLUG}}"
    project_short_description: "{{PROJECT_SHORT_DESCRIPTION}}"
    use_jujutsu: {{USE_JUJUTSU}}
-   last_node_lts_version: "{{LAST_NODE_LTS_VERSION}}"
-   last_pnpm_version: "{{LAST_PNPM_VERSION}}"
-   include_environment_secrets: {{INCLUDE_ENVIRONMENT_SECRETS}}
+    last_node_lts_version: "{{LAST_NODE_LTS_VERSION}}"
+    last_pnpm_version: "{{LAST_PNPM_VERSION}}"
+    last_biome_version: "{{LAST_BIOME_VERSION}}"
+    include_environment_secrets: {{INCLUDE_ENVIRONMENT_SECRETS}}
    include_gopass_setup_secret: {{INCLUDE_GOPASS_SETUP_SECRET}}
    ```
 
