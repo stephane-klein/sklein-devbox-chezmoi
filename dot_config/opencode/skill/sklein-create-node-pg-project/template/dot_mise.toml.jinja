@@ -17,6 +17,15 @@ node = "{{ last_node_lts_version }}"
 pnpm = "{{ last_pnpm_version }}"
 usql = "0.21.4"
 
+[tasks.lint]
+run ="pnpm run lint"
+
+[tasks.format]
+run ="pnpm run format"
+
+[tasks.check]
+run ="pnpm run check"
+
 [tasks.up]
 run = "podman compose up -d"
 
