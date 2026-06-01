@@ -47,8 +47,8 @@ cp "$template_dir/src/seed.js" "$target_dir/src/seed.js"
 
 mkdir -p "$target_dir/deployment-playground/"
 cp "$template_dir/deployment-playground/README.md" "$target_dir/deployment-playground/README.md"
-minijinja-cli "$template_dird/deployment-playground/.env.jinja" "$vars_file" > "$target_dir/deployment-playground/.env"
-minijinja-cli "$template_dird/deployment-playground/compose.yml.jinja" "$vars_file" > "$target_dir/deployment-playground/compose.yml"
+minijinja-cli "$template_dir/deployment-playground/.env.jinja" "$vars_file" > "$target_dir/deployment-playground/.env"
+minijinja-cli "$template_dir/deployment-playground/compose.yml.jinja" "$vars_file" > "$target_dir/deployment-playground/compose.yml"
 
 if [ "$include_gopass_setup_secret" = "true" ]; then
   mkdir -p "$target_dir/scripts"
