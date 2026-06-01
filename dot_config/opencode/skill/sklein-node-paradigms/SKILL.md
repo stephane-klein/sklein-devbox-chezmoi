@@ -27,3 +27,8 @@ Stéphane préfère un style inspiré des paradigmes suivants :
 
 - [Tacit programming / Point-free style](https://en.wikipedia.org/wiki/Tacit_programming) : toujours nommer explicitement les arguments des fonctions.  
   Préférer `[1,2,3].map(n => add1(n))` à `[1,2,3].map(add1)`.
+
+### Code style
+
+- Logique simple en ligne : préférer les expressions inline plutôt que d'extraire des fonctions helper pour des opérations triviales (ex: appels `await sql` simples).
+- Extraire des fonctions uniquement lorsque la réutilisation du code, la lisibilité ou la testabilité en bénéficient réellement.
