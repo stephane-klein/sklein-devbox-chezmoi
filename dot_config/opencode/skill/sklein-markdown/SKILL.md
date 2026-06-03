@@ -88,6 +88,18 @@ Justification : dans une documentation qui mélange fichiers de configuration et
 
 Ils n'ont pas vocation à être copiés/collés en masse. Si un groupe de commandes est fréquemment copié, le remplacer par un script helper (voir `sklein-helper-scripts`).
 
+## Liens vers dossiers
+
+Quand un README liste les dossiers d'un projet, chaque entrée doit être un lien
+cliquable vers le dossier concerné :
+
+```markdown
+- [`01-fedora-minimal-mutable/`](./01-fedora-minimal-mutable/) — Description.
+- [`02-fedora-minimal-bootc/`](./02-fedora-minimal-bootc/) — Description.
+```
+
+Format : `` [`nom-dossier/`](./nom-dossier/) `` — backticks + slash + lien relatif.
+
 ## Scope
 
 Ces conventions s'appliquent à tout Markdown, sauf si le projet concerné définit déjà ses propres conventions de formatage.
