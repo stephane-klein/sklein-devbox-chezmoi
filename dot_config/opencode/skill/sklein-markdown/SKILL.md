@@ -58,6 +58,36 @@ Exemple :
 | Gauche    | Centré    | Droite    |
 ```
 
+## Terminal sessions
+
+### Convention d'affichage
+
+- Les lignes commençant par `$` indiquent une commande utilisateur.
+- Les lignes commençant par `#` indiquent une commande root.
+- Les lignes sans préfixe sont la sortie du terminal.
+- Les commentaires en fin de ligne utilisent `# …`.
+
+```markdown
+$ echo "Hello, world!"
+Hello, world!
+
+$ sudo su
+# systemctl restart nginx
+$ exit
+
+$ uptime # Affiche l'uptime
+```
+
+### Toujours utiliser `$` (y compris sans sortie)
+
+Contrairement à la règle MD014 (omettre `$` quand il n'y a pas de sortie), **toujours préfixer les commandes par `$`**, même si le bloc ne contient que des commandes sans sortie.
+
+Justification : dans une documentation qui mélange fichiers de configuration et commandes, l'absence de `$` crée une ambiguïté entre ce qui est à exécuter et ce qui est de la configuration.
+
+### Ces blocs sont des "screenshots" explicatifs
+
+Ils n'ont pas vocation à être copiés/collés en masse. Si un groupe de commandes est fréquemment copié, le remplacer par un script helper (voir `sklein-helper-scripts`).
+
 ## Scope
 
 Ces conventions s'appliquent à tout Markdown, sauf si le projet concerné définit déjà ses propres conventions de formatage.
