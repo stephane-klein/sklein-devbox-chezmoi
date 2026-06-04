@@ -48,6 +48,7 @@ RUN dnf copr enable -y atim/starship && \
         podman-compose \
         podman-docker \
         rsync \
+        pwgen \
         && \
     dnf clean all
 
