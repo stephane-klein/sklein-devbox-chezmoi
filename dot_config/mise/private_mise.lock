@@ -203,28 +203,28 @@ url = "https://github.com/stephane-klein/try-cli/releases/download/v1.5.3-sklein
 url_api = "https://api.github.com/repos/stephane-klein/try-cli/releases/assets/423482540"
 
 [[tools."github:tassiovirginio/try-rs"]]
-version = "1.7.9"
+version = "1.7.10"
 backend = "github:tassiovirginio/try-rs"
 
 [tools."github:tassiovirginio/try-rs"."platforms.linux-x64"]
-checksum = "sha256:2637594690528c2ebd6fd19e4e4b04d8d89cd2f79911725723c3b62aaf920e32"
-url = "https://github.com/tassiovirginio/try-rs/releases/download/v1.7.9/try-rs-v1.7.9-linux-x86_64.tar.gz"
-url_api = "https://api.github.com/repos/tassiovirginio/try-rs/releases/assets/427244654"
+checksum = "sha256:e478dfb7a1282d2d473299c6bbb7b5e9b44419c036ea4bcff08498460517b7f3"
+url = "https://github.com/tassiovirginio/try-rs/releases/download/v1.7.10/try-rs-v1.7.10-linux-x86_64.tar.gz"
+url_api = "https://api.github.com/repos/tassiovirginio/try-rs/releases/assets/433252547"
 
 [tools."github:tassiovirginio/try-rs"."platforms.linux-x64-musl"]
-checksum = "sha256:2637594690528c2ebd6fd19e4e4b04d8d89cd2f79911725723c3b62aaf920e32"
-url = "https://github.com/tassiovirginio/try-rs/releases/download/v1.7.9/try-rs-v1.7.9-linux-x86_64.tar.gz"
-url_api = "https://api.github.com/repos/tassiovirginio/try-rs/releases/assets/427244654"
+checksum = "sha256:e478dfb7a1282d2d473299c6bbb7b5e9b44419c036ea4bcff08498460517b7f3"
+url = "https://github.com/tassiovirginio/try-rs/releases/download/v1.7.10/try-rs-v1.7.10-linux-x86_64.tar.gz"
+url_api = "https://api.github.com/repos/tassiovirginio/try-rs/releases/assets/433252547"
 
 [tools."github:tassiovirginio/try-rs"."platforms.macos-x64"]
-checksum = "sha256:864b7bf66fb99749fa6a4f4c87a5bdce0ffb478783860aa7f31212fbc9809071"
-url = "https://github.com/tassiovirginio/try-rs/releases/download/v1.7.9/try-rs_1.7.9-1_amd64.deb"
-url_api = "https://api.github.com/repos/tassiovirginio/try-rs/releases/assets/427246701"
+checksum = "sha256:c1780812cf99bc178b117cdfa79421d5e70dfc34f2469b1f2bb63caa16548178"
+url = "https://github.com/tassiovirginio/try-rs/releases/download/v1.7.10/try-rs_1.7.10-1_amd64.deb"
+url_api = "https://api.github.com/repos/tassiovirginio/try-rs/releases/assets/433252729"
 
 [tools."github:tassiovirginio/try-rs"."platforms.windows-x64"]
-checksum = "sha256:2b5ff50d3035096ce06ff95c28109b3520138c059a62a04b600384fbe7225cbc"
-url = "https://github.com/tassiovirginio/try-rs/releases/download/v1.7.9/try-rs-windows-x86_64.exe"
-url_api = "https://api.github.com/repos/tassiovirginio/try-rs/releases/assets/427244983"
+checksum = "sha256:047fe53d31b70075a5f2d5496f4af3ccfc1f60fbf319705a73fe8be32947cb47"
+url = "https://github.com/tassiovirginio/try-rs/releases/download/v1.7.10/try-rs-windows-x86_64.exe"
+url_api = "https://api.github.com/repos/tassiovirginio/try-rs/releases/assets/433253187"
 
 [[tools."github:tobi/try-cli"]]
 version = "1.5.2"
@@ -251,36 +251,37 @@ url = "https://github.com/tobi/try-cli/releases/download/v1.5.2/try-x86_64-linux
 url_api = "https://api.github.com/repos/tobi/try-cli/releases/assets/331169709"
 
 [[tools.go]]
-version = "1.26.2"
+version = "1.26.3"
 backend = "core:go"
 
 [tools.go."platforms.linux-arm64"]
-checksum = "sha256:c958a1fe1b361391db163a485e21f5f228142d6f8b584f6bef89b26f66dc5b23"
-url = "https://dl.google.com/go/go1.26.2.linux-arm64.tar.gz"
+checksum = "sha256:9d89a3ea57d141c2b22d70083f2c8459ba3890f2d9e818e7e933b75614936565"
+url = "https://dl.google.com/go/go1.26.3.linux-arm64.tar.gz"
 
 [tools.go."platforms.linux-arm64-musl"]
-checksum = "sha256:c958a1fe1b361391db163a485e21f5f228142d6f8b584f6bef89b26f66dc5b23"
-url = "https://dl.google.com/go/go1.26.2.linux-arm64.tar.gz"
+checksum = "sha256:9d89a3ea57d141c2b22d70083f2c8459ba3890f2d9e818e7e933b75614936565"
+url = "https://dl.google.com/go/go1.26.3.linux-arm64.tar.gz"
 
 [tools.go."platforms.linux-x64"]
-checksum = "sha256:990e6b4bbba816dc3ee129eaeaf4b42f17c2800b88a2166c265ac1a200262282"
-url = "https://dl.google.com/go/go1.26.2.linux-amd64.tar.gz"
+checksum = "sha256:2b2cfc7148493da5e73981bffbf3353af381d5f93e789c82c79aff64962eb556"
+url = "https://dl.google.com/go/go1.26.3.linux-amd64.tar.gz"
 
 [tools.go."platforms.linux-x64-musl"]
-checksum = "sha256:990e6b4bbba816dc3ee129eaeaf4b42f17c2800b88a2166c265ac1a200262282"
-url = "https://dl.google.com/go/go1.26.2.linux-amd64.tar.gz"
+checksum = "sha256:2b2cfc7148493da5e73981bffbf3353af381d5f93e789c82c79aff64962eb556"
+url = "https://dl.google.com/go/go1.26.3.linux-amd64.tar.gz"
 
 [tools.go."platforms.macos-arm64"]
-checksum = "sha256:32af1522bf3e3ff3975864780a429cc0b41d190ec7bf90faa661d6d64566e7af"
-url = "https://dl.google.com/go/go1.26.2.darwin-arm64.tar.gz"
+checksum = "sha256:875cf54a15311eee2c99b9dd67c68c4a49351d489ab622bf2cfd28c8f2078d3c"
+url = "https://dl.google.com/go/go1.26.3.darwin-arm64.tar.gz"
 
 [tools.go."platforms.macos-x64"]
-checksum = "sha256:bc3f1500d9968c36d705442d90ba91addf9271665033748b82532682e90a7966"
-url = "https://dl.google.com/go/go1.26.2.darwin-amd64.tar.gz"
+checksum = "sha256:278d580b32e299fe4a9c990fcf2d02acfe538c7e551a6ee18f9c7164573d2c63"
+url = "https://dl.google.com/go/go1.26.3.darwin-amd64.tar.gz"
 
 [tools.go."platforms.windows-x64"]
-checksum = "sha256:98eb3570bade15cb826b0909338df6cc6d2cf590bc39c471142002db3832b708"
-url = "https://dl.google.com/go/go1.26.2.windows-amd64.zip"
+checksum = "sha256:20d2ceafb4ed41b96b879010927b28bc92a5be57a7c1801ce365a9ca51d3224a"
+url = "https://dl.google.com/go/go1.26.3.windows-amd64.zip"
+
 
 [[tools.jq]]
 version = "1.8.1"
@@ -322,36 +323,36 @@ url = "https://github.com/jqlang/jq/releases/download/jq-1.8.1/jq-windows-amd64.
 provenance = "github-attestations"
 
 [[tools.jujutsu]]
-version = "0.41.0"
+version = "0.42.0"
 backend = "aqua:jj-vcs/jj"
 
 [tools.jujutsu."platforms.linux-arm64"]
-checksum = "sha256:cd75d0f920b2674147a48eac84ee4594f476fc8f98cd7e358b25750a51622d91"
-url = "https://github.com/jj-vcs/jj/releases/download/v0.41.0/jj-v0.41.0-aarch64-unknown-linux-musl.tar.gz"
+checksum = "sha256:bc962ac57ec264541a62ed8492f080898380a277222b115e1ed96163196e6fc8"
+url = "https://github.com/jj-vcs/jj/releases/download/v0.42.0/jj-v0.42.0-aarch64-unknown-linux-musl.tar.gz"
 
 [tools.jujutsu."platforms.linux-arm64-musl"]
-checksum = "sha256:cd75d0f920b2674147a48eac84ee4594f476fc8f98cd7e358b25750a51622d91"
-url = "https://github.com/jj-vcs/jj/releases/download/v0.41.0/jj-v0.41.0-aarch64-unknown-linux-musl.tar.gz"
+checksum = "sha256:bc962ac57ec264541a62ed8492f080898380a277222b115e1ed96163196e6fc8"
+url = "https://github.com/jj-vcs/jj/releases/download/v0.42.0/jj-v0.42.0-aarch64-unknown-linux-musl.tar.gz"
 
 [tools.jujutsu."platforms.linux-x64"]
-checksum = "sha256:42181a80d316ac157874c817c9945e104275114fb461d99e06e2312502f08f99"
-url = "https://github.com/jj-vcs/jj/releases/download/v0.41.0/jj-v0.41.0-x86_64-unknown-linux-musl.tar.gz"
+checksum = "sha256:2d91e81d649e617a81608e7401ad1106029c15ece01ac928c4a351abef42be6a"
+url = "https://github.com/jj-vcs/jj/releases/download/v0.42.0/jj-v0.42.0-x86_64-unknown-linux-musl.tar.gz"
 
 [tools.jujutsu."platforms.linux-x64-musl"]
-checksum = "sha256:42181a80d316ac157874c817c9945e104275114fb461d99e06e2312502f08f99"
-url = "https://github.com/jj-vcs/jj/releases/download/v0.41.0/jj-v0.41.0-x86_64-unknown-linux-musl.tar.gz"
+checksum = "sha256:2d91e81d649e617a81608e7401ad1106029c15ece01ac928c4a351abef42be6a"
+url = "https://github.com/jj-vcs/jj/releases/download/v0.42.0/jj-v0.42.0-x86_64-unknown-linux-musl.tar.gz"
 
 [tools.jujutsu."platforms.macos-arm64"]
-checksum = "sha256:e84883b4fb42d1e0cb665efae95b44f387603c1280c893f8cbc7bbac7149ea30"
-url = "https://github.com/jj-vcs/jj/releases/download/v0.41.0/jj-v0.41.0-aarch64-apple-darwin.tar.gz"
+checksum = "sha256:98764966f22b599dc0b19bb9bd00d21df86156aeca5827f8274900356768db08"
+url = "https://github.com/jj-vcs/jj/releases/download/v0.42.0/jj-v0.42.0-aarch64-apple-darwin.tar.gz"
 
 [tools.jujutsu."platforms.macos-x64"]
-checksum = "sha256:b40d238bf9de4379be9bfd629cff92cd3ec14e2d072a8f7f7bbb929dac9d22f6"
-url = "https://github.com/jj-vcs/jj/releases/download/v0.41.0/jj-v0.41.0-x86_64-apple-darwin.tar.gz"
+checksum = "sha256:ec04669e9b8decb4b0d63dc050a4275d2b5422efea502a0c208ebd4e53e7d053"
+url = "https://github.com/jj-vcs/jj/releases/download/v0.42.0/jj-v0.42.0-x86_64-apple-darwin.tar.gz"
 
 [tools.jujutsu."platforms.windows-x64"]
-checksum = "sha256:1c5ac3015caf0b15ae81cbafa1d94024dbd17b5dff933204d489787dfb95f835"
-url = "https://github.com/jj-vcs/jj/releases/download/v0.41.0/jj-v0.41.0-x86_64-pc-windows-msvc.zip"
+checksum = "sha256:866461102d87fb49fc67e6e76682635683963eb9fdd05264edda5f1c894d85a6"
+url = "https://github.com/jj-vcs/jj/releases/download/v0.42.0/jj-v0.42.0-x86_64-pc-windows-msvc.zip"
 
 [[tools.neovim]]
 version = "0.12.2"
@@ -411,47 +412,47 @@ checksum = "sha256:6e50ce5498c0cebc20fd39ab3ff5df836ed2f8a31aa093cecad8497cff126
 url = "https://nodejs.org/dist/v24.14.1/node-v24.14.1-win-x64.zip"
 
 [[tools."npm:@upstash/context7-mcp"]]
-version = "3.0.0"
+version = "3.1.0"
 backend = "npm:@upstash/context7-mcp"
 
 [[tools.opencode]]
-version = "1.15.12"
+version = "1.16.2"
 backend = "aqua:anomalyco/opencode"
 
 [tools.opencode."platforms.linux-arm64"]
-checksum = "sha256:ed5181b81e978fa027d9f47cd67f8faebec634223d7f824aa226126188ccbee5"
-url = "https://github.com/anomalyco/opencode/releases/download/v1.15.12/opencode-linux-arm64.tar.gz"
+checksum = "sha256:eb1d5876c70675cfda93c4a1c4385d727412fae73154f1f005d155626df5b559"
+url = "https://github.com/anomalyco/opencode/releases/download/v1.16.2/opencode-linux-arm64.tar.gz"
 
 [tools.opencode."platforms.linux-arm64-musl"]
-checksum = "sha256:7fac9f1d30d0062795a1874b7c0e951b377741236e25384a12a6cdd0aed56890"
-url = "https://github.com/anomalyco/opencode/releases/download/v1.15.12/opencode-linux-arm64-musl.tar.gz"
+checksum = "sha256:549d9e7ba9de70f6bdadb0bc199e4c7d57564b0612311a985fc7dffae3b65fe5"
+url = "https://github.com/anomalyco/opencode/releases/download/v1.16.2/opencode-linux-arm64-musl.tar.gz"
 
 [tools.opencode."platforms.linux-x64"]
-checksum = "sha256:ed6f8bce0fea1fb2be789bfe0cfbe7a4a819770e998e32836b0708c015303a67"
-url = "https://github.com/anomalyco/opencode/releases/download/v1.15.12/opencode-linux-x64.tar.gz"
+checksum = "sha256:06a79c5bb7f8d01716b2440712cf67facd36db59188809aeb232374b206bd429"
+url = "https://github.com/anomalyco/opencode/releases/download/v1.16.2/opencode-linux-x64.tar.gz"
 
 [tools.opencode."platforms.linux-x64-musl"]
-checksum = "sha256:f5a95346e3018a28a0b33b8a7976274a0d837468a1a96e685df514bcf942130c"
-url = "https://github.com/anomalyco/opencode/releases/download/v1.15.12/opencode-linux-x64-musl.tar.gz"
+checksum = "sha256:100a09e77c71d319dfaff781ac06dae159812c03b084efc2ae7b7e4eed49dfe7"
+url = "https://github.com/anomalyco/opencode/releases/download/v1.16.2/opencode-linux-x64-musl.tar.gz"
 
 [tools.opencode."platforms.macos-arm64"]
-checksum = "sha256:d654f0e3f52bdba560b1aac021e1fec7ef456d21b0f02c3ba8202843e73dbd45"
-url = "https://github.com/anomalyco/opencode/releases/download/v1.15.12/opencode-darwin-arm64.zip"
+checksum = "sha256:01585ff4d15820bd3a878e4bc7cacfb1ea75e236d1fed8c2f5f3595edc8b7ab5"
+url = "https://github.com/anomalyco/opencode/releases/download/v1.16.2/opencode-darwin-arm64.zip"
 
 [tools.opencode."platforms.macos-x64"]
-checksum = "sha256:fba0919515bcda9e742dd7c647a7983f784ca948dec84f29c235a8ad0bcef985"
-url = "https://github.com/anomalyco/opencode/releases/download/v1.15.12/opencode-darwin-x64.zip"
+checksum = "sha256:1844bb6cbba789d7bb4e6b417feff73407f864ce68d6fb6d73cb2860870244fc"
+url = "https://github.com/anomalyco/opencode/releases/download/v1.16.2/opencode-darwin-x64.zip"
 
 [tools.opencode."platforms.windows-x64"]
-checksum = "sha256:5cfee78fb675b11cd0777e5342153a784c8bbcb7fc42a35cd33e03d8a2502999"
-url = "https://github.com/anomalyco/opencode/releases/download/v1.15.12/opencode-windows-x64.zip"
+checksum = "sha256:68f276940190e64a0bbee254789e66e0b397a2685700327412096eca1f66308e"
+url = "https://github.com/anomalyco/opencode/releases/download/v1.16.2/opencode-windows-x64.zip"
 
 [[tools."pipx:copier"]]
 version = "9.15.1"
 backend = "pipx:copier"
 
 [[tools."pipx:mcp-server-fetch"]]
-version = "2025.4.7"
+version = "2026.6.4"
 backend = "pipx:mcp-server-fetch"
 
 [[tools."pipx:petname"]]
@@ -487,43 +488,43 @@ checksum = "sha256:124510b94b6baa3380d051fdf4650eaa80a302c876d611e9dba0b2e18d874
 url = "https://github.com/BurntSushi/ripgrep/releases/download/15.1.0/ripgrep-15.1.0-x86_64-pc-windows-msvc.zip"
 
 [[tools.rtk]]
-version = "0.42.0"
+version = "0.42.3"
 backend = "github:rtk-ai/rtk"
 
 [tools.rtk."platforms.linux-arm64"]
-checksum = "sha256:62bb749df1ed64f09149998c31de864932f047a1be4e0f882a8ceada849e0871"
-url = "https://github.com/rtk-ai/rtk/releases/download/v0.42.0/rtk-aarch64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/428637339"
+checksum = "sha256:2b7fa09d06f8dbf334c55482fad2e7ce4a1f8564bc9ed1f65d9f5992db8e5527"
+url = "https://github.com/rtk-ai/rtk/releases/download/v0.42.3/rtk-aarch64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/439464985"
 
 [tools.rtk."platforms.linux-arm64-musl"]
-checksum = "sha256:62bb749df1ed64f09149998c31de864932f047a1be4e0f882a8ceada849e0871"
-url = "https://github.com/rtk-ai/rtk/releases/download/v0.42.0/rtk-aarch64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/428637339"
+checksum = "sha256:2b7fa09d06f8dbf334c55482fad2e7ce4a1f8564bc9ed1f65d9f5992db8e5527"
+url = "https://github.com/rtk-ai/rtk/releases/download/v0.42.3/rtk-aarch64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/439464985"
 
 [tools.rtk."platforms.linux-x64"]
-checksum = "sha256:cdd4f87ac97ce958f71b53a991880d6adcc41cc5bca1044175a64630980152be"
-url = "https://github.com/rtk-ai/rtk/releases/download/v0.42.0/rtk-x86_64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/428637341"
+checksum = "sha256:5df764a633709cb85d248258d085d24ec95faa8bca0e6835a93cd57cadc4eb9e"
+url = "https://github.com/rtk-ai/rtk/releases/download/v0.42.3/rtk-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/439464982"
 
 [tools.rtk."platforms.linux-x64-musl"]
-checksum = "sha256:cdd4f87ac97ce958f71b53a991880d6adcc41cc5bca1044175a64630980152be"
-url = "https://github.com/rtk-ai/rtk/releases/download/v0.42.0/rtk-x86_64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/428637341"
+checksum = "sha256:5df764a633709cb85d248258d085d24ec95faa8bca0e6835a93cd57cadc4eb9e"
+url = "https://github.com/rtk-ai/rtk/releases/download/v0.42.3/rtk-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/439464982"
 
 [tools.rtk."platforms.macos-arm64"]
-checksum = "sha256:cddc9cd11cdf80b3342eebaba0e6ab26d9c8dec45295ea44cf98062987185724"
-url = "https://github.com/rtk-ai/rtk/releases/download/v0.42.0/rtk-aarch64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/428637345"
+checksum = "sha256:d47823afb25919e4e60838c5622e88ffa6536bc0b36a34a3f928bdccac40f614"
+url = "https://github.com/rtk-ai/rtk/releases/download/v0.42.3/rtk-aarch64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/439464983"
 
 [tools.rtk."platforms.macos-x64"]
-checksum = "sha256:3b1b9f13548599ae9d920f5e3169cc402db1930044ea24e0be4e236b7f072a99"
-url = "https://github.com/rtk-ai/rtk/releases/download/v0.42.0/rtk-x86_64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/428637340"
+checksum = "sha256:7c72d05cfc71b7e2f20755b3754b728acecc7c0b1fbbb08757828f9e7bedd81a"
+url = "https://github.com/rtk-ai/rtk/releases/download/v0.42.3/rtk-x86_64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/439464984"
 
 [tools.rtk."platforms.windows-x64"]
-checksum = "sha256:527552ec419988ff4a862415ba28d5aa7c1148ef3dc926ae11a4c133e63a7491"
-url = "https://github.com/rtk-ai/rtk/releases/download/v0.42.0/rtk-x86_64-pc-windows-msvc.zip"
-url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/428637344"
+checksum = "sha256:334d05a6662576a84a78b771aee0749202eacabd87acbb9fd266e6a5466f700a"
+url = "https://github.com/rtk-ai/rtk/releases/download/v0.42.3/rtk-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/439464987"
 
 [[tools.starship]]
 version = "1.25.1"
@@ -625,74 +626,74 @@ url = "https://github.com/tree-sitter/tree-sitter/releases/download/v0.26.9/tree
 provenance = "github-attestations"
 
 [[tools.usage]]
-version = "3.3.0"
+version = "3.4.0"
 backend = "aqua:jdx/usage"
 
 [tools.usage."platforms.linux-arm64"]
-checksum = "sha256:55a0c94c35bb9e2c5cbc223973667cd450759cd3410d4c5836ef2fdfd95adc57"
-url = "https://github.com/jdx/usage/releases/download/v3.3.0/usage-aarch64-unknown-linux-musl.tar.gz"
+checksum = "sha256:5cea2993383ccbbdbf9693bec484c47fc3cbcff75ec167618e1e775e5df9ba19"
+url = "https://github.com/jdx/usage/releases/download/v3.4.0/usage-aarch64-unknown-linux-musl.tar.gz"
 
 [tools.usage."platforms.linux-arm64-musl"]
-checksum = "sha256:55a0c94c35bb9e2c5cbc223973667cd450759cd3410d4c5836ef2fdfd95adc57"
-url = "https://github.com/jdx/usage/releases/download/v3.3.0/usage-aarch64-unknown-linux-musl.tar.gz"
+checksum = "sha256:5cea2993383ccbbdbf9693bec484c47fc3cbcff75ec167618e1e775e5df9ba19"
+url = "https://github.com/jdx/usage/releases/download/v3.4.0/usage-aarch64-unknown-linux-musl.tar.gz"
 
 [tools.usage."platforms.linux-x64"]
-checksum = "sha256:9a4316d633243aa54308ff3bf6970923b18c105dea34fbc3009d51889e1dd03f"
-url = "https://github.com/jdx/usage/releases/download/v3.3.0/usage-x86_64-unknown-linux-musl.tar.gz"
+checksum = "sha256:1a54260df50f1764bc8cbabf8763f2a6314c5025d3b06b512d02898eb28768b3"
+url = "https://github.com/jdx/usage/releases/download/v3.4.0/usage-x86_64-unknown-linux-musl.tar.gz"
 
 [tools.usage."platforms.linux-x64-musl"]
-checksum = "sha256:9a4316d633243aa54308ff3bf6970923b18c105dea34fbc3009d51889e1dd03f"
-url = "https://github.com/jdx/usage/releases/download/v3.3.0/usage-x86_64-unknown-linux-musl.tar.gz"
+checksum = "sha256:1a54260df50f1764bc8cbabf8763f2a6314c5025d3b06b512d02898eb28768b3"
+url = "https://github.com/jdx/usage/releases/download/v3.4.0/usage-x86_64-unknown-linux-musl.tar.gz"
 
 [tools.usage."platforms.macos-arm64"]
-checksum = "sha256:ab6c69a6541e18ffca7bd950dd4cc867ea9267d0f91115c13aa650cde6634d62"
-url = "https://github.com/jdx/usage/releases/download/v3.3.0/usage-universal-apple-darwin.tar.gz"
+checksum = "sha256:e9f7cd9038fec6352eaa001903414edc95bb77386a9573fde21be17991f3f719"
+url = "https://github.com/jdx/usage/releases/download/v3.4.0/usage-universal-apple-darwin.tar.gz"
 
 [tools.usage."platforms.macos-x64"]
-checksum = "sha256:ab6c69a6541e18ffca7bd950dd4cc867ea9267d0f91115c13aa650cde6634d62"
-url = "https://github.com/jdx/usage/releases/download/v3.3.0/usage-universal-apple-darwin.tar.gz"
+checksum = "sha256:e9f7cd9038fec6352eaa001903414edc95bb77386a9573fde21be17991f3f719"
+url = "https://github.com/jdx/usage/releases/download/v3.4.0/usage-universal-apple-darwin.tar.gz"
 
 [tools.usage."platforms.windows-x64"]
-checksum = "sha256:628b8743d552f2cff2dee2b783a4827ef555409def3fb9ec536117d96cda2018"
-url = "https://github.com/jdx/usage/releases/download/v3.3.0/usage-x86_64-pc-windows-msvc.zip"
+checksum = "sha256:2272ad0d264b99986ef8e3d537f774f046db5fe096e8a9375fbb1482f0934e8c"
+url = "https://github.com/jdx/usage/releases/download/v3.4.0/usage-x86_64-pc-windows-msvc.zip"
 
 [[tools.uv]]
-version = "0.11.8"
+version = "0.11.17"
 backend = "aqua:astral-sh/uv"
 
 [tools.uv."platforms.linux-arm64"]
-checksum = "sha256:29418befb64f926a2dba3473e8e69acd00b36fb845d85344ef11321a993ad8f5"
-url = "https://github.com/astral-sh/uv/releases/download/0.11.8/uv-aarch64-unknown-linux-musl.tar.gz"
+checksum = "sha256:9e5eaf16ffad968fc689f18c2733ace914ed417d4e5572e92d807fd51a90228c"
+url = "https://github.com/astral-sh/uv/releases/download/0.11.17/uv-aarch64-unknown-linux-musl.tar.gz"
 provenance = "github-attestations"
 
 [tools.uv."platforms.linux-arm64-musl"]
-checksum = "sha256:29418befb64f926a2dba3473e8e69acd00b36fb845d85344ef11321a993ad8f5"
-url = "https://github.com/astral-sh/uv/releases/download/0.11.8/uv-aarch64-unknown-linux-musl.tar.gz"
+checksum = "sha256:9e5eaf16ffad968fc689f18c2733ace914ed417d4e5572e92d807fd51a90228c"
+url = "https://github.com/astral-sh/uv/releases/download/0.11.17/uv-aarch64-unknown-linux-musl.tar.gz"
 provenance = "github-attestations"
 
 [tools.uv."platforms.linux-x64"]
-checksum = "sha256:de82507d12e31cfc86c1c776238f7c248e48e40d996dedc812d64fdd31c6ed12"
-url = "https://github.com/astral-sh/uv/releases/download/0.11.8/uv-x86_64-unknown-linux-musl.tar.gz"
+checksum = "sha256:4231a429d4e0f7c1937d8916658c08a7706cd7872afebeb87203a18c2e0dc28e"
+url = "https://github.com/astral-sh/uv/releases/download/0.11.17/uv-x86_64-unknown-linux-musl.tar.gz"
 provenance = "github-attestations"
 
 [tools.uv."platforms.linux-x64-musl"]
-checksum = "sha256:de82507d12e31cfc86c1c776238f7c248e48e40d996dedc812d64fdd31c6ed12"
-url = "https://github.com/astral-sh/uv/releases/download/0.11.8/uv-x86_64-unknown-linux-musl.tar.gz"
+checksum = "sha256:4231a429d4e0f7c1937d8916658c08a7706cd7872afebeb87203a18c2e0dc28e"
+url = "https://github.com/astral-sh/uv/releases/download/0.11.17/uv-x86_64-unknown-linux-musl.tar.gz"
 provenance = "github-attestations"
 
 [tools.uv."platforms.macos-arm64"]
-checksum = "sha256:c729adb365114e844dd7f9316313a7ed6443b89bb5681d409eebac78b0bd06c8"
-url = "https://github.com/astral-sh/uv/releases/download/0.11.8/uv-aarch64-apple-darwin.tar.gz"
+checksum = "sha256:2a162f6b90ff3691a2f9cae1622e066a3ce592e110f66670cdcc841324b28226"
+url = "https://github.com/astral-sh/uv/releases/download/0.11.17/uv-aarch64-apple-darwin.tar.gz"
 provenance = "github-attestations"
 
 [tools.uv."platforms.macos-x64"]
-checksum = "sha256:c59d73bf34b58bc8e33a11629f7a255c11789fd00f03cd3e68ab2d1603645de9"
-url = "https://github.com/astral-sh/uv/releases/download/0.11.8/uv-x86_64-apple-darwin.tar.gz"
+checksum = "sha256:6c66e41eaf4d15abeda58d3f268161b6e3f742d98390341b174a7cfc1b48841d"
+url = "https://github.com/astral-sh/uv/releases/download/0.11.17/uv-x86_64-apple-darwin.tar.gz"
 provenance = "github-attestations"
 
 [tools.uv."platforms.windows-x64"]
-checksum = "sha256:c84629a56e0706b69a47ea35862208af827cb6fbfa1d0ca763c52c67594637e8"
-url = "https://github.com/astral-sh/uv/releases/download/0.11.8/uv-x86_64-pc-windows-msvc.zip"
+checksum = "sha256:35fc29e03e62f3cda769bc12773f3cb70ce305d0d36c0d8bd0c117dd0b3fcd14"
+url = "https://github.com/astral-sh/uv/releases/download/0.11.17/uv-x86_64-pc-windows-msvc.zip"
 provenance = "github-attestations"
 
 [[tools.yazi]]
