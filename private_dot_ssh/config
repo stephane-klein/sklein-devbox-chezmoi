@@ -1,3 +1,8 @@
+AddKeysToAgent yes
+
+Identityfile ~/.ssh/stephane-klein-devbox
+IdentityFile ~/.ssh/id_rsa_2016
+
 Host github.com
     HostName github.com
     User git
