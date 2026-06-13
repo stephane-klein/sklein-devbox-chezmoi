@@ -51,6 +51,7 @@ RUN dnf copr enable -y atim/starship && \
         rsync \
         pwgen \
         oils-for-unix \
+        openssl \
         && \
     dnf clean all
 
