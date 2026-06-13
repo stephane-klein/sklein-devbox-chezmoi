@@ -3,7 +3,7 @@ lockfile = true
 
 [tools]
 starship = "1.25.1"
-opencode = "1.16.2"
+opencode = "1.17.4"
 ripgrep = "15.1.0"
 fd = "10.4.2"
 tmux = "3.6a"
@@ -11,25 +11,25 @@ jujutsu = "0.42.0"
 node = "24.14.1"
 uv = "latest"
 go = "latest"
-neovim = "0.12.2"
+neovim = "0.12.3"
 tree-sitter = "0.26.9"
-usage = "3.4.0"
+usage = "3.5.0"
 atuin = "18.16.1"
 delta = "0.19.2"
-rtk = "0.42.3"
-github-cli = "2.93.0"
+rtk = "0.42.4"
+github-cli = "2.94.0"
 zoxide = "0.9.9"
 jq = "1.8.1"
-yq = "4.53.2"
+yq = "4.53.3"
 yazi = "26.5.6"
-"pipx:copier" = "9.15.1"
-"github:tassiovirginio/try-rs" = "1.7.10"
+"pipx:copier" = "9.15.2"
+"github:tassiovirginio/try-rs" = "1.7.11"
 "github:11happy/cpx" = "0.1.4"
 "github:mitsuhiko/minijinja" = "2.20.0"
 
 
 # Tooling for OpenCode
-"npm:@upstash/context7-mcp" = "3.1.0"
+"npm:@upstash/context7-mcp" = "3.2.0"
 "pipx:mcp-server-fetch" = "2026.6.4"
 
 # Tooling for Tmux
