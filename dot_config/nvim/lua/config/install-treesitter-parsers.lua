@@ -15,10 +15,23 @@ local parsers = {
   "sql",
   -- Script / Utils
   "bash", "regex", "luap", "luadoc", "printf",
+  -- Oils (YSH)
+  "ysh",
   -- System
   "c",
   -- Git
   "git_config", "git_rebase", "gitignore", "gitattributes", "gitcommit", "diff",
+}
+
+-- Register custom parsers
+local parser_configs = require("nvim-treesitter.parsers")
+parser_configs.ysh = {
+  install_info = {
+    url = "https://github.com/danyspin97/tree-sitter-ysh",
+    files = { "src/parser.c", "src/scanner.c" },
+    branch = "main",
+  },
+  filetype = "ysh",
 }
 
 print("Installing Treesitter parsers: " .. table.concat(parsers, ", "))
