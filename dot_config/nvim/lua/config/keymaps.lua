@@ -70,3 +70,9 @@ vim.keymap.set("n", "<Leader><Leader>z", function() Snacks.zen.zoom() end, { des
 vim.keymap.set('n', 'q', '<Nop>', { desc = 'Disable macro recording' })
 
 vim.keymap.set("n", "<leader>sj", function() require("snacks").picker.jumps() end, { desc = "Jump List" })
+
+vim.keymap.set("n", "<leader>yp", function()
+  local path = vim.fn.expand("%:p")
+  vim.fn.setreg("+", path)
+  vim.notify('Copied: ' .. path)
+end, { desc = "Copy current file absolute path" })
