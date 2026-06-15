@@ -11,7 +11,7 @@ FROM fedora:43
 # gcc package for Neovim Treesitter support
 RUN dnf copr enable -y atim/starship && \
     dnf copr enable -y jdxcode/mise && \
-    dnf copr enable -ytkbcopr/oils-for-unix && \
+    dnf copr enable -y tkbcopr/oils-for-unix && \
     dnf update -y && \
     dnf install -y \
         procps-ng \
