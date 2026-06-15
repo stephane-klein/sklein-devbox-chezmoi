@@ -1,9 +1,9 @@
 #!/bin/sh
 set -e
 
-# Clean up stale gopass-agent socket from previous container stop
-# (gopass starts its agent on-demand, the socket may be stale)
+# Clean up stale sockets from previous container stop
 rm -f /tmp/user/1000/gopass/gopass-age-agent.sock
+rm -f /tmp/ssh-agent.sock
 
 # Run one-time initialization scripts
 for script in /etc/entrypoint-init.d/*; do

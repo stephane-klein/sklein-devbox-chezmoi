@@ -28,6 +28,7 @@ mkdir -p /home/sklein/.config/sklein-devbox
     [ -S "/tmp/dbus-remote.sock" ] && echo "export DBUS_SESSION_BUS_ADDRESS='unix:path=/tmp/dbus-remote.sock'"
     [ -S "/tmp/pulse-remote.sock" ] && echo "export PULSE_SERVER='unix:/tmp/pulse-remote.sock'"
     [ -S "/run/user/1000/podman/podman.sock" ] && echo "export CONTAINER_HOST='unix:///run/user/1000/podman/podman.sock'"
+    echo "export SSH_AUTH_SOCK='/tmp/ssh-agent.sock'"
 } > /home/sklein/.config/sklein-devbox/env
 chown sklein:sklein /home/sklein/.config/sklein-devbox/env
 echo "[entrypoint-init] 03-setup-user-env: environment variables saved"
