@@ -52,6 +52,7 @@ RUN dnf copr enable -y atim/starship && \
         pwgen \
         oils-for-unix \
         openssl \
+        dig \
         && \
     dnf clean all
 
