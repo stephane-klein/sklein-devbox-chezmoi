@@ -75,6 +75,8 @@ fi
 alias opencode='OPENCODE_GO_WORKSPACE_ID=$(gopass show -o opencode-go/workspace) OPENCODE_GO_AUTH_COOKIE=$(gopass show -o opencode-go/auth_cookie) TMUX= command opencode'
 alias open-nvim-config="cd ~/.config/nvim; nvim ."
 alias open-nvim-chezmoi="cd ~/.local/share/chezmoi; nvim ."
+alias open-opencode-skill="cd ~/.config/opencode/skill/; nvim ."
+alias goto-opencode-skill="cd ~/.config/opencode/skill/"
 alias try="try-rs"
 alias scratch-opencode='(cd ~/scratch && opencode)'
 
