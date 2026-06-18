@@ -72,7 +72,7 @@ if [[ -n "$TMUX_PANE" ]]; then
   tmux select-pane -t "$TMUX_PANE" -T "$PWD"
 fi
 
-alias opencode="TMUX= command opencode"
+alias opencode='OPENCODE_GO_WORKSPACE_ID=$(gopass show -o opencode-go/workspace) OPENCODE_GO_AUTH_COOKIE=$(gopass show -o opencode-go/auth_cookie) TMUX= command opencode'
 alias open-nvim-config="cd ~/.config/nvim; nvim ."
 alias open-nvim-chezmoi="cd ~/.local/share/chezmoi; nvim ."
 alias try="try-rs"
