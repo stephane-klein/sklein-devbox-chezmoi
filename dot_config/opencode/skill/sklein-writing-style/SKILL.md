@@ -13,6 +13,8 @@ Conventions de style pour toute rédaction (notes, issues, documentation, messag
 - Écrire en première personne, de manière incarnée. Le « je » est le bienvenu.
 - Être direct et concis.
 - Pas de style marketing, pas de langage publicitaire.
+- **Vouvoiement** : utiliser le vouvoiement sur sklein.xyz et notes.sklein.xyz. Ailleurs, s'adapter au contexte.
+- **Anglais** : le tutoiement/vouvoiement ne se pose pas, utiliser "you" par défaut.
 
 ## Narrer le processus intellectuel
 
@@ -25,6 +27,14 @@ Principe : écrire comme on pense, pas comme on conclut.
 - Si un point n'est pas compris du tout, le dire.
 
 **Contraste sain** (ce qu'on ne veut pas) : un texte qui donne l'impression que tout était déjà clair avant d'écrire, que l'auteur survole le sujet d'un regard omniscient.
+
+## Structure skimmable
+
+Organiser le contenu pour la lecture rapide :
+
+- Des titres descriptifs et des liens ancrés sur les titres pour partager directement au bon endroit.
+- Ne pas enfouir les idées dans de la prose : un lecteur doit pouvoir trouver une réponse précise sans tout lire.
+- La structure (headers, sections) est une aide à la navigation — elle ne doit pas être doublée par une rhétorique de plan annoncé dans la prose (cf. `tone-analyzer`).
 
 ## Marqueurs de modestie épistémique
 
@@ -60,6 +70,8 @@ Pour une analyse fine, utiliser le skill **tone-analyzer**.
 
 - Privilégier la communication explicite.
 - Les répétitions de pronoms sont acceptables si elles améliorent la compréhension.
+- **Exemples** : un ou deux exemples concrets valent mieux qu'une définition formelle quand un point peut être ambigu. Ne pas en forcer là où le texte est déjà clair sans — l'exemple doit éclairer, pas décorer.
+- **Acronymes** : définir ou linker les acronymes à leur première occurrence.
 
 ## Terminologie
 
