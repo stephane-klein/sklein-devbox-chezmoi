@@ -32,6 +32,7 @@ yazi = "26.5.6"
 "npm:@upstash/context7-mcp" = "3.2.1"
 "pipx:mcp-server-fetch" = "2026.6.4"
 "npm:tavily-mcp" = "0.2.20"
+"npm:exa-mcp-server" = "3.2.1"
 
 # Tooling for Tmux
 "pipx:petname" = "latest"

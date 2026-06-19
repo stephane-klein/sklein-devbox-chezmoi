@@ -29,6 +29,14 @@
         "DEFAULT_PARAMETERS": "{\"include_images\": false, \"max_results\": 15, \"search_depth\": \"advanced\"}"
       },
       "enabled": true,
+    },
+    "exa": {
+      "type": "local",
+      "command": ["mise", "exec", "--cd", "/", "--", "exa-mcp-server"],
+      "enabled": false,
+      "environment": {
+        "EXA_API_KEY": "{{ gopass "exa.ia/opencode-devbox/apikey" }}"
+      }
     }
   },
   "plugin": [
