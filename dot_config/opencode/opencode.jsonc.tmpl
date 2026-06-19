@@ -20,10 +20,19 @@
       "type": "local",
       "command": ["mise", "exec", "--cd", "/", "--", "context7-mcp", "--api-key", "{{ gopass "context7/apikey"}}"],
       "enabled": true,
+    },
+    "tavily": {
+      "type": "local",
+      "command": ["mise", "exec", "--cd", "/", "--", "tavily-mcp"],
+      "environment": {
+        "TAVILY_API_KEY": "{{ gopass "tavily/apikey" }}",
+        "DEFAULT_PARAMETERS": "{\"include_images\": false, \"max_results\": 15, \"search_depth\": \"advanced\"}"
+      },
+      "enabled": true,
     }
   },
   "plugin": [
-    "@mohak34/opencode-notifier@0.2.4",
+    "@mohak34/opencode-notifier@0.2.8",
     "@slkiser/opencode-quota@3.10.1"
   ]
 }
