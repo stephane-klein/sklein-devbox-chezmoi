@@ -46,6 +46,8 @@ Poser ces questions **dans l'ordre**, et s'arrêter dès qu'une réponse est "no
 
 **1.5 — La librairie est-elle en bonne santé ?**
 > - Maintenance active (commits récents, issues traitées) ?
+> - Date de création du projet ? Survivre plusieurs années est un bon signal ;
+>   un projet trop récent n'a pas fait ses preuves dans la durée.
 > - Licence compatible avec le projet ?
 > - Dépendances transitives acceptables (pas de chaîne leftpad) ?
 > - Communauté ou sponsor pérenne ?
@@ -127,7 +129,7 @@ Une fois que l'ajout est justifié (section 1), comparer les candidates sur :
 Ces signaux doivent déclencher une pause et un questionnement explicite :
 
 - "Tout le monde utilise X" → suspicion de cargo cult
-- "X vient de sortir et monte vite sur GitHub" → suspicion de hype
+- "X vient de sortir et monte vite sur GitHub" → suspicion de hype (projet trop jeune)
 - La documentation de X est un livre → suspicion de complexité accidentelle embarquée
 - X résout un problème que je n'ai pas encore eu → YAGNI
 - X est la "bonne pratique" dans cet écosystème → challenger pourquoi
