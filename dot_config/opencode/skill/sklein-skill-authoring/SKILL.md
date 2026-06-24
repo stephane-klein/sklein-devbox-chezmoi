@@ -7,6 +7,8 @@ description: Guide pour la création de nouveaux skills
 
 ## Langue
 
-Les skills globaux sont rédigés en **français** par défaut.
+Les skills globaux (dans `~/.config/opencode/skill/`) sont rédigés en **français** par défaut.
 
-Exception : uniquement si l'utilisateur le demande explicitement lors de la création du skill.
+Exception : les skills locaux au projet (dans `.opencode/skills/<name>/`) sont rédigés en **anglais**.
+
+Autre exception : uniquement si l'utilisateur le demande explicitement lors de la création du skill.
