@@ -2,8 +2,8 @@
 lockfile = true
 
 [tools]
-starship = "1.25.1"
-opencode = "1.17.10"
+starship = "1.26.0"
+opencode = "1.17.11"
 ripgrep = "15.1.0"
 fd = "10.4.2"
 tmux = "3.6a"
@@ -12,7 +12,7 @@ node = "24.14.1"
 uv = "latest"
 go = "latest"
 neovim = "0.12.3"
-tree-sitter = "0.26.9"
+tree-sitter = "0.26.10"
 usage = "3.5.3"
 atuin = "18.16.1"
 delta = "0.19.2"
