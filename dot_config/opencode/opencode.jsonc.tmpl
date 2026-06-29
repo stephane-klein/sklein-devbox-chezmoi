@@ -37,20 +37,20 @@
       "environment": {
         "EXA_API_KEY": "{{ gopass "exa.ia/opencode-devbox/apikey" }}"
       }
+    },
+    "hindsight": {
+      "enabled": true,
+      "type": "remote",
+      "url": "https://api.hindsight.sklein.internal/mcp/default/",
+      "headers": {
+        "Authorization": "Bearer {{ gopass "hindsight/mcp_token" }}"
+      }
     }
   },
   "plugin": [
     "@mohak34/opencode-notifier@0.2.8",
     "@slkiser/opencode-quota@3.10.1",
     "cc-safety-net@1.0.6",
-    "opencode-vibeguard@0.1.0",
-    [
-      "@vectorize-io/opencode-hindsight@0.2.6",
-      {
-        "hindsightApiUrl": "https://api.hindsight.sklein.internal",
-        "hindsightApiToken": "{{ gopass "hindsight/mcp_token" }}",
-        "bankId": "default"
-      }
-    ]
+    "opencode-vibeguard@0.1.0"
   ]
 }
