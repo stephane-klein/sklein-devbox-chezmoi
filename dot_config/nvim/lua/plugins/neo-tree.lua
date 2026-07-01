@@ -68,6 +68,7 @@ local function refresh_jj_status()
           git.worktrees[jj_root] = {
             status = {},
             status_diff = {},
+            status_progress = {},
           }
         end
 
@@ -143,6 +144,7 @@ return {
       vim.cmd([[Neotree close]])
     end,
     init = function()
+      require("scripts.patch-neo-tree")()
       vim.api.nvim_create_autocmd("BufEnter", {
         group = vim.api.nvim_create_augroup("Neotree_start_directory", { clear = true }),
         desc = "Start Neo-tree with directory",
