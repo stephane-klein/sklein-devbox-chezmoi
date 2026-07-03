@@ -3,11 +3,11 @@ lockfile = true
 
 [tools]
 starship = "1.26.0"
-opencode = "1.17.11"
+opencode = "1.17.13"
 ripgrep = "15.1.0"
 fd = "10.4.2"
-tmux = "3.6a"
-jujutsu = "0.42.0"
+tmux = "3.7b"
+jujutsu = "0.43.0"
 node = "24.14.1"
 uv = "latest"
 go = "latest"
