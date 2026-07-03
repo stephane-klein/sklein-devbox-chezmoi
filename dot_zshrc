@@ -19,7 +19,7 @@ eval "$(mise activate zsh 2>/dev/null)"
 
 # Atuin - advanced history with pwd, duration, and context
 if command -v atuin &> /dev/null; then
-    eval "$(atuin init zsh)"
+    eval "$(atuin init zsh --disable-up-arrow)"
 fi
 
 # History: 2 years limit (~730000 commands) - fallback compatibility
