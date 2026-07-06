@@ -1,0 +1,24 @@
+#!/bin/sh
+
+sudo mkdir -p /etc/pitchfork/
+cat <<EOF | sudo tee /etc/pitchfork/config.toml > /dev/null
+#:schema https://pitchfork.jdx.dev/schema.json
+namespace = "global"
+
+[settings.supervisor]
+container = true
+
+[daemons.sshd]
+run = """
+exec /usr/sbin/sshd -D -e -p "${SKLEIN_DEVBOX_SSH_PORT:-2222}"
+"""
+retry = true
+boot_start = true
+
+[daemons.ssh-agent]
+run = """
+/usr/bin/ssh-agent -D -t 86400 -a /tmp/ssh-agent.sock
+"""
+retry = true
+boot_start = true
+EOF

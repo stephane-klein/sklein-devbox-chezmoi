@@ -12,5 +12,6 @@ for script in /etc/entrypoint-init.d/*; do
     fi
 done
 
-export PEBBLE=/var/lib/pebble
-exec /usr/local/bin/pebble run
+export PITCHFORK_STATE_DIR="/run/pitchfork-state/"
+sudo mkdir -m 777 -p $PITCHFORK_STATE_DIR
+pitchfork supervisor run --container --boot

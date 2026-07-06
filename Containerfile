@@ -77,14 +77,6 @@ RUN curl -sSL "https://github.com/stephane-klein/gopass/releases/download/1.16.2
     mv /tmp/gopass /usr/local/bin/gopass && \
     rm -rf /tmp/gopass*
 
-# Install pebble
-ARG PEBBLE_VERSION=1.30.1
-RUN curl -sSL "https://github.com/canonical/pebble/releases/download/v${PEBBLE_VERSION}/pebble_v${PEBBLE_VERSION}_linux_amd64.tar.gz" \
-        -o /tmp/pebble.tar.gz && \
-    tar -xzf /tmp/pebble.tar.gz -C /tmp && \
-    mv /tmp/pebble /usr/local/bin/pebble && \
-    rm -rf /tmp/pebble*
-
 # Install neovim
 ARG NEOVIM_VERSION=0.12.1
 RUN curl -sSL "https://github.com/neovim/neovim/releases/download/v${NEOVIM_VERSION}/nvim-linux-x86_64.tar.gz" \
@@ -92,6 +84,14 @@ RUN curl -sSL "https://github.com/neovim/neovim/releases/download/v${NEOVIM_VERS
     tar -xzf /tmp/nvim.tar.gz -C /tmp && \
     cp -r /tmp/nvim-linux-x86_64/* /usr/local/ && \
     rm -rf /tmp/nvim*
+
+# Install pitchfork
+ARG PITCHFORK_VERSION=2.15.0
+RUN curl -sSL "https://github.com/jdx/pitchfork/releases/download/v${PITCHFORK_VERSION}/pitchfork-x86_64-unknown-linux-gnu.tar.gz" \
+        -o /tmp/pitchfork.tar.gz && \
+    tar -xzf /tmp/pitchfork.tar.gz -C /tmp && \
+    mv /tmp/pitchfork /usr/local/bin/pitchfork && \
+    rm -rf /tmp/pitchfork*
 
 # Create user sklein with fixed UID 1000
 RUN groupadd -g 1000 sklein && \
@@ -106,19 +106,11 @@ RUN echo "sklein ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/sklein && \
 COPY sshd_config /etc/ssh/sshd_config
 RUN chmod 644 /etc/ssh/sshd_config
 
-# Copy pebble init scripts
-COPY entrypoint-init.d/ /etc/entrypoint-init.d/
-RUN chmod +x /etc/entrypoint-init.d/*
-
-# Setup pebble directory with open permissions for rootless keep-id
-RUN mkdir -p /var/lib/pebble && chmod 777 /var/lib/pebble
-
-# Copy pebble layers
-COPY pebble/layers/ /var/lib/pebble/layers/
-
 # Copy container entrypoint script
 COPY container-entrypoint.sh /usr/local/bin/container-entrypoint.sh
 RUN chmod +x /usr/local/bin/container-entrypoint.sh
+COPY entrypoint-init.d/ /etc/entrypoint-init.d/
+RUN chmod +x /etc/entrypoint-init.d/*
 
 # Copy init script
 COPY sklein-devbox-init.sh /usr/local/bin/sklein-devbox-init.sh
@@ -127,10 +119,6 @@ RUN chmod +x /usr/local/bin/sklein-devbox-init.sh
 # Copy SSH ForceCommand entrypoint script
 COPY ssh-forcecommand-entrypoint.sh /usr/local/bin/ssh-forcecommand-entrypoint.sh
 RUN chmod +x /usr/local/bin/ssh-forcecommand-entrypoint.sh
-
-# Configure Pebble directory
-ENV PEBBLE=/var/lib/pebble
-RUN echo 'export PEBBLE=/var/lib/pebble' > /etc/profile.d/pebble.sh
 
 # Configure XDG directories
 ENV XDG_CONFIG_HOME=/home/sklein/.config \

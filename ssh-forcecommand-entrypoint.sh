@@ -15,7 +15,6 @@ fi
 
 export XDG_RUNTIME_DIR="/tmp/user/$(id -u)"
 export GPG_TTY=$(tty)
-export PEBBLE=/var/lib/pebble
 
 # Trap for graceful tmux shutdown when sshd dies (SIGHUP) or receives SIGTERM
 # Only for interactive sessions (not healthcheck)
