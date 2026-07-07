@@ -14,6 +14,15 @@ else
     echo "Warning: gh not found, skipping GitHub CLI completions" >&2
 fi
 
+# Pitchfork completion
+if command -v pitchfork &> /dev/null; then
+    mkdir -p "$COMPLETIONS_DIR"
+    pitchfork completion zsh > "${COMPLETIONS_DIR}/_pitchfork"
+    echo "✓ Pitchfork completions updated"
+else
+    echo "Warning: pitchfork not found, skipping Pitchfork completions" >&2
+fi
+
 # Jujutsu completion (existing script)
 if [[ -x "${HOME}/bin/update-jj-completion.sh" ]]; then
     "${HOME}/bin/update-jj-completion.sh"
