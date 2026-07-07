@@ -54,6 +54,7 @@ RUN dnf copr enable -y atim/starship && \
         openssl \
         dig \
         poppler-utils \
+        xdg-utils \
         && \
     dnf clean all
 

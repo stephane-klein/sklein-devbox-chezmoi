@@ -1,0 +1,15 @@
+#!/bin/bash
+if [ ! -S /tmp/dbus-remote.sock ]; then
+    exec /usr/bin/xdg-open "$@"
+fi
+
+DBUS_SESSION_BUS_ADDRESS="unix:path=/tmp/dbus-remote.sock"
+export DBUS_SESSION_BUS_ADDRESS
+
+for url in "$@"; do
+    gdbus call --session \
+        --dest org.freedesktop.portal.Desktop \
+        --object-path /org/freedesktop/portal/desktop \
+        --method org.freedesktop.portal.OpenURI.OpenURI \
+        '' "$url" '{}' >/dev/null 2>&1
+done
