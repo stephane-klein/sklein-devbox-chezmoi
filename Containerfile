@@ -55,6 +55,8 @@ RUN dnf copr enable -y atim/starship && \
         dig \
         poppler-utils \
         xdg-utils \
+        chromium \
+        google-noto-color-emoji-fonts \
         && \
     dnf clean all
 

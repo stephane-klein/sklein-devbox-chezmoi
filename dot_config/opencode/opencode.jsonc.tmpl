@@ -45,6 +45,14 @@
       "headers": {
         "Authorization": "Bearer {{ gopass "hindsight/mcp_token" }}"
       }
+    },
+    "playwright": {
+      "type": "local",
+      "command": ["mise", "exec", "--cd", "/", "--", "playwright-mcp", "--no-sandbox"],
+      "enabled": false,
+      "environment": {
+        "PLAYWRIGHT_MCP_CDP_ENDPOINT": "http://127.0.0.1:9222"
+      }
     }
   },
   "plugin": [
