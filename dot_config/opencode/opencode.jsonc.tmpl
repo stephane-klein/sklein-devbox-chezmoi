@@ -53,6 +53,15 @@
       "environment": {
         "PLAYWRIGHT_MCP_CDP_ENDPOINT": "http://127.0.0.1:9222"
       }
+    },
+    "browser-control": {
+      "type": "local",
+      "command": ["node", "{{ .chezmoi.homeDir }}/.local/share/browser-control-mcp/mcp-server/dist/server.js"],
+      "enabled": false,
+      "environment": {
+        "EXTENSION_SECRET": "{{ gopass "browser-control-mcp/EXTENSION_SECRET" }}",
+        "EXTENSION_PORT": "8090"
+      }
     }
   },
   "plugin": [
