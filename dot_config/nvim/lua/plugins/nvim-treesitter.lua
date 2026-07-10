@@ -1,17 +1,12 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  build = ":TSUpdate",
-  config = function()
-    local ok, configs = pcall(require, "nvim-treesitter.configs")
-    if ok then
-      configs.setup({
-        highlight = {
-          enable = true,
-          additional_vim_regex_highlighting = false,
-        },
-      })
-    end
-
+  opts = {
+    highlight = {
+      enable = true,
+      additional_vim_regex_highlighting = false,
+    },
+  },
+  init = function()
     -- Custom parser: YSH (Oils shell)
     local function register_ysh()
       local parsers = require("nvim-treesitter.parsers")
@@ -24,9 +19,7 @@ return {
         filetype = "ysh",
       }
     end
-
     register_ysh()
-
     vim.api.nvim_create_autocmd("User", {
       pattern = "TSUpdate",
       callback = register_ysh,
