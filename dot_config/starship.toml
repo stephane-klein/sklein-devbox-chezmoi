@@ -3,11 +3,7 @@
 
 format = """
 $directory\
-$git_branch\
-$git_commit\
-$git_state\
-$git_metrics\
-$git_status\
+${custom.jj}\
 $golang\
 $nodejs\
 $python\
@@ -17,6 +13,13 @@ $mise\
 $shell\
 $character
 """
+
+[custom.jj]
+symbol = ""
+style = "bold green"
+format = "[$symbol$output]($style) "
+when = "jj-starship detect"
+shell = ["jj-starship", "--no-color", "--no-symbol", "--no-jj-prefix", "--no-git-prefix"]
 
 [character]
 success_symbol = "[➜](bold green)"

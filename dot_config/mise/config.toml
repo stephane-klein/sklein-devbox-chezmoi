@@ -27,6 +27,10 @@ yazi = "26.5.6"
 "github:11happy/cpx" = "0.1.4"
 "github:mitsuhiko/minijinja" = "2.21.0"
 "github:laulauland/jj-hunk" = "0.4.1"
+"github:dmmulroy/jj-starship" = {
+  version = "0.7.1",
+  postinstall = "chmod u+x ${MISE_TOOL_INSTALL_PATH}/jj-starship"
+}
 
 #"go:github.com/mitsuhiko/gh-issue-sync" = "main"
 "go:github.com/mitsuhiko/gh-issue-sync/cmd/gh-issue-sync" = "main"
