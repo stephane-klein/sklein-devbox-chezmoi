@@ -79,6 +79,7 @@ alias open-opencode-skill="cd ~/.config/opencode/skill/; nvim ."
 alias goto-opencode-skill="cd ~/.config/opencode/skill/"
 alias try="try-rs"
 alias scratch-opencode='(cd ~/scratch && opencode)'
+alias k="kubectl"
 
 export EDITOR=nvim
 eval "$(zoxide init zsh)"
