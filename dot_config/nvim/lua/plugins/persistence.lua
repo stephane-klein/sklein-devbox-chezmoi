@@ -19,11 +19,13 @@ return {
   },
   -- Auto-restore session when opening Neovim without arguments
   init = function()
-    vim.api.nvim_create_autocmd("VimEnter", {
+    vim.api.nvim_create_autocmd("UIEnter", {
       group = vim.api.nvim_create_augroup("restore_session", { clear = true }),
       callback = function()
         if vim.fn.argc() == 0 then
-          require("persistence").load()
+          vim.schedule(function()
+            require("persistence").load()
+          end)
         end
       end,
       nested = true,

@@ -76,3 +76,33 @@ vim.keymap.set("n", "<leader>yp", function()
   vim.fn.setreg("+", path)
   vim.notify('Copied: ' .. path)
 end, { desc = "Copy current file absolute path" })
+
+-- LSP keymaps under gl prefix (visible in which-key as +LSP group)
+pcall(vim.keymap.del, "n", "gld")
+vim.keymap.set("n", "gld", function()
+  local word = vim.fn.expand("<cword>")
+
+  vim.api.nvim_echo({ { "gld: resolving " .. word .. "...", "MoreMsg" } }, false, {})
+
+  local clients = vim.lsp.get_clients({ bufnr = 0, method = "textDocument/definition" })
+  if #clients == 0 then
+    vim.notify("gld: no LSP client for definition", vim.log.levels.WARN)
+    return
+  end
+
+  vim.lsp.buf.definition()
+
+  vim.schedule(function()
+    local line = vim.fn.getline(".")
+    local pattern = "import%s+" .. vim.pesc(word) .. "%s+from%s+([\"'])(.-)%1"
+    local import_path = line:match(pattern)
+    if import_path then
+      vim.api.nvim_echo({ { "gld: opening " .. import_path, "MoreMsg" } }, false, {})
+      local dir = vim.fn.expand("%:p:h")
+      vim.cmd("e " .. vim.fn.fnameescape(vim.fn.resolve(dir .. "/" .. import_path)))
+    end
+  end)
+end, { desc = "Goto Definition" })
+vim.keymap.set("n", "glr", vim.lsp.buf.references, { desc = "References" })
+
+require("which-key").add({ { "gl", group = "LSP" } })

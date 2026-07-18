@@ -36,6 +36,22 @@ return {
         --     ".git"
         --   )(fname)
         -- end,
+        settings = {
+          vtsls = {
+            tsserver = {
+              globalPlugins = {
+                {
+                  name = "typescript-svelte-plugin",
+                  location = require("mason-registry")
+                    .get_package("svelte-language-server")
+                    :get_install_path()
+                    .. "/node_modules/typescript-svelte-plugin",
+                  enableForWorkspaceTypeScriptVersions = true,
+                },
+              },
+            },
+          },
+        },
       })
 
       -- clangd (C/C++)
@@ -47,6 +63,40 @@ return {
           "--header-insertion=iwyu",
           "--completion-style=detailed",
           "--function-arg-placeholders=true",
+        },
+      })
+
+      -- svelte
+      vim.lsp.config('svelte', {
+        settings = {
+          svelte = {
+            plugin = {
+              typescript = {
+                enable = true,
+                diagnostics = { enable = true },
+                hover = { enable = true },
+                completions = { enable = true },
+                documentSymbols = { enable = true },
+                codeActions = { enable = true },
+                selectionRange = { enable = true },
+                signatureHelp = { enable = true },
+                semanticTokens = { enable = true },
+                workspaceSymbols = { enable = true },
+              },
+              svelte = {
+                enable = true,
+                diagnostics = { enable = true },
+                hover = { enable = true },
+                completions = { enable = true },
+                rename = { enable = true },
+                codeActions = { enable = true },
+                selectionRange = { enable = true },
+                documentHighlight = { enable = true },
+                runesLegacyModeCodeLens = { enable = true },
+                defaultScriptLanguage = "none",
+              },
+            },
+          },
         },
       })
 
