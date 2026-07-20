@@ -3,3 +3,6 @@ run = """
 chromium-browser --headless=new  --remote-debugging-port=9222  --remote-debugging-address=0.0.0.0  --remote-allow-origins="*"  --no-sandbox --window-size=1920,1200 --use-gl=angle --use-angle=swiftshader
 """
 retry = true
+
+[daemons.opencode-web]
+run = "~/.local/bin/opencode-web-run.sh"

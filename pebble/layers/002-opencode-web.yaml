@@ -1,7 +1,0 @@
-services:
-  opencode-web:
-    override: replace
-    summary: OpenCode web interface
-    command: /home/sklein/.local/bin/opencode-web-run.sh
-    startup: disabled
-    user: sklein
