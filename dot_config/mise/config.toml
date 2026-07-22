@@ -3,7 +3,7 @@ lockfile = true
 
 [tools]
 starship = "1.26.0"
-opencode = "1.18.3"
+opencode = "1.18.4"
 ripgrep = "15.2.0"
 fd = "10.4.2"
 tmux = "3.7b"
