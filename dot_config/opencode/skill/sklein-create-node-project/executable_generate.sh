@@ -14,6 +14,7 @@ cp "$template_dir/.gitignore" "$target_dir/.gitignore"
 cp "$template_dir/biome.jsonc" "$target_dir/biome.jsonc"
 
 cp "$template_dir/.secret.example" "$target_dir/.secret.example"
+cp "$template_dir/.npmrc" "$target_dir/.npmrc"
 
 minijinja-cli "$template_dir/.mise.toml.jinja" "$vars_file" > "$target_dir/.mise.toml"
 minijinja-cli "$template_dir/AGENTS.md.jinja" "$vars_file" > "$target_dir/AGENTS.md"

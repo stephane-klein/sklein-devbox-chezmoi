@@ -93,6 +93,19 @@ L'agent doit déterminer `PROJECT_SLUG` automatiquement :
 
 - **`AUTHOR_NAME`** = `Stéphane Klein`
 
+## Version Prefix Doctrine
+
+Toutes les dépendances directes dans `package.json` utilisent le préfixe **tilde (`~`)** plutôt que caret (`^`) ou pin exact.
+
+**Fichiers concernés :**
+- `template/package.json.jinja` — chaque version est préfixée par `~` (ex: `"~{{ last_biome_version }}"`)
+- `template/.npmrc` — contient `save-prefix=~` pour que `pnpm add` conserve le tilde
+
+**Rationnel :**
+- `^` (caret) autorise les montées minor, qui ont déjà causé des régressions en équipe
+- pin exact (`"1.2.3"`) bloque les patches de sécurité — pas de mise à jour sans intervention manuelle
+- `~` (tilde) est le compromis : les patches de sécurité arrivent via `pnpm update`, les minors/majors nécessitent une décision explicite
+
 ## Récupération automatique des versions
 
 Avant toute génération, l'agent doit récupérer dynamiquement :
@@ -107,6 +120,9 @@ Avant toute génération, l'agent doit récupérer dynamiquement :
 
 3. **Dernière version de Biome** via `curl -s https://registry.npmjs.org/@biomejs/biome/latest | jq -r '.version'` :
    - Exemple de résultat : `2.3.11`
+
+4. **Dernière version de npm-package-json-lint** via `curl -s https://registry.npmjs.org/npm-package-json-lint/latest | jq -r '.version'` :
+   - Exemple de résultat : `9.0.2`
 
 Si l'une de ces requêtes échoue ou retourne une donnée inutilisable, l'agent **doit échouer proprement** et informer l'utilisateur que la création du projet est impossible sans les versions à jour.
 
@@ -129,6 +145,7 @@ Une fois les versions récupérées et les conflits résolus (ou confirmés par 
     last_node_lts_version: "{{LAST_NODE_LTS_VERSION}}"
     last_pnpm_version: "{{LAST_PNPM_VERSION}}"
     last_biome_version: "{{LAST_BIOME_VERSION}}"
+    last_npm_package_json_lint_version: "{{LAST_NPM_PACKAGE_JSON_LINT_VERSION}}"
     include_environment_secrets: {{INCLUDE_ENVIRONMENT_SECRETS}}
    include_gopass_setup_secret: {{INCLUDE_GOPASS_SETUP_SECRET}}
    ```
@@ -142,6 +159,8 @@ Une fois les versions récupérées et les conflits résolus (ou confirmés par 
    ```
 
 3. **Supprimer** le fichier temporaire après exécution.
+
+**Note :** le fichier `.npmrc` est également créé (contient `save-prefix=~`). Voir la section "Version Prefix Doctrine" pour le rationnel.
 
 **L'agent ne doit PAS exécuter `pnpm install` ni aucune autre commande d'installation.**
 
