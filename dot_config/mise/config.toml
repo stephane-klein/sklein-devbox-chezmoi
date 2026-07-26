@@ -3,7 +3,9 @@ lockfile = true
 
 [tools]
 starship = "1.26.0"
-opencode = "1.18.4"
+opencode = "1.18.5"
+# The release pace of Oh-My-Pi is very high (https://github.com/can1357/oh-my-pi/releases), with several updates per day, so for now I prefer not to pin the version.
+"github:can1357/oh-my-pi" = "latest"
 ripgrep = "15.2.0"
 fd = "10.4.2"
 tmux = "3.7b"
@@ -13,7 +15,7 @@ uv = "latest"
 go = "latest"
 neovim = "0.12.4"
 tree-sitter = "0.26.11"
-usage = "3.5.5"
+usage = "3.5.6"
 atuin = "18.17.1"
 delta = "0.19.2"
 rtk = "0.42.4"
@@ -38,7 +40,7 @@ yazi = "26.5.6"
 
 
 # Tooling for OpenCode
-"npm:@upstash/context7-mcp" = "3.2.4"
+"npm:@upstash/context7-mcp" = "3.2.5"
 "pipx:mcp-server-fetch" = "2026.7.10"
 "npm:tavily-mcp" = "0.2.21"
 "npm:exa-mcp-server" = "3.2.1"
@@ -49,7 +51,7 @@ yazi = "26.5.6"
 "pipx:petname" = "latest"
 
 # Kubernetes
-kubectl = "1.36.2"
+kubectl = "1.36.3"
 helm = "4.2.3"
 kubectx = "0.11.0"
 kubens = "0.11.0"
