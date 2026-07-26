@@ -5,6 +5,7 @@ lockfile = true
 starship = "1.26.0"
 opencode = "1.18.5"
 # The release pace of Oh-My-Pi is very high (https://github.com/can1357/oh-my-pi/releases), with several updates per day, so for now I prefer not to pin the version.
+# I installed oh-my-pi purely to try it out — for now, OpenCode remains my daily driver.
 "github:can1357/oh-my-pi" = "latest"
 ripgrep = "15.2.0"
 fd = "10.4.2"
