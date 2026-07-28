@@ -57,6 +57,7 @@ RUN dnf copr enable -y atim/starship && \
         xdg-utils \
         chromium \
         google-noto-color-emoji-fonts \
+        wl-clipboard \
         && \
     dnf clean all
 
