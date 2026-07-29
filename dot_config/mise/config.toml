@@ -3,10 +3,15 @@ lockfile = true
 
 [tools]
 starship = "1.26.0"
-opencode = "1.18.5"
+opencode = "1.18.9"
 # The release pace of Oh-My-Pi is very high (https://github.com/can1357/oh-my-pi/releases), with several updates per day, so for now I prefer not to pin the version.
 # I installed oh-my-pi purely to try it out — for now, OpenCode remains my daily driver.
 "github:can1357/oh-my-pi" = "latest"
+
+# The release pace of Pi.dev is very hight (https://github.com/earendil-works/pi/releases), with several update per day, so for now I prefer not to pin the versions.
+# I installed Pi.dev purely to try it out — for now, OpenCode remains my daily driver.
+"github:earendil-works/pi" = "latest"
+
 ripgrep = "15.2.0"
 fd = "10.4.2"
 tmux = "3.7b"
@@ -16,8 +21,8 @@ uv = "latest"
 go = "latest"
 neovim = "0.12.4"
 tree-sitter = "0.26.11"
-usage = "3.5.6"
-atuin = "18.17.1"
+usage = "4.0.0"
+atuin = "18.18.1"
 delta = "0.19.2"
 rtk = "0.42.4"
 github-cli = "2.96.0"
