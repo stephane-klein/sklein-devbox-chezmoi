@@ -4,7 +4,11 @@
   "default_agent": "dialogue",
   "lsp": {},
   "permission": {
-    "bash": "allow"
+    "bash": "allow",
+    "external_directory": {
+      "/workspace/examples/**": "allow",
+      "~/.corrections/": "allow"
+    }
   },
   // I use `mise exec --cd / -- ...` to launch MCP servers with the Node instance installed globally by Mise
   "mcp": {
