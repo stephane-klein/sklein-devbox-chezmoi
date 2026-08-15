@@ -3,7 +3,7 @@ lockfile = true
 
 [tools]
 starship = "1.26.0"
-opencode = "1.18.16"
+opencode = "1.18.18"
 # The release pace of Oh-My-Pi is very high (https://github.com/can1357/oh-my-pi/releases), with several updates per day, so for now I prefer not to pin the version.
 # I installed oh-my-pi purely to try it out — for now, OpenCode remains my daily driver.
 "github:can1357/oh-my-pi" = "latest"
@@ -34,7 +34,7 @@ lsd = "1.2.0"
 "pipx:copier" = "9.17.0"
 "github:tassiovirginio/try-rs" = "1.7.11"
 "github:11happy/cpx" = "0.1.4"
-"github:mitsuhiko/minijinja" = "2.23.0"
+"github:mitsuhiko/minijinja" = "2.24.0"
 "github:laulauland/jj-hunk" = "0.4.1"
 "github:newren/git-filter-repo" = "2.47.0"
 "github:dmmulroy/jj-starship" = {
@@ -47,20 +47,20 @@ lsd = "1.2.0"
 
 
 # Tooling for OpenCode
-"npm:@upstash/context7-mcp" = "4.0.0"
+"npm:@upstash/context7-mcp" = "4.0.2"
 "pipx:mcp-server-fetch" = "2026.7.10"
 "npm:tavily-mcp" = "0.2.22"
 "npm:exa-mcp-server" = "3.4.0"
-"npm:cc-safety-net" = "2.0.1"
+"npm:cc-safety-net" = "2.0.4"
 "npm:@playwright/mcp" = "0.0.79"
-"npm:@openchamber/web" = "1.18.2"
+"npm:@openchamber/web" = "1.18.3"
 
 # Tooling for Tmux
 "pipx:petname" = "latest"
 
 # Kubernetes
 kubectl = "1.36.3"
-helm = "4.2.3"
+helm = "4.2.4"
 kubectx = "0.11.0"
 kubens = "0.11.0"
 helmfile = "1.7.3"
