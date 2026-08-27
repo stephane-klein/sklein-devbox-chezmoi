@@ -103,7 +103,7 @@ end
 
 return {
   {
-    "nvim-neo-tree/neo-tree.nvim",
+    "stephane-klein/neo-tree.nvim",
     enabled = true,
     cmd = "Neotree",
     keys = {
@@ -144,7 +144,6 @@ return {
       vim.cmd([[Neotree close]])
     end,
     init = function()
-      require("scripts.patch-neo-tree")()
       vim.api.nvim_create_autocmd("BufEnter", {
         group = vim.api.nvim_create_augroup("Neotree_start_directory", { clear = true }),
         desc = "Start Neo-tree with directory",
@@ -278,7 +277,7 @@ return {
     "antosha417/nvim-lsp-file-operations",
     dependencies = {
       "nvim-lua/plenary.nvim",
-      "nvim-neo-tree/neo-tree.nvim",
+      "stephane-klein/neo-tree.nvim",
     },
     config = function()
       require("lsp-file-operations").setup()
@@ -304,7 +303,7 @@ return {
   {
     "stephane-klein/neo-tree-session.nvim",
     dependencies = {
-      "nvim-neo-tree/neo-tree.nvim",
+      "stephane-klein/neo-tree.nvim",
       "folke/persistence.nvim"
     },
     opts = {}
