@@ -39,7 +39,7 @@ return {
         layouts = {
           vertical = {
             layout = {
-              title = "{title} {live} {flags} | hints: <a-h> <a-i>",
+              title = "{title} {live} {flags} | hints: <a-h> <a-i> <ctrl-up> <ctrl-down>",
               width = 0.9,
               height = 0.9,
             },
