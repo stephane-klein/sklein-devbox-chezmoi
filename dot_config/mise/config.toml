@@ -3,7 +3,7 @@ lockfile = true
 
 [tools]
 starship = "1.26.0"
-opencode = "1.18.21"
+opencode = "1.18.23"
 # The release pace of Oh-My-Pi is very high (https://github.com/can1357/oh-my-pi/releases), with several updates per day, so for now I prefer not to pin the version.
 # I installed oh-my-pi purely to try it out — for now, OpenCode remains my daily driver.
 "github:can1357/oh-my-pi" = "latest"
@@ -13,7 +13,7 @@ opencode = "1.18.21"
 "github:earendil-works/pi" = "latest"
 
 ripgrep = "15.2.0"
-fd = "10.4.2"
+fd = "10.5.0"
 tmux = "3.7b"
 jujutsu = "0.44.0"
 jjui = "0.10.9"
@@ -22,8 +22,8 @@ uv = "latest"
 go = "latest"
 neovim = "0.12.5"
 tree-sitter = "0.26.13"
-usage = "6.1.0"
-atuin = "18.19.0"
+usage = "6.4.1"
+atuin = "18.20.1"
 delta = "0.19.2"
 rtk = "0.42.4"
 github-cli = "2.98.0"
@@ -54,13 +54,13 @@ lsd = "1.2.0"
 "npm:exa-mcp-server" = "3.4.1"
 "npm:cc-safety-net" = "2.0.10"
 "npm:@playwright/mcp" = "0.0.79"
-"npm:@openchamber/web" = "1.20.0"
+"npm:@openchamber/web" = "1.21.0"
 
 # Tooling for Tmux
 "pipx:petname" = "latest"
 
 # Kubernetes
-kubectl = "1.36.4"
+kubectl = "1.37.0"
 helm = "4.2.4"
 kubectx = "0.11.0"
 kubens = "0.11.0"
