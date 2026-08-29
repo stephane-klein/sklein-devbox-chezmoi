@@ -1,5 +1,7 @@
 [git]
 sign-commits = true
+# Never push wip:/private: commits (prevents accidental push of work in progress)
+private-commits = "description(glob:'wip:*') | description(glob:'private:*')"
 
 [user]
 name = "Stéphane Klein"
