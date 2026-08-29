@@ -5,3 +5,5 @@ node_modules
 .secrets/
 ATOMIC-SPLIT-PLAN.md
 DRAFT.md
+mise.local.toml
+mise.local.lock
