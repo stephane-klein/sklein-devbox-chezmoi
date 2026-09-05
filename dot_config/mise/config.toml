@@ -43,6 +43,9 @@ lsd = "1.2.0"
   postinstall = "chmod u+x ${MISE_TOOL_INSTALL_PATH}/jj-starship"
 }
 
+# Incus client
+"github:lxc/incus" = { version = "6.23", bin = "incus" }
+
 #"go:github.com/mitsuhiko/gh-issue-sync" = "main"
 "go:github.com/mitsuhiko/gh-issue-sync/cmd/gh-issue-sync" = "main"
 
