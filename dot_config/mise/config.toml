@@ -27,6 +27,11 @@ atuin = "18.20.1"
 delta = "0.19.2"
 rtk = "0.42.4"
 github-cli = "2.98.0"
+
+# Forgejo CLI (fj) + extension Actions (fj-ex)
+"forgejo:forgejo-contrib/forgejo-cli" = "0.6.0"
+"github:JKamsker/forgejo-cli-ex" = "0.1.7"
+
 zoxide = "0.10.0"
 jq = "1.8.2"
 yq = "4.53.6"

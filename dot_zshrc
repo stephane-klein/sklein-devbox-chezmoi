@@ -82,6 +82,20 @@ alias scratch-opencode='(cd ~/scratch && opencode)'
 alias k="kubectl"
 
 export EDITOR=nvim
+
+# Forgejo CLI (fj/fj-ex) default instance
+export FJ_FALLBACK_HOST="https://forgejo.sklein.internal"
+export FJ_USER="stephane-klein"
+
+# fj always targets the default Forgejo instance, regardless of the current git remote.
+# Pass your own -H/--host (or use `command fj`) to override.
+fj() {
+    if [[ "$*" == *"-H"* || "$*" == *"--host"* ]]; then
+        command fj "$@"
+    else
+        command fj -H forgejo.sklein.internal "$@"
+    fi
+}
 eval "$(zoxide init zsh)"
 
 _z() {
