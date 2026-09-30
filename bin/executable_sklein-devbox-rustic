@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+export OPENDAL_ACCESS_KEY_ID="$(gopass show -o scaleway/sklein-devbox-rustic-backup/SCW_ACCESS_KEY)"
+export OPENDAL_SECRET_ACCESS_KEY="$(gopass show -o scaleway/sklein-devbox-rustic-backup/SCW_SECRET_KEY)"
+
+exec rustic "$@"

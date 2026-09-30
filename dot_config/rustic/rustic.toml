@@ -1,0 +1,8 @@
+[repository]
+repository = "opendal:s3"
+password-command = "gopass show -o scaleway/sklein-devbox-rustic-backup/RUSTIC_PASSWORD"
+
+[repository.options]
+bucket = "sklein-devbox-rustic-backup"
+region = "fr-par"
+endpoint = "https://s3.fr-par.scw.cloud"

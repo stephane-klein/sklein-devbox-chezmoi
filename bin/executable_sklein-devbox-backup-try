@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+source_dir="${HOME}/tries"
+
+export OPENDAL_ACCESS_KEY_ID="$(gopass show -o scaleway/sklein-devbox-rustic-backup/SCW_ACCESS_KEY)"
+export OPENDAL_SECRET_ACCESS_KEY="$(gopass show -o scaleway/sklein-devbox-rustic-backup/SCW_SECRET_KEY)"
+
+rustic backup "$source_dir" \
+    --init \
+    --host "$(uname -n)" \
+    --tag "machine-id-$(cat /etc/machine-id)" \
+    --tag try \
+    --glob '!**/node_modules' \
+    --glob '!**/.venv' \
+    --glob '!**/dist' \
+    --glob '!**/.git'
+
+rustic forget --filter-tags try --keep-last 2 --prune

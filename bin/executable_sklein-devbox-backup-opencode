@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+source_dir="${HOME}/.local/share/opencode"
+
+export OPENDAL_ACCESS_KEY_ID="$(gopass show -o scaleway/sklein-devbox-rustic-backup/SCW_ACCESS_KEY)"
+export OPENDAL_SECRET_ACCESS_KEY="$(gopass show -o scaleway/sklein-devbox-rustic-backup/SCW_SECRET_KEY)"
+
+rustic backup "$source_dir" \
+    --init \
+    --host "$(uname -n)" \
+    --tag "machine-id-$(cat /etc/machine-id)" \
+    --tag opencode \
+    --glob "!${source_dir}/account.json" \
+    --glob "!${source_dir}/auth.json*"
+
+rustic forget --filter-tags opencode --keep-last 2 --prune
